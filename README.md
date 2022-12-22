@@ -4,7 +4,7 @@ This are my custom export configurations for [Mp3tag](https://www.mp3tag.de/en/)
 
 ## Support
 
-Hey dude! Help me out for a couple of :beers: or a :coffee:!
+Hey there! Help me out and support my work. You can buy me a :coffee: as a thank you!
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/amilino)
 
