@@ -1,0 +1,161 @@
+$filename(%_workingpath%%_workingdir%.html,utf-8)<html><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META NAME="Author" CONTENT="milka (amilino@gmail.com)">
+<META NAME="Generator" CONTENT="%_app% - http://www.mp3tag.de">
+<META NAME="Date" CONTENT="%_date%">
+<title>..:: %_workingdir% Album, Compilation & Mix List ::..</title>
+<STYLE type=text/css><!--
+BODY {
+	FONT-FAMILY: VERDANA, TAHOMA, ARIAL, HELVETICA;
+	FONT-SIZE: 10px;
+	COLOR: #707070;
+	TEXT-ALIGN: CENTER;
+	BACKGROUND-COLOR: #222E44;
+}
+A {
+	COLOR: #989068;
+	TEXT-DECORATION: none;
+}
+A:active { COLOR: #BFBFBF }
+A:visited { COLOR: #787058 }
+A:hover {
+	COLOR: #A8A080;
+	TEXT-DECORATION: none;
+}
+.TITLE {
+	FONT-FAMILY: TIMES NEW ROMAN, VERDANA, TAHOMA, ARIAL, HELVETICA;
+	FONT-SIZE: 16px;
+	COLOR: #787058;
+	LETTER-SPACING: 3px;
+}
+.TITLE_2 {
+	FONT-FAMILY: VERDANA, TAHOMA, ARIAL, HELVETICA;
+	FONT-SIZE: 12px;
+	LETTER-SPACING: 3px;
+}
+IMG.cover {
+	BORDER-RIGHT: #787058 1px solid;
+	BORDER-TOP: #787058 1px solid;
+	BORDER-LEFT: #787058 1px solid;
+	BORDER-BOTTOM: #787058 1px solid;
+	WIDTH: 80px;
+}
+TD {
+	FONT-FAMILY: VERDANA, TAHOMA, ARIAL, HELVETICA;
+	FONT-SIZE: 10px;
+}
+TD.valshade {
+	BACKGROUND-COLOR: #1E1C2C;
+	TEXT-ALIGN: CENTER;
+	BORDER-RIGHT: #787058 1px solid;
+	BORDER-TOP: #787058 1px solid;
+	BORDER-LEFT: #787058 1px solid;
+	BORDER-BOTTOM: #787058 1px solid;
+}
+.INFO {
+	FONT-FAMILY: VERDANA, TAHOMA, ARIAL, HELVETICA;
+	FONT-SIZE: 10px;
+	COLOR: #787058;
+}
+.ID3 {
+	FONT-FAMILY: VERDANA, TAHOMA, ARIAL, HELVETICA;
+	FONT-SIZE: 10px;
+	COLOR: #707070;
+}
+.TOTAL {
+	FONT-FAMILY: VERDANA, TAHOMA, ARIAL, HELVETICA;
+	FONT-SIZE: 9px;
+	COLOR: #707070;
+}
+.COUNT {
+	FONT-FAMILY: VERDANA, TAHOMA, ARIAL, HELVETICA;
+	FONT-SIZE: 9px;
+	COLOR: #A8A080;
+}
+//--></STYLE>
+
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT"><!--
+// All functions are created by milka.                   //
+// Functions can be used when credit is given. It        //
+// should look like this:                                //
+/* +++ script name by milka +++ */                       //
+
+// When you classify it in such a way, you are free to   //
+// use the script.                                       //
+// this export script was last modified: 26.08.2006      //
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
+// ++++++++++++++++++ DEFINE THE NAME +++++++++++++++++++ //
+// Here you can define the names of the covers.            //
+// You can even define the whole name of the file!!!      //
+
+// Defines names for covers:
+var cover = "cover.jpg";
+
+
+var album_count = $loop(%_folderpath%,1)$loopend()$sub(%_max_counter%,1);
+var album_count_2 = $loop(%_folderpath%,1)$loopend()%_max_counter%;
+var mix_count = $loop(%_filename_ext%)$puts(cnt,$if($eql($folderdepth(%_folderpath%),$folderdepth(%_workingpath%)),$add($get(cnt),1),$add($get(cnt),0)))$loopend()$get(cnt);
+
+/* +++ Smart counters by milka +++ */
+function album_counter() {
+		if(mix_count) { document.write(album_count); }
+		else { document.write(album_count_2); }
+}
+function album_track_counter() {
+	var album_track_count = %_total_files%-mix_count;
+	document.write(album_track_count);
+}
+function mix_counter() {
+	document.write(mix_count);
+}
+//--></SCRIPT>
+
+</HEAD>
+<BODY name="top">
+<TABLE height="100%%" width="100%%" align="center"><TBODY>
+   <TR><TD vAlign="top"><BR>
+<TABLE cellSpacing=5 cellPadding=2 width="60%%" border=0 align="center"><TBODY>
+   <TR><TD class="valshade" width="100%%" colSpan=2>
+      <DIV class="title"><B>Album, Compilation & Mix List</B></DIV>
+   </TD></TR>
+   <TR><TD class="valshade" width="50%%">
+      <DIV class="title_2">%_workingdir%</DIV>
+   </TD>
+   <TD class="valshade" width="50%%">
+      <DIV>Total: <B>$replace($replace($replace($replace($replace(-%_total_time2%,-00:00,0),-00:0,),-00:,),-0,),-,)</B> | <B>%_total_size%</B> | <B>%_total_files%</B> Tracks</DIV>
+   </TD></TR>
+</TBODY></TABLE><BR>$if($eql($folderdepth(%_folderpath%),$folderdepth(%_workingpath%)),<TR><TD>,$loop(%_folderpath%)$if($eql($folderdepth(%_folderpath%),$folderdepth(%_workingpath%)),,
+<TABLE cellSpacing=0 cellPadding=3 width="50%%" border=0 align="center"><TBODY>
+   <TR><TD vAlign="top"><A href="$replace($replace(%_folderpath%%_directory%.html,%_workingpath%,),#,%%23)"><script>document.write("<IMG class=\"cover\" src=\"$replace($replace($replace(%_folderpath%,%_workingpath%,),#,%%23),\,/)" + cover + "\">");</script></A></TD>
+   <TD vAlign="top" align="left" width="100%%">
+      <P class="info"><B><A href="$replace($replace(%_folderpath%%_directory%.m3u,%_workingpath%,),#,%%23)">%_directory%</A></B>$if(%genre%,
+            <BR><SPAN class="id3">Genre: <B>%genre%</B></SPAN><BR>,            <BR>)$if(%comment%,
+                <SPAN class="id3">Comment: <B>%comment%</B></SPAN><BR>,)
+       <S>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</S>
+       <BR><SPAN class="total">Length: <B>$replace($replace($replace($replace($replace(-%_total_time2%,-00:00,0),-00:0,),-00:,),-0,),-,)</B>
+       <BR><B>%_total_files%</B> Tracks
+       </SPAN></P>
+   </TD></TR>
+</TBODY></TABLE><BR>)$loop(%_directory%)$loopend()$loopend()</TD></TR>
+   <TR><TD>)<DIV><BR>
+      <P class="info" align="center">Album / Compilation Count: <SPAN class="count"><B><SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT">album_counter()</SCRIPT> '['<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT">album_track_counter()</SCRIPT> Tracks']'</B></SPAN>
+   </P></DIV>
+   <DIV><BR>
+      <P class="info" align="center">Mix Count: <SPAN class="count"><B><SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT">mix_counter()</SCRIPT></B></SPAN>
+   </P></DIV>
+<TABLE class="table" align="center">$loop(%_filename_ext%)$if($eql($folderdepth(%_folderpath%),$folderdepth(%_workingpath%)),
+   <TR bgcolor="#243148"><TD><A href="$replace(%_filename_ext%,#,%%23)">%_filename%</A></TD>
+      <TD align="right" style="padding-left: 4px;">$div(%_total_time_raw%,60):$num($sub(%_total_time_raw%,$mul($div(%_total_time_raw%,60),60)),2)</TD>
+      <TD align="right" style="padding-left: 4px;">%_file_size_mb% MB</TD>
+      <TD>%genre%</TD>
+      <TD style="padding-left: 4px;">%encodedby%</TD>
+   </TR>,)$loopend()
+</TABLE>
+   <TR><TD vAlign="bottom"><DIV align="center">
+   <BR><BR><BR><A href="#top"><B>Back On Top</B></A> - <A href="$replace(%_workingdir%.m3u,#,%%23)"><B>Play All</B></A>
+   <BR></DIV></TD></TR>
+</TBODY></TABLE>
+</BODY>
+</HTML>
