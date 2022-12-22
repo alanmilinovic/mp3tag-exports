@@ -10,6 +10,8 @@ Hey there! Help me out and support my work. You can buy me a :coffee: as a thank
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/amilino)
 
+or use a [PayPal](https://www.paypal.com/paypalme/alanmilinovic1)
+
 ## Installing
 Just copy the .mte files to (C:\Users\\"your username"\AppData\Roaming\Mp3tag\export):
 
