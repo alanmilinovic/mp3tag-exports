@@ -29,7 +29,7 @@ Just copy the .mte files to (C:\Users\\"your username"\AppData\Roaming\Mp3tag\ex
 
 ### [Simple Smart Dynamic List](https://raw.githack.com/alanmilinovic/mp3tag-exports/main/Preview/Simple%20Smart%20Dynamic%20List/---%3D%3D%3D%20Burn%20%3D%3D%3D---%20(((Dynamic%20Music%20List))).html)
 <p align="center" float="left">
-    <a href="https://github.com/alanmilinovic/mp3tag-exports/blob/main/Preview/Simple%20Smart%20Dynamic%20List%20Screenshot.png">
-        <img src="https://github.com/alanmilinovic/mp3tag-exports/blob/main/Preview/Simple%20Smart%20Dynamic%20List%20Screenshot.png" width="450" alt="click for demo" />
+    <a href="https://raw.githubusercontent.com/alanmilinovic/mp3tag-exports/main/Preview/Simple%20Smart%20Dynamic%20List%20Screenshot.png">
+        <img src="https://raw.githubusercontent.com/alanmilinovic/mp3tag-exports/main/Preview/Simple%20Smart%20Dynamic%20List%20Screenshot.png" width="450" alt="click for demo" />
     </a>
 </p>
