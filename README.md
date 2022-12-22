@@ -1,4 +1,4 @@
-# Music Export Configuraitons for Mp3tag
+# Music Export Configurations for Mp3tag
 
 This are my custom export configurations for [Mp3tag](https://www.mp3tag.de/en/).
 
