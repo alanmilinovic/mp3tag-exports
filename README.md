@@ -8,7 +8,7 @@ This are my custom export configurations for [Mp3tag](https://www.mp3tag.de/en/)
 
 Hey there! Help me out and support my work. You can buy me a :coffee: as a thank you!
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/amilino) or use a [PayPal](https://www.paypal.com/paypalme/alanmilinovic1)
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/amilino) or [!["PayPal"](https://www.paypalobjects.com/digitalassets/c/website/marketing/apac/C2/logos-buttons/optimize/44_Grey_PayPal_Pill_Button.png)](https://www.paypal.com/paypalme/alanmilinovic1)
 
 ## Installing
 Just copy the .mte files to (C:\Users\\"your username"\AppData\Roaming\Mp3tag\export):
