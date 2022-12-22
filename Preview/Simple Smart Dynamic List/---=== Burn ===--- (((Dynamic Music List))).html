@@ -1,0 +1,385 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META NAME="Author" CONTENT="milka (amilino@gmail.com)">
+<META NAME="Generator" CONTENT="Mp3tag v2.36d - http://www.mp3tag.de">
+<META NAME="Date" CONTENT="28.9.2006">
+<TITLE>---=== Burn ===--- Music Directory & File List</TITLE>
+<STYLE TYPE="TEXT/CSS"><!--
+body { background-color: #CCCCCC; text-align: center; }
+A {	color: #6F7397; text-decoration: none; }
+A:hover { color: #3D3F54; }
+.title { font-size: 16px; color: #6F7397; font-family: Tahoma,Verdana,Arial; text-align: center; }
+.header { background-color: #DFDFDF; font-size: 11px; color: #6F7397; font-family: Verdana,Arial,Tahoma; font-weight:bold; }
+.style { font-size: 11px; color: #6F7397; font-family: Verdana,Arial,Tahoma; text-align: center; }
+.file { background-color: #DFDFDF; font-size: 11px; color: #787D9E; font-family: Tahoma,Verdana,Arial; border-bottom: 1px solid #6F7397; }
+.filea { padding-left: 10px; }
+.fileb { text-align: right; border-left: 1px solid #6F7397; padding-right: 2px; }
+.filec { text-align: right; border-left: 1px solid #6F7397; border-right: 1px solid #6F7397; padding-left: 4px; padding-right: 2px; }
+.filed { text-align: center; }
+.table { background-color: #DFDFDF; font-size: 11px; color: #6F7397; font-family: Tahoma,Verdana,Arial; font-weight:bold; border-top: 1px solid #6F7397; border-bottom: 1px solid #6F7397; }
+.songtr { border-collapse: collapse; border-width: 0px; border-style: none; padding: 0px; margin: 0px; }
+//--></STYLE>
+
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT"><!--
+// All functions are created by milka.                   //
+// Functions can be used when credit is given. It        //
+// should look like this:                                //
+/* +++ script name by milka +++ */                       //
+
+// When you classify it in such a way, you are free to   //
+// use the script.                                       //
+// this export script was last modified: 26.08.2006      //
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
+// ++++++++++++++++++ DEFINE THE NAMES ++++++++++++++++++ //
+// Here you can define the names of the covers & reviews. //
+// You can even define the whole name of the file!!!      //
+
+// Defines names for covers & reviews:
+var cover = "cover.jpg";
+var review = "review.txt";
+
+
+var album_count = 4;
+var album_count_2 = 5;
+var mix_count = 12;
+
+/* +++ Dynamic preview by milka +++ */
+function hide_first_album(){
+	if(mix_count){ hidden.rows[1].style.display="none"; }
+}
+function hide_expend_all(){
+	if(album_count){ document.write('<B><A href="javascript:show_all()" id="a" class="style">SHOW ALL</A></B>'); }
+}
+function first_column(){
+	if(album_count && album_count_2 && mix_count) { document.write('ALBUM / MIX'); }
+	else if(album_count_2 && (mix_count == 0)){ document.write('ALBUM'); }
+	else if(mix_count){ document.write('MIX'); }
+}
+/* +++ Smart counters by milka +++ */
+function album_counter() {
+		if(mix_count) { document.write(album_count); }
+		else { document.write(album_count_2); }
+}
+function album_track_counter() {
+	var album_track_count = 62-mix_count;
+	document.write(album_track_count);
+}
+function mix_counter() {
+	document.write(mix_count);
+}
+/* +++ show/hide by milka +++ */
+function show_album(id) {
+	if(document.getElementById('n' + id).style.display == 'none') {
+		document.getElementById('n' + id).style.display = '';
+		document.getElementById('p' + id).innerText = "-";
+		document.getElementById('p' + id).style.padding = '2px';
+	}else{
+		document.getElementById('n' + id).style.display = 'none';
+		document.getElementById('p' + id).innerText = "+";
+		document.getElementById('p' + id).style.padding = '0.5px';
+	}
+}
+function show_all(id) {
+	if(mix_count) i=1; else i=0;
+		for (i; i<=album_count; i++) {
+			document.getElementById('n' + i).style.display = '';
+			document.getElementById('p' + i).innerText = "-";
+			document.getElementById('p' + i).style.padding = '2px';
+		}
+	document.getElementById('a').innerText = "HIDE ALL";
+	document.getElementById('a').href = "javascript:hide_all()";
+}
+function hide_all(id) {
+	if(mix_count) i=1; else i=0;
+		for (i; i<=album_count; i++) {
+			document.getElementById('n' + i).style.display = 'none';
+			document.getElementById('p' + i).innerText = "+";
+			document.getElementById('p' + i).style.padding = '0.5px';
+		}
+	document.getElementById('a').innerText = "SHOW ALL";
+	document.getElementById('a').href = "javascript:show_all()";
+}
+/* +++ Highlight effect by milka +++ */
+function highlight_on(id){
+	if(document.getElementById("light" + id)) {
+		document.getElementById("light" + id).style.color = "#3D3F54";
+	}
+}
+function highlight_out(id){
+		document.getElementById("light" + id).style.color = "#6F7397";
+}
+function highlight_on_a(id){
+	if(document.getElementById("a_light" + id)) {
+		document.getElementById("a_light" + id).style.color = "#3D3F54";
+	}
+}
+function highlight_out_a(id){
+		document.getElementById("a_light" + id).style.color = "#6F7397";
+}
+function highlight_on_m(id){
+	if(document.getElementById("m_light" + id)) {
+		document.getElementById("m_light" + id).style.color = "#3D3F54";
+	}
+}
+function highlight_out_m(id){
+		document.getElementById("m_light" + id).style.color = "#6F7397";
+}
+/* +++ Auto-Sizing Image Popup Window +++ */
+/* +++ script by SquallLeonhart38 +++ */
+/* +++ Edited by milka +++ */
+
+// Set the horizontal and vertical position for the popup
+var Start_X = 100;
+var Start_Y = 100;
+
+// Set these value approximately 20 pixels greater than the
+// size of the largest image to be used (needed for Netscape)
+var img_Width  = 500;
+var img_Height = 500;
+
+// Do not edit below this line...
+// ================================
+if(navigator.userAgent.indexOf("Opera") != -1) {defaultWidth = screen.availWidth;defaultHeight = screen.availHeight;}
+var img_option = "scrollbars=no, status=no, toolbar=no, menubar=no, dependent=yes, location=no, resizable=no, width=" + img_Width + ", height=" + img_Height + ", left=" + Start_X + ", top=" + Start_Y;
+function popImage(id) {
+	var imageURL = a[id][1] + cover;
+	var imageTitle = a[id][0];
+	var image_window=window.open("about:blank","Albumcover",img_option);
+	with(image_window.document) {
+		writeln("<html><head><title>" + imageTitle + "<\/title><script><!--");
+		writeln("var isNN,isIE,isOO;");
+			writeln("isNN = (navigator.appName == \"Netscape\" && navigator.userAgent.indexOf(\"Opera\") == -1)?1:0;");
+			writeln("isOO = (navigator.userAgent.indexOf(\"Opera\") != -1)?1:0;");
+			writeln("isIE = (navigator.appName.indexOf(\"Microsoft\") != -1 && navigator.userAgent.indexOf(\"Opera\") == -1)?1:0;");
+		writeln("function resizepopup() {");
+			writeln("if(isIE) {");
+				writeln("window.resizeTo(100,100);");
+				writeln("width = 100-(document.body.clientWidth-document.images[0].width);");
+				writeln("height = 100-(document.body.clientHeight-document.images[0].height);");
+				writeln("window.resizeTo(width,height);}");
+			writeln("if(isNN) {");       
+				writeln("window.innerWidth=document.images[0].width;");
+				writeln("window.innerHeight=document.images[0].height;}");
+			writeln("if(isOO) {");
+				writeln("window.resizeTo(100,100);");
+				writeln("width = 100-(document.body.clientWidth-document.images[0].width)+12;");
+				writeln("height = 100-(document.body.clientHeight-document.images[0].height)-16;");
+				writeln("window.resizeTo(width,height);}}");
+		writeln("//--><\/script><\/head>");
+		writeln("<body style=\"margin: 0px; padding: 0px\" onload=\"resizepopup();self.focus()\">");
+		writeln("<img name=\"cover\" src=\"" + imageURL + "\"><\/body><\/html>");
+	close();
+	}
+}
+
+/* +++ PopUp-Window for Reviews +++ */
+/* +++ script by SquallLeonhart38 +++ */
+/* +++ Edited by milka +++ */
+
+// this values specify the width and the height of the review
+// popup. You can change them or leave them as they are.
+var rev_Width  = 550;
+var rev_Height = 500;
+
+var rev_option = "resizable=no, menubar=no, status=no, scrollbars=no, toolbar=no, location=no, dependent=yes, width=" + rev_Width + ", height=" + rev_Height;
+function popReview(id) {
+	var reviewURL = a[id][1] + review;
+	var review_window = window.open("about:blank", "Review",rev_option);
+	with(review_window.document) {
+		writeln("<html><head><title>Review of: " + a[id][0] + "<\/title><\/head>");
+		writeln("<body style=\"margin: 0px; padding: 0px\">");
+		writeln("<iframe src=\"" + reviewURL + "\" scrolling=\"yes\" width=\"" + rev_Width + "\" height=\"" + rev_Height + "\" frameborder=\"0\">");
+		writeln("<\/body><\/html>");
+	close();
+	}
+}
+
+/* +++ Arrayed Java Export by nickless +++ */
+/* +++ Edited by milka +++ */
+
+var a = new Array(62);	//main export array for songs
+
+/* history of subarray fields usage
+a[n]=new Array(2);	//creates a new subarray in the n-th line of table
+a[n][0]=name of directory
+a[n][1]=folderpath without workingpath
+*/
+
+a[0]=new Array(2);
+a[0][0]="---=== Burn ===---";
+a[0][1]="";
+a[1]=new Array(2);
+a[1][0]="High Contrast - High Society [2004]";
+a[1][1]="High Contrast - High Society [2004]/";
+a[2]=new Array(2);
+a[2][0]="Jungle Jazz Vol.1";
+a[2][1]="Jungle Jazz Vol.1/";
+a[3]=new Array(2);
+a[3][0]="Kruder & Dorfmeister - Conversions [1999]";
+a[3][1]="Kruder & Dorfmeister - Conversions [1999]/";
+a[4]=new Array(2);
+a[4][0]="LTJ Bukem - Journey Inwards [2000]";
+a[4][1]="LTJ Bukem - Journey Inwards [2000]/";
+//--></SCRIPT>
+
+</HAED>
+<BODY name="top" onload="hide_first_album()">
+	<DIV class="title">_- <B>---=== Burn ===---</B> Music Directory & File List -_</DIV><P>
+	<DIV class="style">TOTAL:<B> 17:54:24</B> | <B>1,20 GB</B> | <B>62</B> Tracks 
+	(<B><SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT">album_counter()</SCRIPT></B> Albums 
+	[<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT">album_track_counter()</SCRIPT> Tracks] | 
+	<B><SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT">mix_counter()</SCRIPT></B> Mixes)</DIV>
+	<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT">hide_expend_all()</SCRIPT>
+<TABLE id="hidden" align="center" width="70%">
+	<TR align="center" class="header">
+		<TD style="border-bottom: 2px solid #6F7397" width="55%"><SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT">first_column()</SCRIPT></TD>
+		<TD align="right" style="border-bottom: 2px solid #6F7397" width="9%">LENGTH</TD>
+		<TD align="right" style="border-bottom: 2px solid #6F7397" width="11%">SIZE</TD>
+		<TD align="center" style="border-bottom: 2px solid #6F7397" width="18%">GENRE</TD>
+		<TD align="right" style="border-bottom: 2px solid #6F7397" width="7%">TRACK</TD>
+	</TR>
+	<TR class="table" id="a_light1">
+		<TD style="border-right: 1px solid #6F7397" onMouseOver="javascript:highlight_on_a(1)" onMouseOut="javascript:highlight_out_a(1)"><A href="javascript:show_album('0')"><FONT id="p0">+</FONT> ---=== Burn ===---</A></TD><TD align="right">12:47:40</TD><TD class="filec">858,58 MB</TD><TD align="center">Drum'n'bass</TD><TD class="fileb">12</TD>
+	</TR>
+	<TR class="songtr" id="n0" style="display: none"><TD colspan="5" style="margin: 0px; padding: 0px">
+	<TABLE width="100%" cellspacing="0" cellpadding="0" class="file">
+		<COLGROUP><COL width="45%"><COL width="9%"><COL width="9%"><COL width="11%"><COL width="18%"><COL width="7%"></COLGROUP>
+	<TR>
+		<TD align="center"><B><A href="---=== Burn ===---.m3u">Play Album</A></B> | <B><A href="javascript:popReview('0')">Review</A></B></TD>
+		<TD valign="top" rowspan="13"><BR><A href="javascript:popImage('0')"><script>document.write("<IMG src=\"" + a[0][1] + cover + "\" width=\"55\" /*height=\"55\"*/ align=\"right\" style=\"border: 1px solid #6F7397\">");</script></A></TD>
+		<TD class="fileb">&nbsp;</TD><TD class="filec">&nbsp;</TD><TD class="filed">&nbsp;</TD><TD class="fileb">&nbsp;</TD>
+	</TR>
+		<TR id="light1"><TD class="filea" onMouseOver="javascript:highlight_on(1)" onMouseOut="javascript:highlight_out(1)"><A href="Adamf And Jmajik Mcmc - Sub 1 (15.4.1999).mp3">Adamf And Jmajik Mcmc - Sub 1 (15.4.1999)</A></TD><TD class="fileb">42:16</TD><TD class="filec">38,65 MB</TD><TD class="filed">Hard Drum'n'bass</TD><TD class="fileb">1</TD></TR>
+		<TR id="light2"><TD class="filea" onMouseOver="javascript:highlight_on(2)" onMouseOut="javascript:highlight_out(2)"><A href="Adamf And Jmajik Mcmc - Sub 2 (15.4.1999).mp3">Adamf And Jmajik Mcmc - Sub 2 (15.4.1999)</A></TD><TD class="fileb">72:05</TD><TD class="filec">65,89 MB</TD><TD class="filed">Hard Drum'n'bass</TD><TD class="fileb">1</TD></TR>
+		<TR id="light3"><TD class="filea" onMouseOver="javascript:highlight_on(3)" onMouseOut="javascript:highlight_out(3)"><A href="Aphrodite - Live At Hultsfred Festival, Sweden.mp3">Aphrodite - Live At Hultsfred Festival, Sweden</A></TD><TD class="fileb">54:16</TD><TD class="filec">62,06 MB</TD><TD class="filed">Jungle</TD><TD class="fileb">1</TD></TR>
+		<TR id="light4"><TD class="filea" onMouseOver="javascript:highlight_on(4)" onMouseOut="javascript:highlight_out(4)"><A href="Dj Marky & Xrs Em - Essential Mix (21.03.2004).mp3">Dj Marky & Xrs Em - Essential Mix (21.03.2004)</A></TD><TD class="fileb">119:55</TD><TD class="filec">164,44 MB</TD><TD class="filed">Drum'n'bass</TD><TD class="fileb">1</TD></TR>
+		<TR id="light5"><TD class="filea" onMouseOver="javascript:highlight_on(5)" onMouseOut="javascript:highlight_out(5)"><A href="Goldie - Therapy (18.12.2003).mp3">Goldie - Therapy (18.12.2003)</A></TD><TD class="fileb">58:40</TD><TD class="filec">46,90 MB</TD><TD class="filed">Hard Drum'n'bass</TD><TD class="fileb">1</TD></TR>
+		<TR id="light6"><TD class="filea" onMouseOver="javascript:highlight_on(6)" onMouseOut="javascript:highlight_out(6)"><A href="High Contrast - Essential Mix 06.04.2003 Part 1.mp3">High Contrast - Essential Mix 06.04.2003 Part 1</A></TD><TD class="fileb">60:58</TD><TD class="filec">83,75 MB</TD><TD class="filed">Progressive Vocal Jungle</TD><TD class="fileb">1</TD></TR>
+		<TR id="light7"><TD class="filea" onMouseOver="javascript:highlight_on(7)" onMouseOut="javascript:highlight_out(7)"><A href="High Contrast - Essential Mix 06.04.2003 Part 2.mp3">High Contrast - Essential Mix 06.04.2003 Part 2</A></TD><TD class="fileb">58:42</TD><TD class="filec">80,63 MB</TD><TD class="filed">Progressive Vocal Jungle</TD><TD class="fileb">1</TD></TR>
+		<TR id="light8"><TD class="filea" onMouseOver="javascript:highlight_on(8)" onMouseOut="javascript:highlight_out(8)"><A href="LTJ Bukem - 2 Step Drum & Bass Mix.mp3">LTJ Bukem - 2 Step Drum & Bass Mix</A></TD><TD class="fileb">53:26</TD><TD class="filec">46,69 MB</TD><TD class="filed">Drum'n'Bass</TD><TD class="fileb">1</TD></TR>
+		<TR id="light9"><TD class="filea" onMouseOver="javascript:highlight_on(9)" onMouseOut="javascript:highlight_out(9)"><A href="LTJ Bukem - Live At Ministry Of Sound [2000].mp3">LTJ Bukem - Live At Ministry Of Sound [2000]</A></TD><TD class="fileb">67:29</TD><TD class="filec">77,20 MB</TD><TD class="filed">Drum'n'bass</TD><TD class="fileb">1</TD></TR>
+		<TR id="light10"><TD class="filea" onMouseOver="javascript:highlight_on(10)" onMouseOut="javascript:highlight_out(10)"><A href="Shroombab - Illness Mix Part 1 (06.01. 2004).mp3">Shroombab - Illness Mix Part 1 (06.01. 2004)</A></TD><TD class="fileb">59:05</TD><TD class="filec">54,12 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light11"><TD class="filea" onMouseOver="javascript:highlight_on(11)" onMouseOut="javascript:highlight_out(11)"><A href="Shroombab - Illness Mix Part 2 (Studiomix At Wien, 01.08.2004).mp3">Shroombab - Illness Mix Part 2 (Studiomix At Wien, 01.08.2004)</A></TD><TD class="fileb">60:00</TD><TD class="filec">82,42 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light12"><TD class="filea" onMouseOver="javascript:highlight_on(12)" onMouseOut="javascript:highlight_out(12)"><A href="Shroombab - Tolerance Mix [2004].mp3">Shroombab - Tolerance Mix [2004]</A></TD><TD class="fileb">60:48</TD><TD class="filec">55,84 MB</TD><TD class="filed">Drum'n'bass</TD><TD class="fileb">1</TD></TR>
+</TABLE>
+	</TD></TR>
+	<TR class="table" id="a_light2">
+		<TD style="border-right: 1px solid #6F7397" onMouseOver="javascript:highlight_on_a(2)" onMouseOut="javascript:highlight_out_a(2)"><A href="javascript:show_album('1')"><FONT id="p1">+</FONT> High Contrast - High Society [2004]</A></TD><TD align="right">1:13:12</TD><TD class="filec">100,40 MB</TD><TD align="center">Drum & Bass</TD><TD class="fileb">12</TD>
+	</TR>
+	<TR class="songtr" id="n1" style="display: none"><TD colspan="5" style="margin: 0px; padding: 0px">
+	<TABLE width="100%" cellspacing="0" cellpadding="0" class="file">
+		<COLGROUP><COL width="45%"><COL width="9%"><COL width="9%"><COL width="11%"><COL width="18%"><COL width="7%"></COLGROUP>
+	<TR>
+		<TD align="center"><B><A href="High Contrast - High Society [2004]/High Contrast - High Society [2004].m3u">Play Album</A></B> | <B><A href="javascript:popReview('1')">Review</A></B></TD>
+		<TD valign="top" rowspan="13"><BR><A href="javascript:popImage('1')"><script>document.write("<IMG src=\"" + a[1][1] + cover + "\" width=\"55\" /*height=\"55\"*/ align=\"right\" style=\"border: 1px solid #6F7397\">");</script></A></TD>
+		<TD class="fileb">&nbsp;</TD><TD class="filec">&nbsp;</TD><TD class="filed">&nbsp;</TD><TD class="fileb">&nbsp;</TD>
+	</TR>
+		<TR id="light13"><TD class="filea" onMouseOver="javascript:highlight_on(13)" onMouseOut="javascript:highlight_out(13)"><A href="High Contrast - High Society [2004]/01. High Contrast - Lovesick.mp3">01. High Contrast - Lovesick</A></TD><TD class="fileb">7:15</TD><TD class="filec">9,95 MB</TD><TD class="filed">Drum & Bass</TD><TD class="fileb">1</TD></TR>
+		<TR id="light14"><TD class="filea" onMouseOver="javascript:highlight_on(14)" onMouseOut="javascript:highlight_out(14)"><A href="High Contrast - High Society [2004]/02. High Contrast - Tutti Frutti.mp3">02. High Contrast - Tutti Frutti</A></TD><TD class="fileb">6:07</TD><TD class="filec">8,39 MB</TD><TD class="filed">Drum & Bass</TD><TD class="fileb">1</TD></TR>
+		<TR id="light15"><TD class="filea" onMouseOver="javascript:highlight_on(15)" onMouseOut="javascript:highlight_out(15)"><A href="High Contrast - High Society [2004]/03. High Contrast - High Society feat. Dynamite Mc.mp3">03. High Contrast - High Society feat. Dynamite Mc</A></TD><TD class="fileb">5:26</TD><TD class="filec">7,45 MB</TD><TD class="filed">Drum & Bass</TD><TD class="fileb">1</TD></TR>
+		<TR id="light16"><TD class="filea" onMouseOver="javascript:highlight_on(16)" onMouseOut="javascript:highlight_out(16)"><A href="High Contrast - High Society [2004]/04. High Contrast - Brief Encounter.mp3">04. High Contrast - Brief Encounter</A></TD><TD class="fileb">5:45</TD><TD class="filec">7,88 MB</TD><TD class="filed">Drum & Bass</TD><TD class="fileb">1</TD></TR>
+		<TR id="light17"><TD class="filea" onMouseOver="javascript:highlight_on(17)" onMouseOut="javascript:highlight_out(17)"><A href="High Contrast - High Society [2004]/05. High Contrast - Racing Green.mp3">05. High Contrast - Racing Green</A></TD><TD class="fileb">6:47</TD><TD class="filec">9,31 MB</TD><TD class="filed">Drum & Bass</TD><TD class="fileb">1</TD></TR>
+		<TR id="light18"><TD class="filea" onMouseOver="javascript:highlight_on(18)" onMouseOut="javascript:highlight_out(18)"><A href="High Contrast - High Society [2004]/06. High Contrast - Natural High.mp3">06. High Contrast - Natural High</A></TD><TD class="fileb">6:26</TD><TD class="filec">8,82 MB</TD><TD class="filed">Drum & Bass</TD><TD class="fileb">1</TD></TR>
+		<TR id="light19"><TD class="filea" onMouseOver="javascript:highlight_on(19)" onMouseOut="javascript:highlight_out(19)"><A href="High Contrast - High Society [2004]/07. High Contrast - Angels And Fly feat. Nolay.mp3">07. High Contrast - Angels And Fly feat. Nolay</A></TD><TD class="fileb">5:13</TD><TD class="filec">7,15 MB</TD><TD class="filed">Drum & Bass</TD><TD class="fileb">1</TD></TR>
+		<TR id="light20"><TD class="filea" onMouseOver="javascript:highlight_on(20)" onMouseOut="javascript:highlight_out(20)"><A href="High Contrast - High Society [2004]/08. High Contrast - The Persistence Of Memory.mp3">08. High Contrast - The Persistence Of Memory</A></TD><TD class="fileb">6:30</TD><TD class="filec">8,92 MB</TD><TD class="filed">Drum & Bass</TD><TD class="fileb">1</TD></TR>
+		<TR id="light21"><TD class="filea" onMouseOver="javascript:highlight_on(21)" onMouseOut="javascript:highlight_out(21)"><A href="High Contrast - High Society [2004]/09. High Contrast - Twiligh's Last Gleaming.mp3">09. High Contrast - Twiligh's Last Gleaming</A></TD><TD class="fileb">7:37</TD><TD class="filec">10,46 MB</TD><TD class="filed">Drum & Bass</TD><TD class="fileb">1</TD></TR>
+		<TR id="light22"><TD class="filea" onMouseOver="javascript:highlight_on(22)" onMouseOut="javascript:highlight_out(22)"><A href="High Contrast - High Society [2004]/10. High Contrast - Only Two Can Play feat. Spoonface.mp3">10. High Contrast - Only Two Can Play feat. Spoonface</A></TD><TD class="fileb">4:33</TD><TD class="filec">6,24 MB</TD><TD class="filed">Drum & Bass</TD><TD class="fileb">1</TD></TR>
+		<TR id="light23"><TD class="filea" onMouseOver="javascript:highlight_on(23)" onMouseOut="javascript:highlight_out(23)"><A href="High Contrast - High Society [2004]/11. High Contrast - Yesterday's Colours.mp3">11. High Contrast - Yesterday's Colours</A></TD><TD class="fileb">5:51</TD><TD class="filec">8,02 MB</TD><TD class="filed">Drum & Bass</TD><TD class="fileb">1</TD></TR>
+		<TR id="light24"><TD class="filea" onMouseOver="javascript:highlight_on(24)" onMouseOut="javascript:highlight_out(24)"><A href="High Contrast - High Society [2004]/12. High Contrast - The Basement Track (Bonus Track).mp3">12. High Contrast - The Basement Track (Bonus Track)</A></TD><TD class="fileb">5:42</TD><TD class="filec">7,83 MB</TD><TD class="filed">Drum & Bass</TD><TD class="fileb">1</TD></TR>
+</TABLE>
+	</TD></TR>
+	<TR class="table" id="a_light3">
+		<TD style="border-right: 1px solid #6F7397" onMouseOver="javascript:highlight_on_a(3)" onMouseOut="javascript:highlight_out_a(3)"><A href="javascript:show_album('2')"><FONT id="p2">+</FONT> Jungle Jazz Vol.1</A></TD><TD align="right">1:17:22</TD><TD class="filec">70,68 MB</TD><TD align="center"></TD><TD class="fileb">14</TD>
+	</TR>
+	<TR class="songtr" id="n2" style="display: none"><TD colspan="5" style="margin: 0px; padding: 0px">
+	<TABLE width="100%" cellspacing="0" cellpadding="0" class="file">
+		<COLGROUP><COL width="45%"><COL width="9%"><COL width="9%"><COL width="11%"><COL width="18%"><COL width="7%"></COLGROUP>
+	<TR>
+		<TD align="center"><B><A href="Jungle Jazz Vol.1/Jungle Jazz Vol.1.m3u">Play Album</A></B> | <B><A href="javascript:popReview('2')">Review</A></B></TD>
+		<TD valign="top" rowspan="15"><BR><A href="javascript:popImage('2')"><script>document.write("<IMG src=\"" + a[2][1] + cover + "\" width=\"55\" /*height=\"55\"*/ align=\"right\" style=\"border: 1px solid #6F7397\">");</script></A></TD>
+		<TD class="fileb">&nbsp;</TD><TD class="filec">&nbsp;</TD><TD class="filed">&nbsp;</TD><TD class="fileb">&nbsp;</TD>
+	</TR>
+		<TR id="light25"><TD class="filea" onMouseOver="javascript:highlight_on(25)" onMouseOut="javascript:highlight_out(25)"><A href="Jungle Jazz Vol.1/01. Wax Doctor - Atmospheric Funk.mp3">01. Wax Doctor - Atmospheric Funk</A></TD><TD class="fileb">6:06</TD><TD class="filec">5,58 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light26"><TD class="filea" onMouseOver="javascript:highlight_on(26)" onMouseOut="javascript:highlight_out(26)"><A href="Jungle Jazz Vol.1/02. Roni Size - It's All Jazzy Thing.mp3">02. Roni Size - It's All Jazzy Thing</A></TD><TD class="fileb">5:32</TD><TD class="filec">5,06 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light27"><TD class="filea" onMouseOver="javascript:highlight_on(27)" onMouseOut="javascript:highlight_out(27)"><A href="Jungle Jazz Vol.1/03. Jonny L - This Time.mp3">03. Jonny L - This Time</A></TD><TD class="fileb">5:37</TD><TD class="filec">5,13 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light28"><TD class="filea" onMouseOver="javascript:highlight_on(28)" onMouseOut="javascript:highlight_out(28)"><A href="Jungle Jazz Vol.1/04. Alex Reece - Pulp Fiction.mp3">04. Alex Reece - Pulp Fiction</A></TD><TD class="fileb">6:11</TD><TD class="filec">5,66 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light29"><TD class="filea" onMouseOver="javascript:highlight_on(29)" onMouseOut="javascript:highlight_out(29)"><A href="Jungle Jazz Vol.1/05. Photek - The Rain.mp3">05. Photek - The Rain</A></TD><TD class="fileb">4:23</TD><TD class="filec">4,01 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light30"><TD class="filea" onMouseOver="javascript:highlight_on(30)" onMouseOut="javascript:highlight_out(30)"><A href="Jungle Jazz Vol.1/06. Ohm Guru - Tokio Station.mp3">06. Ohm Guru - Tokio Station</A></TD><TD class="fileb">4:43</TD><TD class="filec">4,31 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light31"><TD class="filea" onMouseOver="javascript:highlight_on(31)" onMouseOut="javascript:highlight_out(31)"><A href="Jungle Jazz Vol.1/07. Kid Loops - Back To The Lab.mp3">07. Kid Loops - Back To The Lab</A></TD><TD class="fileb">6:32</TD><TD class="filec">5,97 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light32"><TD class="filea" onMouseOver="javascript:highlight_on(32)" onMouseOut="javascript:highlight_out(32)"><A href="Jungle Jazz Vol.1/08. Zion Spirit - Demons At Play.mp3">08. Zion Spirit - Demons At Play</A></TD><TD class="fileb">6:48</TD><TD class="filec">6,21 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light33"><TD class="filea" onMouseOver="javascript:highlight_on(33)" onMouseOut="javascript:highlight_out(33)"><A href="Jungle Jazz Vol.1/09. Hidden Agenda - Is It Love.mp3">09. Hidden Agenda - Is It Love</A></TD><TD class="fileb">6:45</TD><TD class="filec">6,16 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light34"><TD class="filea" onMouseOver="javascript:highlight_on(34)" onMouseOut="javascript:highlight_out(34)"><A href="Jungle Jazz Vol.1/10. Outside - The Big 'F' Reunion.mp3">10. Outside - The Big 'F' Reunion</A></TD><TD class="fileb">3:53</TD><TD class="filec">3,55 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light35"><TD class="filea" onMouseOver="javascript:highlight_on(35)" onMouseOut="javascript:highlight_out(35)"><A href="Jungle Jazz Vol.1/11. Typhorns - Private Eden.mp3">11. Typhorns - Private Eden</A></TD><TD class="fileb">5:08</TD><TD class="filec">4,68 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light36"><TD class="filea" onMouseOver="javascript:highlight_on(36)" onMouseOut="javascript:highlight_out(36)"><A href="Jungle Jazz Vol.1/12. Ballistic Brothers - Come On.mp3">12. Ballistic Brothers - Come On</A></TD><TD class="fileb">5:48</TD><TD class="filec">5,30 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light37"><TD class="filea" onMouseOver="javascript:highlight_on(37)" onMouseOut="javascript:highlight_out(37)"><A href="Jungle Jazz Vol.1/13. Bubble Jet - Emotionelectric.mp3">13. Bubble Jet - Emotionelectric</A></TD><TD class="fileb">4:59</TD><TD class="filec">4,55 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light38"><TD class="filea" onMouseOver="javascript:highlight_on(38)" onMouseOut="javascript:highlight_out(38)"><A href="Jungle Jazz Vol.1/14. D. Note - Flesh And Blood.mp3">14. D. Note - Flesh And Blood</A></TD><TD class="fileb">4:57</TD><TD class="filec">4,52 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+</TABLE>
+	</TD></TR>
+	<TR class="table" id="a_light4">
+		<TD style="border-right: 1px solid #6F7397" onMouseOver="javascript:highlight_on_a(4)" onMouseOut="javascript:highlight_out_a(4)"><A href="javascript:show_album('3')"><FONT id="p3">+</FONT> Kruder & Dorfmeister - Conversions [1999]</A></TD><TD align="right">1:00:11</TD><TD class="filec">110,13 MB</TD><TD align="center"></TD><TD class="fileb">10</TD>
+	</TR>
+	<TR class="songtr" id="n3" style="display: none"><TD colspan="5" style="margin: 0px; padding: 0px">
+	<TABLE width="100%" cellspacing="0" cellpadding="0" class="file">
+		<COLGROUP><COL width="45%"><COL width="9%"><COL width="9%"><COL width="11%"><COL width="18%"><COL width="7%"></COLGROUP>
+	<TR>
+		<TD align="center"><B><A href="Kruder & Dorfmeister - Conversions [1999]/Kruder & Dorfmeister - Conversions [1999].m3u">Play Album</A></B> | <B><A href="javascript:popReview('3')">Review</A></B></TD>
+		<TD valign="top" rowspan="11"><BR><A href="javascript:popImage('3')"><script>document.write("<IMG src=\"" + a[3][1] + cover + "\" width=\"55\" /*height=\"55\"*/ align=\"right\" style=\"border: 1px solid #6F7397\">");</script></A></TD>
+		<TD class="fileb">&nbsp;</TD><TD class="filec">&nbsp;</TD><TD class="filed">&nbsp;</TD><TD class="fileb">&nbsp;</TD>
+	</TR>
+		<TR id="light39"><TD class="filea" onMouseOver="javascript:highlight_on(39)" onMouseOut="javascript:highlight_out(39)"><A href="Kruder & Dorfmeister - Conversions [1999]/01. Dj Unknown Face - Dat's Cool.mp3">01. Dj Unknown Face - Dat's Cool</A></TD><TD class="fileb">6:15</TD><TD class="filec">11,44 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light40"><TD class="filea" onMouseOver="javascript:highlight_on(40)" onMouseOut="javascript:highlight_out(40)"><A href="Kruder & Dorfmeister - Conversions [1999]/02. Dead Calm - Searchin'.mp3">02. Dead Calm - Searchin'</A></TD><TD class="fileb">7:44</TD><TD class="filec">14,16 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light41"><TD class="filea" onMouseOver="javascript:highlight_on(41)" onMouseOut="javascript:highlight_out(41)"><A href="Kruder & Dorfmeister - Conversions [1999]/03. Ballistic Brothers - Come On.mp3">03. Ballistic Brothers - Come On</A></TD><TD class="fileb">4:58</TD><TD class="filec">9,10 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light42"><TD class="filea" onMouseOver="javascript:highlight_on(42)" onMouseOut="javascript:highlight_out(42)"><A href="Kruder & Dorfmeister - Conversions [1999]/04. Omni Trio - Nu Birth Of Cool.mp3">04. Omni Trio - Nu Birth Of Cool</A></TD><TD class="fileb">5:46</TD><TD class="filec">10,55 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light43"><TD class="filea" onMouseOver="javascript:highlight_on(43)" onMouseOut="javascript:highlight_out(43)"><A href="Kruder & Dorfmeister - Conversions [1999]/05. PFM - One And Only.mp3">05. PFM - One And Only</A></TD><TD class="fileb">9:21</TD><TD class="filec">17,10 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light44"><TD class="filea" onMouseOver="javascript:highlight_on(44)" onMouseOut="javascript:highlight_out(44)"><A href="Kruder & Dorfmeister - Conversions [1999]/06. Skanna - Find Me.mp3">06. Skanna - Find Me</A></TD><TD class="fileb">4:50</TD><TD class="filec">8,85 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light45"><TD class="filea" onMouseOver="javascript:highlight_on(45)" onMouseOut="javascript:highlight_out(45)"><A href="Kruder & Dorfmeister - Conversions [1999]/07. Count Basic K&d Session - Speechless Drum & Bass.mp3">07. Count Basic K&d Session - Speechless Drum & Bass</A></TD><TD class="fileb">6:51</TD><TD class="filec">12,53 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light46"><TD class="filea" onMouseOver="javascript:highlight_on(46)" onMouseOut="javascript:highlight_out(46)"><A href="Kruder & Dorfmeister - Conversions [1999]/08. Hutch Vs. Aquansky - Visible From Space.mp3">08. Hutch Vs. Aquansky - Visible From Space</A></TD><TD class="fileb">5:54</TD><TD class="filec">10,79 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light47"><TD class="filea" onMouseOver="javascript:highlight_on(47)" onMouseOut="javascript:highlight_out(47)"><A href="Kruder & Dorfmeister - Conversions [1999]/09. Spacelink - Time Zone.mp3">09. Spacelink - Time Zone</A></TD><TD class="fileb">1:58</TD><TD class="filec">3,60 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light48"><TD class="filea" onMouseOver="javascript:highlight_on(48)" onMouseOut="javascript:highlight_out(48)"><A href="Kruder & Dorfmeister - Conversions [1999]/10. Earl Grey - The Lick.mp3">10. Earl Grey - The Lick</A></TD><TD class="fileb">6:34</TD><TD class="filec">12,01 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+</TABLE>
+	</TD></TR>
+	<TR class="table" id="a_light5">
+		<TD style="border-right: 1px solid #6F7397" onMouseOver="javascript:highlight_on_a(5)" onMouseOut="javascript:highlight_out_a(5)"><A href="javascript:show_album('4')"><FONT id="p4">+</FONT> LTJ Bukem - Journey Inwards [2000]</A></TD><TD align="right">1:35:59</TD><TD class="filec">87,70 MB</TD><TD align="center"></TD><TD class="fileb">14</TD>
+	</TR>
+	<TR class="songtr" id="n4" style="display: none"><TD colspan="5" style="margin: 0px; padding: 0px">
+	<TABLE width="100%" cellspacing="0" cellpadding="0" class="file">
+		<COLGROUP><COL width="45%"><COL width="9%"><COL width="9%"><COL width="11%"><COL width="18%"><COL width="7%"></COLGROUP>
+	<TR>
+		<TD align="center"><B><A href="LTJ Bukem - Journey Inwards [2000]/LTJ Bukem - Journey Inwards [2000].m3u">Play Album</A></B> | <B><A href="javascript:popReview('4')">Review</A></B></TD>
+		<TD valign="top" rowspan="15"><BR><A href="javascript:popImage('4')"><script>document.write("<IMG src=\"" + a[4][1] + cover + "\" width=\"55\" /*height=\"55\"*/ align=\"right\" style=\"border: 1px solid #6F7397\">");</script></A></TD>
+		<TD class="fileb">&nbsp;</TD><TD class="filec">&nbsp;</TD><TD class="filed">&nbsp;</TD><TD class="fileb">&nbsp;</TD>
+	</TR>
+		<TR id="light49"><TD class="filea" onMouseOver="javascript:highlight_on(49)" onMouseOut="javascript:highlight_out(49)"><A href="LTJ Bukem - Journey Inwards [2000]/01. Ltj Bukem - Journey Inwards.mp3">01. Ltj Bukem - Journey Inwards</A></TD><TD class="fileb">7:06</TD><TD class="filec">6,49 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light50"><TD class="filea" onMouseOver="javascript:highlight_on(50)" onMouseOut="javascript:highlight_out(50)"><A href="LTJ Bukem - Journey Inwards [2000]/02. Ltj Bukem - Watercolours.mp3">02. Ltj Bukem - Watercolours</A></TD><TD class="fileb">7:39</TD><TD class="filec">6,99 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light51"><TD class="filea" onMouseOver="javascript:highlight_on(51)" onMouseOut="javascript:highlight_out(51)"><A href="LTJ Bukem - Journey Inwards [2000]/03. Ltj Bukem - Rhodes To Freedom.mp3">03. Ltj Bukem - Rhodes To Freedom</A></TD><TD class="fileb">9:11</TD><TD class="filec">8,39 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light52"><TD class="filea" onMouseOver="javascript:highlight_on(52)" onMouseOut="javascript:highlight_out(52)"><A href="LTJ Bukem - Journey Inwards [2000]/04. Ltj Bukem - Our World.mp3">04. Ltj Bukem - Our World</A></TD><TD class="fileb">5:07</TD><TD class="filec">4,67 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light53"><TD class="filea" onMouseOver="javascript:highlight_on(53)" onMouseOut="javascript:highlight_out(53)"><A href="LTJ Bukem - Journey Inwards [2000]/05. Ltj Bukem - Undress Your Mind.mp3">05. Ltj Bukem - Undress Your Mind</A></TD><TD class="fileb">7:45</TD><TD class="filec">7,09 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light54"><TD class="filea" onMouseOver="javascript:highlight_on(54)" onMouseOut="javascript:highlight_out(54)"><A href="LTJ Bukem - Journey Inwards [2000]/06. Ltj Bukem - Point Of View.mp3">06. Ltj Bukem - Point Of View</A></TD><TD class="fileb">3:10</TD><TD class="filec">2,89 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light55"><TD class="filea" onMouseOver="javascript:highlight_on(55)" onMouseOut="javascript:highlight_out(55)"><A href="LTJ Bukem - Journey Inwards [2000]/07. Ltj Bukem - Viewpoint.mp3">07. Ltj Bukem - Viewpoint</A></TD><TD class="fileb">8:06</TD><TD class="filec">7,39 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light56"><TD class="filea" onMouseOver="javascript:highlight_on(56)" onMouseOut="javascript:highlight_out(56)"><A href="LTJ Bukem - Journey Inwards [2000]/08. Ltj Bukem - Sunrain.mp3">08. Ltj Bukem - Sunrain</A></TD><TD class="fileb">7:28</TD><TD class="filec">6,82 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light57"><TD class="filea" onMouseOver="javascript:highlight_on(57)" onMouseOut="javascript:highlight_out(57)"><A href="LTJ Bukem - Journey Inwards [2000]/09. Ltj Bukem - Deserted Vaults (Instrumental).mp3">09. Ltj Bukem - Deserted Vaults (Instrumental)</A></TD><TD class="fileb">4:26</TD><TD class="filec">4,05 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light58"><TD class="filea" onMouseOver="javascript:highlight_on(58)" onMouseOut="javascript:highlight_out(58)"><A href="LTJ Bukem - Journey Inwards [2000]/10. Ltj Bukem - Inner Guidance.mp3">10. Ltj Bukem - Inner Guidance</A></TD><TD class="fileb">5:18</TD><TD class="filec">4,84 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light59"><TD class="filea" onMouseOver="javascript:highlight_on(59)" onMouseOut="javascript:highlight_out(59)"><A href="LTJ Bukem - Journey Inwards [2000]/11. Ltj Bukem - Close To The Source.mp3">11. Ltj Bukem - Close To The Source</A></TD><TD class="fileb">7:46</TD><TD class="filec">7,10 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light60"><TD class="filea" onMouseOver="javascript:highlight_on(60)" onMouseOut="javascript:highlight_out(60)"><A href="LTJ Bukem - Journey Inwards [2000]/12. Ltj Bukem - Suspended Space.mp3">12. Ltj Bukem - Suspended Space</A></TD><TD class="fileb">8:25</TD><TD class="filec">7,70 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light61"><TD class="filea" onMouseOver="javascript:highlight_on(61)" onMouseOut="javascript:highlight_out(61)"><A href="LTJ Bukem - Journey Inwards [2000]/13. Ltj Bukem - Unconditional Love.mp3">13. Ltj Bukem - Unconditional Love</A></TD><TD class="fileb">6:06</TD><TD class="filec">5,57 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+		<TR id="light62"><TD class="filea" onMouseOver="javascript:highlight_on(62)" onMouseOut="javascript:highlight_out(62)"><A href="LTJ Bukem - Journey Inwards [2000]/14. Ltj Bukem - Feel What You Feel.mp3">14. Ltj Bukem - Feel What You Feel</A></TD><TD class="fileb">8:26</TD><TD class="filec">7,71 MB</TD><TD class="filed"></TD><TD class="fileb">1</TD></TR>
+</TABLE>
+	</TD></TR>
+		<TR class="file" id="m_light51"><TD style="padding-left: 12px; border-right: 1px solid #6F7397" onMouseOver="javascript:highlight_on_m(51)" onMouseOut="javascript:highlight_out_m(51)"><A href="Adamf And Jmajik Mcmc - Sub 1 (15.4.1999).mp3">Adamf And Jmajik Mcmc - Sub 1 (15.4.1999)</A></TD><TD align="right">42:16</TD><TD class="filec">38,65 MB</TD><TD align="center">Hard Drum'n'bass</TD><TD class="fileb">1</TD></TR>
+		<TR class="file" id="m_light52"><TD style="padding-left: 12px; border-right: 1px solid #6F7397" onMouseOver="javascript:highlight_on_m(52)" onMouseOut="javascript:highlight_out_m(52)"><A href="Adamf And Jmajik Mcmc - Sub 2 (15.4.1999).mp3">Adamf And Jmajik Mcmc - Sub 2 (15.4.1999)</A></TD><TD align="right">72:05</TD><TD class="filec">65,89 MB</TD><TD align="center">Hard Drum'n'bass</TD><TD class="fileb">1</TD></TR>
+		<TR class="file" id="m_light53"><TD style="padding-left: 12px; border-right: 1px solid #6F7397" onMouseOver="javascript:highlight_on_m(53)" onMouseOut="javascript:highlight_out_m(53)"><A href="Aphrodite - Live At Hultsfred Festival, Sweden.mp3">Aphrodite - Live At Hultsfred Festival, Sweden</A></TD><TD align="right">54:16</TD><TD class="filec">62,06 MB</TD><TD align="center">Jungle</TD><TD class="fileb">1</TD></TR>
+		<TR class="file" id="m_light54"><TD style="padding-left: 12px; border-right: 1px solid #6F7397" onMouseOver="javascript:highlight_on_m(54)" onMouseOut="javascript:highlight_out_m(54)"><A href="Dj Marky & Xrs Em - Essential Mix (21.03.2004).mp3">Dj Marky & Xrs Em - Essential Mix (21.03.2004)</A></TD><TD align="right">119:55</TD><TD class="filec">164,44 MB</TD><TD align="center">Drum'n'bass</TD><TD class="fileb">1</TD></TR>
+		<TR class="file" id="m_light55"><TD style="padding-left: 12px; border-right: 1px solid #6F7397" onMouseOver="javascript:highlight_on_m(55)" onMouseOut="javascript:highlight_out_m(55)"><A href="Goldie - Therapy (18.12.2003).mp3">Goldie - Therapy (18.12.2003)</A></TD><TD align="right">58:40</TD><TD class="filec">46,90 MB</TD><TD align="center">Hard Drum'n'bass</TD><TD class="fileb">1</TD></TR>
+		<TR class="file" id="m_light56"><TD style="padding-left: 12px; border-right: 1px solid #6F7397" onMouseOver="javascript:highlight_on_m(56)" onMouseOut="javascript:highlight_out_m(56)"><A href="High Contrast - Essential Mix 06.04.2003 Part 1.mp3">High Contrast - Essential Mix 06.04.2003 Part 1</A></TD><TD align="right">60:58</TD><TD class="filec">83,75 MB</TD><TD align="center">Progressive Vocal Jungle</TD><TD class="fileb">1</TD></TR>
+		<TR class="file" id="m_light57"><TD style="padding-left: 12px; border-right: 1px solid #6F7397" onMouseOver="javascript:highlight_on_m(57)" onMouseOut="javascript:highlight_out_m(57)"><A href="High Contrast - Essential Mix 06.04.2003 Part 2.mp3">High Contrast - Essential Mix 06.04.2003 Part 2</A></TD><TD align="right">58:42</TD><TD class="filec">80,63 MB</TD><TD align="center">Progressive Vocal Jungle</TD><TD class="fileb">1</TD></TR>
+		<TR class="file" id="m_light58"><TD style="padding-left: 12px; border-right: 1px solid #6F7397" onMouseOver="javascript:highlight_on_m(58)" onMouseOut="javascript:highlight_out_m(58)"><A href="LTJ Bukem - 2 Step Drum & Bass Mix.mp3">LTJ Bukem - 2 Step Drum & Bass Mix</A></TD><TD align="right">53:26</TD><TD class="filec">46,69 MB</TD><TD align="center">Drum'n'Bass</TD><TD class="fileb">1</TD></TR>
+		<TR class="file" id="m_light59"><TD style="padding-left: 12px; border-right: 1px solid #6F7397" onMouseOver="javascript:highlight_on_m(59)" onMouseOut="javascript:highlight_out_m(59)"><A href="LTJ Bukem - Live At Ministry Of Sound [2000].mp3">LTJ Bukem - Live At Ministry Of Sound [2000]</A></TD><TD align="right">67:29</TD><TD class="filec">77,20 MB</TD><TD align="center">Drum'n'bass</TD><TD class="fileb">1</TD></TR>
+		<TR class="file" id="m_light60"><TD style="padding-left: 12px; border-right: 1px solid #6F7397" onMouseOver="javascript:highlight_on_m(60)" onMouseOut="javascript:highlight_out_m(60)"><A href="Shroombab - Illness Mix Part 1 (06.01. 2004).mp3">Shroombab - Illness Mix Part 1 (06.01. 2004)</A></TD><TD align="right">59:05</TD><TD class="filec">54,12 MB</TD><TD align="center"></TD><TD class="fileb">1</TD></TR>
+		<TR class="file" id="m_light61"><TD style="padding-left: 12px; border-right: 1px solid #6F7397" onMouseOver="javascript:highlight_on_m(61)" onMouseOut="javascript:highlight_out_m(61)"><A href="Shroombab - Illness Mix Part 2 (Studiomix At Wien, 01.08.2004).mp3">Shroombab - Illness Mix Part 2 (Studiomix At Wien, 01.08.2004)</A></TD><TD align="right">60:00</TD><TD class="filec">82,42 MB</TD><TD align="center"></TD><TD class="fileb">1</TD></TR>
+		<TR class="file" id="m_light62"><TD style="padding-left: 12px; border-right: 1px solid #6F7397" onMouseOver="javascript:highlight_on_m(62)" onMouseOut="javascript:highlight_out_m(62)"><A href="Shroombab - Tolerance Mix [2004].mp3">Shroombab - Tolerance Mix [2004]</A></TD><TD align="right">60:48</TD><TD class="filec">55,84 MB</TD><TD align="center">Drum'n'bass</TD><TD class="fileb">1</TD></TR>
+</TABLE>
+<DIV class="style"><A href="#top" class="style"><B>Back On Top</B></A>|<B><A href="---=== Burn ===---.m3u" class="style">Play All</A></B></DIV>
+</BODY>
+</HTML>
