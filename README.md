@@ -1,5 +1,7 @@
 # Music Export Configurations for Mp3tag
 
+[![Community Forum][forum-shield]][forum]
+
 This are my custom export configurations for [Mp3tag](https://www.mp3tag.de/en/).
 
 ## Support
@@ -33,3 +35,6 @@ Just copy the .mte files to (C:\Users\\"your username"\AppData\Roaming\Mp3tag\ex
         <img src="https://raw.githubusercontent.com/alanmilinovic/mp3tag-exports/main/Preview/Simple%20Smart%20Dynamic%20List%20Screenshot.png" width="450" alt="click for demo" />
     </a>
 </p>
+
+[forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg?style=for-the-badge
+[forum]: https://community.mp3tag.de/t/milkas-exports/2422
