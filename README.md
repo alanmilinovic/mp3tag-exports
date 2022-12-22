@@ -14,3 +14,13 @@ Just copy the .mte files to (C:\Users\\"your username"\AppData\Roaming\Mp3tag\ex
 ```
 %appdata%\Mp3tag\export
 ```
+
+## Screenshots
+<p align="center" float="left">
+    <a href="https://raw.githack.com/alanmilinovic/mp3tag-exports/main/Preview/Simple/---%3D%3D%3D%20Burn%20%3D%3D%3D---.html">
+        <img src="https://raw.githubusercontent.com/alanmilinovic/mp3tag-exports/main/Preview/Simple%20Screenshot.png" width="300" />
+    </a>
+    <a href="https://raw.githack.com/alanmilinovic/mp3tag-exports/main/Preview/Simple/High%20Contrast%20-%20High%20Society%20[2004]/High%20Contrast%20-%20High%20Society%20[2004].html">
+        <img src="https://raw.githubusercontent.com/alanmilinovic/mp3tag-exports/main/Preview/Simple%20Album%20Screenshot.png" width="300" />
+    </a>
+</p>
