@@ -1,0 +1,5 @@
+$filename(%_folderpath%%_directory%.m3u,ansi)#EXTM3U
+#EXTINF:-1,----- %_directory% ($replace($replace(-%_total_time2%,-00:,),-,)) -----
+separator://:$loop(%_filename_ext%)
+#EXTINF:%_length_seconds%,$if($or(%artist%,%title%),$if($not(%track%),,$num(%track%,2). ),)$if(%artist%,%artist% - %title%,%title%)$if($or(%artist%,%title%),,%_filename%)
+%_filename_ext%$loopend()
