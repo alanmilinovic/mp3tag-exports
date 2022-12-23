@@ -1,0 +1,862 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META NAME="Author" CONTENT="milka (amilino@gmail.com)">
+<META NAME="Generator" CONTENT="Mp3tag v2.36d - http://www.mp3tag.de">
+<META NAME="Date" CONTENT="28.9.2006">
+<title>..:: ---=== Burn ===--- Mix / Set List ::..</title>
+<style type="text/css"><!--
+body { font-family: tahoma, verdana, arial, helvetica; color: #FFFFFF; font-size: 11px; text-align: center;
+SCROLLBAR-FACE-COLOR: #FFFFFF; SCROLLBAR-HIGHLIGHT-COLOR: #000000; SCROLLBAR-SHADOW-COLOR: #000000; SCROLLBAR-3DLIGHT-COLOR: #888888;
+SCROLLBAR-ARROW-COLOR: #888888; SCROLLBAR-TRACK-COLOR: #222222; SCROLLBAR-DARKSHADOW-COLOR: #888888; }
+
+nobr { color: #FFFFFF; padding: 2px; font-weight:bold; text-decoration: none; font-family: Tahoma,Verdana,Arial; }
+
+.info_table {
+	background-color: #000000;
+	border-right: 1px solid #000000;
+	border-left: 1px solid #000000;
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	font-size: 11px;
+	font-family: Tahoma,Verdana,Arial;
+}
+.info_table a { text-decoration: none; color: #FFFFFF; }
+.info_table a:hover { text-decoration: none; color: #000000; }
+.info_names { color: #FFFFFF; font-size: 11px; padding: 2px; font-weight:bold;}
+.info_values { color: #AAAAAA; padding: 2px; height: 17px; }
+.info_line { color: #AAAAAA; font-size: 11px; padding: 2px; height: 17px; width: auto; border-bottom: 1px solid #000000;}
+.info_themes  { color: #FFFFFF; text-align: center; padding: 2px; font-weight:bold; height: 17px; border-top: 1px solid #000000; border-right: 1px solid #000000;}
+
+.export_table { 
+	background-color: #000000;
+	border: 0px solid #000000;
+	font-size: 11px;
+	font-family: Tahoma,Verdana,Arial;
+	color: #FFFFFF;
+	text-align: center;
+	vertical-align: middle;
+	margin: 10px 4px 10px 4px;
+	padding: 0px;
+	border-collapse: separate;
+}
+.export_table a { text-decoration: none; color: #FFFFFF; }
+.export_table a:hover { text-decoration: none; color: #000000; }
+.export_header { background-color: #000000; color: #FFFFFF; }
+.export_header a { text-decoration: none; color: #FFFFFF; }
+.export_header a:hover { text-decoration: none; color: #FFFFFF; }
+
+.about_table {
+	background-color: #000000;
+	border-right: 1px solid #000000;
+	border-left: 1px solid #000000;
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	color: #FFFFFF;
+	font-size: 11px;
+	font-family: Tahoma,Verdana,Arial;
+
+}
+.about_table a { text-decoration: none; color: #FFFFFF; font-weight: bold; }
+.about_table a:hover { text-decoration: none; color: #000000; font-weight: bold; }
+.tip_table {
+	border: 0px solid #000000;
+	font-size: 11px;
+	font-family: Tahoma,Verdana,Arial;
+	text-align: left;
+	vertical-align: middle;
+	margin: 0px;
+	padding: 2px;
+}
+
+/* +++ Tooltip by ctnchris +++ */
+/* +++ edited by nickless +++ */
+/*
+	Tangering Structure CSS
+	Copyright wehnerj (jwehner@wehnerweb.com)
+	http://www.wehnerweb.com
+
+	LEAVE THIS COMMENT INTACT
+*/
+.dhtmltooltip {
+	border: 1px solid black;
+	background-color: #7B8279;
+	color: white;
+	font-family: Tahoma,Verdana,Arial;
+	font-size: 11px;
+	text-align:left;
+	padding: 2px;
+}
+
+#dhtmltooltip {
+	position: absolute;
+	width: 300px;
+	visibility: hidden;
+	z-index: 100;
+	/* Remove following 3 lines to remove tooltip alpha blending. */
+	filter:alpha(opacity=88);
+	-moz-opacity: 0.88;
+	opacity: 0.88;
+}
+//--></style>
+
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT" SRC="search_data.js"></SCRIPT>
+
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT"><!--
+// All functions are created by milka.                   //
+// Functions can be used when credit is given. It        //
+// should look like this:                                //
+/* +++ script name by milka +++ */                       //
+
+// When you classify it in such a way, you are free to   //
+// use the script.                                       //
+// this export script was last modified: 26.08.2006      //
+
+/* +++ Smart counters by milka +++ */
+var artist_count = 7;
+var unknownartist = 0;
+var artist_real = artist_count - unknownartist;
+var mix_count = 12;
+
+function statistics() {
+	if(artist_real > 1) {
+		var artist_ext = " Artists";
+	}else{
+		var artist_ext = " Artist";
+	}
+	if(mix_count > 1) {
+		var mix_ext = " Mixes / Sets";
+	}else{
+		var mix_ext = " Mix / Set";
+	}
+
+	document.write(mix_count + mix_ext + " | ");
+	if(unknownartist == 1) {
+		document.write(artist_real + artist_ext + " + Unknown Artist(s)");
+	}else{
+		document.write(artist_real + artist_ext);
+	}
+}
+
+/****************************************************
+* Cookie Functions, Color Themes, Quick Sort
+  & Custom Functions
+* Coded by nickless
+* Edited by milka
+*****************************************************/
+// +++ Cookie Functions +++ //
+function WriteCookie(name, value, expire_time) { //expire_time in hours
+	_expire_date =  new Date();
+	_expire_date.setTime(_expire_date.getTime() + expire_time * 1000 * 3600);
+
+	document.cookie = name + "=" + escape(value) + "; expires=" + _expire_date.toGMTString() + "; path=/";
+}
+function DeleteCookie(name) { document.cookie = name + "=; expires=Thu, 01-Jan-80 00:00:01 GMT; path=/"; }
+
+// +++ Arrayed Java Export by nickless +++ //
+var table_length = 12;	//length of the table
+var a = new Array(table_length);	//main export array
+
+/* history of subarray fields usage
+a[n] = new Array(14);	//creates a new subarray in the n-th line of table
+a[n][0] = counter
+a[n][1] = artist
+a[n][2] = album
+a[n][3] = title
+a[n][4] = length in minutes
+a[n][5] = year
+a[n][6] = genre
+a[n][7] = bitrate (digits only)
+a[n][8] = bitrate information ( kbps VBR/CBR)
+a[n][9] = comment
+a[n][10] = size of file
+a[n][11] = written tags
+a[n][12] = filename with extension
+a[n][13] = encoded by
+*/
+
+//you can delete fields you don't need (memory & performance), but delete ALL cases where they are used everywhere in the file!
+
+a[0] = new Array(14);
+a[0][0]="1";
+a[0][1]="Adamf And Jmajik Mcmc";
+a[0][2]="";
+a[0][3]="Sub 1 (15.4.1999)";
+a[0][4]="42:16";
+a[0][5]="1999";
+a[0][6]="Hard Drum'n'bass";
+a[0][7]=128;
+a[0][8]=" kbps";
+a[0][9]="";
+a[0][10]="38,65 MB";
+a[0][11]="ID3v2.3";
+a[0][12]="Adamf And Jmajik Mcmc - Sub 1 (15.4.1999).mp3";
+a[0][13]="Adamf and Jmajik Mcmc";
+
+a[1] = new Array(14);
+a[1][0]="2";
+a[1][1]="Adamf And Jmajik Mcmc";
+a[1][2]="";
+a[1][3]="Sub 2 (15.4.1999)";
+a[1][4]="72:05";
+a[1][5]="1999";
+a[1][6]="Hard Drum'n'bass";
+a[1][7]=128;
+a[1][8]=" kbps";
+a[1][9]="";
+a[1][10]="65,89 MB";
+a[1][11]="ID3v2.3";
+a[1][12]="Adamf And Jmajik Mcmc - Sub 2 (15.4.1999).mp3";
+a[1][13]="Adamf and Jmajik Mcmc";
+
+a[2] = new Array(14);
+a[2][0]="3";
+a[2][1]="Aphrodite";
+a[2][2]="";
+a[2][3]="Live At Hultsfred Festival, Sweden";
+a[2][4]="54:16";
+a[2][5]="";
+a[2][6]="Jungle";
+a[2][7]=160;
+a[2][8]=" kbps";
+a[2][9]="Gavin King";
+a[2][10]="62,06 MB";
+a[2][11]="ID3v2.3";
+a[2][12]="Aphrodite - Live At Hultsfred Festival, Sweden.mp3";
+a[2][13]="Aphrodite, Review";
+
+a[3] = new Array(14);
+a[3][0]="4";
+a[3][1]="Dj Marky & Xrs";
+a[3][2]="";
+a[3][3]="Essential Mix (21.03.2004)";
+a[3][4]="119:55";
+a[3][5]="2004";
+a[3][6]="Drum'n'bass";
+a[3][7]=192;
+a[3][8]=" kbps";
+a[3][9]="";
+a[3][10]="164,44 MB";
+a[3][11]="ID3v2.3";
+a[3][12]="Dj Marky & Xrs Em - Essential Mix (21.03.2004).mp3";
+a[3][13]="Dj Marky & Xrs, Tracklist, Review";
+
+a[4] = new Array(14);
+a[4][0]="5";
+a[4][1]="Goldie";
+a[4][2]="";
+a[4][3]="Therapy (18.12.2003)";
+a[4][4]="58:40";
+a[4][5]="2003";
+a[4][6]="Hard Drum'n'bass";
+a[4][7]=112;
+a[4][8]=" kbps";
+a[4][9]="";
+a[4][10]="46,90 MB";
+a[4][11]="ID3v2.3";
+a[4][12]="Goldie - Therapy (18.12.2003).mp3";
+a[4][13]="Goldie";
+
+a[5] = new Array(14);
+a[5][0]="6";
+a[5][1]="High Contrast";
+a[5][2]="";
+a[5][3]="Essential Mix 06.04.2003 Part1";
+a[5][4]="60:58";
+a[5][5]="2003";
+a[5][6]="Progressive Vocal Jungle";
+a[5][7]=192;
+a[5][8]=" kbps";
+a[5][9]="Lincoln Barrett";
+a[5][10]="83,75 MB";
+a[5][11]="ID3v2.3";
+a[5][12]="High Contrast - Essential Mix 06.04.2003 Part 1.mp3";
+a[5][13]="High Contrast, Tracklist, Review";
+
+a[6] = new Array(14);
+a[6][0]="7";
+a[6][1]="High Contrast";
+a[6][2]="";
+a[6][3]="Essential Mix 06.04.2003 Part2";
+a[6][4]="58:42";
+a[6][5]="2003";
+a[6][6]="Progressive Vocal Jungle";
+a[6][7]=192;
+a[6][8]=" kbps";
+a[6][9]="Lincoln Barrett";
+a[6][10]="80,63 MB";
+a[6][11]="ID3v2.3";
+a[6][12]="High Contrast - Essential Mix 06.04.2003 Part 2.mp3";
+a[6][13]="High Contrast, Tracklist, Review";
+
+a[7] = new Array(14);
+a[7][0]="8";
+a[7][1]="Ltj Bukem";
+a[7][2]="";
+a[7][3]="2 Step Drum & Bass Mix";
+a[7][4]="53:26";
+a[7][5]="";
+a[7][6]="Drum'n'Bass";
+a[7][7]=122;
+a[7][8]=" kbps VBR";
+a[7][9]="";
+a[7][10]="46,69 MB";
+a[7][11]="ID3v2.3";
+a[7][12]="LTJ Bukem - 2 Step Drum & Bass Mix.mp3";
+a[7][13]="Ltj Bukem, Review";
+
+a[8] = new Array(14);
+a[8][0]="9";
+a[8][1]="Ltj Bukem";
+a[8][2]="Logical Progression";
+a[8][3]="Live At Ministry Of Sound";
+a[8][4]="67:29";
+a[8][5]="2000";
+a[8][6]="Drum'n'bass";
+a[8][7]=160;
+a[8][8]=" kbps";
+a[8][9]="";
+a[8][10]="77,20 MB";
+a[8][11]="ID3v2.3";
+a[8][12]="LTJ Bukem - Live At Ministry Of Sound [2000].mp3";
+a[8][13]="Ltj Bukem, Review";
+
+a[9] = new Array(14);
+a[9][0]="10";
+a[9][1]="Shroombab";
+a[9][2]="";
+a[9][3]="Illness Mix Part 1 (06.01.2004)";
+a[9][4]="59:05";
+a[9][5]="2004";
+a[9][6]="";
+a[9][7]=128;
+a[9][8]=" kbps";
+a[9][9]="";
+a[9][10]="54,12 MB";
+a[9][11]="ID3v2.3";
+a[9][12]="Shroombab - Illness Mix Part 1 (06.01. 2004).mp3";
+a[9][13]="Shroombab, Tracklist";
+
+a[10] = new Array(14);
+a[10][0]="11";
+a[10][1]="Shroombab";
+a[10][2]="";
+a[10][3]="Illness Mix Part 2 (Studiomix at Wien, 01.08.2004)";
+a[10][4]="60:00";
+a[10][5]="2004";
+a[10][6]="";
+a[10][7]=192;
+a[10][8]=" kbps";
+a[10][9]="";
+a[10][10]="82,42 MB";
+a[10][11]="ID3v2.3";
+a[10][12]="Shroombab - Illness Mix Part 2 (Studiomix At Wien, 01.08.2004).mp3";
+a[10][13]="Shroombab, Tracklist";
+
+a[11] = new Array(14);
+a[11][0]="12";
+a[11][1]="Shroombab";
+a[11][2]="";
+a[11][3]="Tolerance Mix";
+a[11][4]="60:48";
+a[11][5]="2004";
+a[11][6]="Drum'n'bass";
+a[11][7]=128;
+a[11][8]=" kbps";
+a[11][9]="";
+a[11][10]="55,84 MB";
+a[11][11]="ID3v2.3";
+a[11][12]="Shroombab - Tolerance Mix [2004].mp3";
+a[11][13]="Cover, Tracklist";
+
+
+
+// +++ Array Object Extension +++ //
+//public functions
+Array.prototype.sortBy = sortBySubarrayNr;	//call name_of_the_array.sortBy() to sort the array by nr. in subarray in alphabetical (A->Z or Z-A) order (optionally)
+Array.prototype.sortByStack = sortByStack;	//call name_of_the_array.sortBy() to sort the array by settings setted with push_stack_m
+Array.prototype.push_stack_m = push_stack_m;	//add subarray nr and order to sorting history, array will be sorted my all this (up to 5) criteria
+//internal functions & properties
+Array.prototype.multisort = multisort;
+Array.prototype.xchange = xchange;
+Array.prototype.compare = compare;
+Array.prototype.quicksort = quicksort;
+Array.prototype.sort_stack_m = new Array(-1,-1,-1,-1,-1);	//contains history of sorting for sorting by multiple criteria; -1=not sorted, 0++=sorted by subarray nr; internal use, don't change directly!!!
+Array.prototype.order_stack_m = new Array(true,true,true,true,true);	//contains history of sorting order; true = A->Z, false = Z->A; internal use, don't change directly!!!
+
+// +++ Quick Sort +++ //
+function sortBySubarrayNr(sub_nr, order) {	//sorts array by entry nr. sub_nr in (alphabetical or not) order; internal use, don't call directly!!!
+	this.push_stack_m(sub_nr,order);
+	this.multisort(0,this.length-1,0);
+}
+function sortByStack() { this.multisort(0,this.length-1,0) }	//internal use, don't call directly!!!
+function multisort(from_a, to_b, stack_level) {  //sorts by multiple criteria; internal use, don't call directly!!!
+	if ((stack_level>=this.sort_stack_m.length)||(this.sort_stack_m[stack_level]<0)) { return }
+	this.quicksort(from_a,to_b,stack_level);
+	if ((stack_level+1>=this.sort_stack_m.length)||(this.sort_stack_m[stack_level+1]<0)) { return }
+	var a = from_a+1;
+	var b = from_a;
+	while (a<=to_b) {
+		while ((a<=to_b)&&(this[a-1][this.sort_stack_m[stack_level]]!=this[a][this.sort_stack_m[stack_level]])) { a++ }
+		b = a+1;
+		while ((b<=to_b)&&(this[a][this.sort_stack_m[stack_level]]==this[b][this.sort_stack_m[stack_level]])) { b++ }
+		if (a>to_b) { return }
+		this.multisort(a-1,b-1,stack_level+1);
+		a = b+1;
+	}
+}
+function push_stack_m(last_sort_m, last_order_m) {  //internal use, don't call directly!!!
+	if (last_sort_m < 0) return;
+	if (this.sort_stack_m[0] == last_sort_m) {	//prevent sorting multiple times by the same criterion_m
+		if (!last_order_m) { this.order_stack_m[0] = !(this.order_stack_m[0]) }	//reverse order if not defined
+		else { this.order_stack_m[0] = last_order_m }
+		return;
+	}
+	for (var i=this.sort_stack_m.length-1;i>0;i--) {
+		this.sort_stack_m[i] = this.sort_stack_m[i-1];
+		this.order_stack_m[i] = this.order_stack_m[i-1];
+	}
+	if (!last_order_m) { last_order_m = true }
+	this.sort_stack_m[0] = last_sort_m;
+	this.order_stack_m[0] = last_order_m;
+}
+function xchange(nr1, nr2) {  //internal use, don't call directly!!!
+	var temp = this[nr1];
+	this[nr1] = this[nr2];
+	this[nr2] = temp;
+}
+function compare(n1, n2, stack_nr) {  //internal use, don't call directly!!!
+	if (this.order_stack_m[stack_nr]) { return(this[n1][this.sort_stack_m[stack_nr]] < this[n2][this.sort_stack_m[stack_nr]]) }
+	else { return(this[n1][this.sort_stack_m[stack_nr]] > this[n2][this.sort_stack_m[stack_nr]]) };
+}
+function quicksort(left, right, stack_pos) {  //internal use, don't call directly!!!
+	var l, r, x;
+
+	l = left;
+	r = right;
+	x = (left + right)>>>1;
+
+	do { 
+		while(this.compare(l, x, stack_pos)) { l++ };
+		while(this.compare(x, r, stack_pos)) { r-- };
+		if(l <= r) { 
+			this.xchange(l, r);
+
+			//x==l? r : x==r? l : x;
+			if(x == l) { x = r }
+			else { if(x == r) {x = l} }
+
+			l++;
+			r--;
+		}
+	} while(l < r);
+
+	if (r > left) { this.quicksort(left, r, stack_pos) };
+	if (l < right) { this.quicksort(l, right, stack_pos) };
+}
+
+// +++ Color Themes by nickless +++ //
+function UpdateLinks(theme_nr, link_nr) {	//updates colors of links to themes
+	if (Number(theme_nr)>=0) {
+		var obj = document.getElementById("ct_" + old_theme);
+		if (obj) { 
+			obj.style.color = '';
+			if (!document.styleSheets) { obj.style.color = curr_theme[5] }
+		}
+		old_theme = Number(theme_nr);
+		var obj = document.getElementById("ct_" + theme_nr);
+		if (obj) { obj.style.color = curr_theme[6] }
+	}
+}
+function SetColorTheme(name, update_now, theme_nr) {	//applies a color theme to document by it's name and updates the table if necessary; name = name of the array with colors (s.th. like "ct_milka")
+	curr_theme = eval(name);
+	if (!curr_theme) { return };
+	var all_rules = new Array();
+	var all_nums = new Array();
+	
+	if (document.styleSheets) {	//mozilla/ie browsers allows change css rules
+		if (document.styleSheets[0].rules) { all_rules =  document.styleSheets[0].rules;}	//IE
+		if (document.styleSheets[0].cssRules) { all_rules =  document.styleSheets[0].cssRules;}	//Netscape
+	
+		if (!all_rules) {return};	//unknown browser that supports document.styleSheets but neither rules nor cssRules
+		all_nums = ChooseRules(all_rules);
+	
+		all_rules[all_nums[0]].style.backgroundColor = curr_theme[0];	//background
+
+		all_rules[all_nums[2]].style.backgroundColor  = curr_theme[2];	//info table background
+		all_rules[all_nums[2]].style.borderColor = curr_theme[7];	//info table border
+		all_rules[all_nums[3]].style.color = curr_theme[3];	//info table names
+		all_rules[all_nums[4]].style.color = curr_theme[4];	//info table values
+		all_rules[all_nums[5]].style.color = curr_theme[5];	//info table link
+		all_rules[all_nums[6]].style.color = curr_theme[6];	//info table link hover
+		all_rules[all_nums[7]].style.borderTopColor = curr_theme[7];	//info table line
+		all_rules[all_nums[7]].style.borderRightColor = curr_theme[7];	//info table line
+		all_rules[all_nums[7]].style.borderLeftColor = curr_theme[7];	//info table line
+		all_rules[all_nums[7]].style.borderBottomColor = curr_theme[7];	//info table line
+
+		all_rules[all_nums[8]].style.backgroundColor = curr_theme[10];	//export table header background
+		all_rules[all_nums[8]].style.color = curr_theme[11];	//export table names
+		all_rules[all_nums[16]].style.color = curr_theme[13];	//export table names link
+		all_rules[all_nums[17]].style.color = curr_theme[14];	//export table names link hover
+		all_rules[all_nums[9]].style.color = curr_theme[12];	//export table values
+		all_rules[all_nums[10]].style.color = curr_theme[13];	//export table link
+		all_rules[all_nums[11]].style.color = curr_theme[14];	//export table link hover
+		all_rules[all_nums[9]].style.backgroundColor = curr_theme[15];	//export table border
+
+		all_rules[all_nums[12]].style.backgroundColor  = curr_theme[16];	//about table background
+		all_rules[all_nums[12]].style.borderColor = curr_theme[7];	//about table border
+		all_rules[all_nums[12]].style.color = curr_theme[17];	//about table text
+		all_rules[all_nums[13]].style.color = curr_theme[18];	//about table link
+		all_rules[all_nums[14]].style.color = curr_theme[19];	//about table link hover
+
+		all_rules[all_nums[15]].style.backgroundColor  = curr_theme[16];	//popup background
+		all_rules[all_nums[15]].style.color = curr_theme[17];	//popup text
+		all_rules[all_nums[15]].style.borderColor = curr_theme[7];	//popup border
+	}
+	else {	//browser don't support document.styleSheets = Opera etc.
+		//body
+		document.body.style.backgroundColor = curr_theme[0];
+		//info table
+		var obj = document.getElementById('info_table');
+		if (obj) {
+			obj.style.backgroundColor = curr_theme[2];
+			obj.style.borderColor = curr_theme[7]};
+		var obj = document.getElementById('info_table_l');
+		if (obj) {
+			obj.style.backgroundColor = curr_theme[2];
+			obj.style.borderColor = curr_theme[7]};
+		var obj = document.getElementById('export_header');
+		if (obj) {obj.style.backgroundColor = curr_theme[10]};
+		var i = 0;
+		do {
+			var obj = document.getElementById('info_names_'+i);
+			if (obj) {obj.style.color = curr_theme[4]};
+			i++;
+		} while (obj);
+		i = 0;
+		do {
+			var obj = document.getElementById('info_values_'+i);
+			if (obj) {obj.style.color = curr_theme[4]};
+			i++;
+		} while (obj);
+		i = 0;
+		do {
+			var obj = document.getElementById('included_'+i);
+			if (obj) {obj.style.color = curr_theme[4]};
+			i++;
+		} while (obj);
+		i = 0;
+		do {
+			var obj = document.getElementById('num_'+i);
+			if (obj) {obj.style.color = curr_theme[4]};
+			i++;
+		} while (obj);
+		i = 0;
+		do {
+			var obj = document.getElementById('misc_'+i);	//misc characters in info table
+			if (obj) {obj.style.color = curr_theme[4]};
+			i++;
+		} while (obj);
+		i = 0;
+		do {
+			var obj = document.getElementById('link_'+i);	//links to exported files 
+			if (obj) { obj.style.color = curr_theme[5]; }
+			i++;
+		} while (obj);
+		var obj = document.getElementById('info_line');
+		if (obj) {
+			obj.style.color = curr_theme[3];
+			obj.style.borderTopColor = curr_theme[7];
+			obj.style.borderRightColor = curr_theme[7];
+			obj.style.borderLeftColor = curr_theme[7];
+			obj.style.borderBottomColor = curr_theme[7];
+		}
+		//all links
+		i = 0;
+		do {
+			var obj = document.getElementById('other_'+i);	//misc links
+			if (obj) { obj.style.color = curr_theme[5] }
+			i++;
+		} while (obj);
+		i = 0;
+		do {
+			var obj = document.getElementById('h_link_'+i);	//links in the header of export table
+			if (obj) {obj.style.color = curr_theme[5]}
+			i++;
+		} while (obj);
+		//about table
+		var obj = document.getElementById('about_table');
+		if (obj) {
+			obj.style.backgroundColor = curr_theme[16];
+			obj.style.color = curr_theme[17];
+			obj.style.borderColor = curr_theme[7];
+		}
+		//popup; color scheme = info table
+		var obj = document.getElementById('dhtmltooltip');
+		if (obj) {
+			obj.style.backgroundColor = curr_theme[16];
+			obj.style.color = curr_theme[17];
+			obj.style.borderColor = curr_theme[7];
+		}
+	}
+	UpdateLinks(Number(theme_nr), -1);	//update colors of links
+}
+
+// +++ Custom Functions +++ //
+function full_loaded() {	//update links & colors after page is loaded
+	if (!document.styleSheets) { 	//opera fix
+		if (curr_ct) { SetColorTheme(curr_ct, false, -1) }
+		else { SetColorTheme('ct_milka', false, -1) }	//default color theme for opera nr2
+	}
+	if (!curr_theme_nr) {  //set default color theme link for opera
+		curr_theme_nr = 14;  //ct_milka
+	
+	}
+	
+	UpdateLinks(Number(curr_theme_nr));  //set links to current color settings
+}
+function over_link(obj, table_nr, link_nr) {	//handle mouseover events of links in whole document; obj=link, table_nr:0=info_table,1=export_table,2=about_table, link_nr=nr of link that sent the event
+//all tooltip textes are defined here
+	switch (table_nr) {
+		case 0: {	//export table
+			if (!document.styleSheets && obj) { obj.style.color = curr_theme[19]; }	//onhover for opera
+			switch (obj.id.charAt(0)) {
+				case 'h': {	//header popup
+					ddrivetip('Sort Table By<br><b>' + obj.firstChild.nodeValue + '</b>', 80);
+					break;
+				}
+				case 'l': {	//extended info popup
+					//extended information popup
+					ddrivetip('<table class="tip_table" style="color:' + curr_theme[3] + '; width:320px;">'
+						+ '<tr><td style="font-weight:bold; text-align:right; width:70px;" valign="top">Title:</td><td style="color:' + curr_theme[4] + '; width:250px;">' + a[link_nr][3] + '</td></tr>'
+						+ '<tr><td style="font-weight:bold; text-align:right;" valign="top">Artist:</td><td style="color:' + curr_theme[4] + '">' + a[link_nr][1] + '</td></tr>'
+						+ '<tr><td style="font-weight:bold; text-align:right;" valign="top">Album:</td><td style="color:' + curr_theme[4] + '">' + a[link_nr][2] + '</td></tr>'
+						+ '<tr><td style="font-weight:bold; text-align:right;" valign="top">Comment:</td><td style="color:' + curr_theme[4] + '">' + a[link_nr][9] + '</td></tr>'
+						+ '<tr><td style="font-weight:bold; text-align:right;">Bitrate:</td><td style="color:' + curr_theme[4] + '">' + a[link_nr][7] + a[link_nr][8] + '</td></tr>'
+						+ '<tr><td style="font-weight:bold; text-align:right;">Tag(s):</td><td style="color:' + curr_theme[4] + '">' + a[link_nr][11] + '</td></tr>'
+						+ '<tr><td style="font-weight:bold; text-align:right;">Filesize:</td><td style="color:' + curr_theme[4] + '">' + a[link_nr][10] + '</td></tr></table>',320);
+					break;
+				}
+			}	
+			break;
+		}
+		case 1: {	//about table
+			if (!document.styleSheets && obj) { obj.style.color = curr_theme[19]; }	//onhover for opera
+			//mp3tag link popup
+			ddrivetip('<b>Go To Album / Compi. List</b>', 154);
+			break;
+		}
+		case 2: {	//other links
+			if (!document.styleSheets && obj) { obj.style.color = curr_theme[6]; }	//onhover for opera
+		}
+	}
+}
+function out_link(obj, table_nr, link_nr) {	//handle mouseout events of links in whole document; obj=link, table_nr:0=info_table,1=export_table,2=about_table, link_nr=nr of link that sent the event
+	switch (table_nr) {
+		case 0: {	//export table
+			switch (obj.id.charAt(0)) {
+				case 'h': {	//extended info popup
+					if (!document.styleSheets && obj) { obj.style.color = curr_theme[18]; }	//onhover for opera
+					break;
+				}
+				case 'l': {	//link to exported file popup
+					if (!document.styleSheets && obj) { obj.style.color = curr_theme[18]; }	//onhover for opera
+					break;
+				}
+			}			
+			break;
+		}
+		case 1: {	//info table
+			if (!document.styleSheets && obj) {	//onhover for opera
+				if (obj.id != 'ct_' + curr_theme_nr) { obj.style.color = curr_theme[5]; }
+			}
+			break;
+		}
+		case 2: {	//about
+			if (!document.styleSheets && obj) { obj.style.color = curr_theme[18]; }	//onhover for opera
+			break;
+		}
+	}
+	hideddrivetip();	//hide popup
+}
+function do_sort(criterion_m, link_nr) {	//set cookies and reload to sort; criterion_m=nr of subarray
+	a.push_stack_m(criterion_m);
+	WriteCookie("sorting_stack_m",a.sort_stack_m.join(),24*14);
+	WriteCookie("sort_order_stack_m",a.order_stack_m.join(),24*14);
+	WriteCookie("sorted_link_m",link_nr,24*14);
+	window.location.reload();
+}
+function play_file(file_nr) { 
+	window.location = a[file_nr][12];
+}
+function read_settings_m() {
+	var sort_st_m = ReadCookie("sorting_stack_m");
+	var order_st_m = ReadCookie("sort_order_stack_m");
+	if (sort_st_m) { a.sort_stack_m = eval('Array(' + sort_st_m + ')') };
+	if (order_st_m) { a.order_stack_m = eval('Array(' + order_st_m + ')') };
+	a.sortByStack();
+}
+function write_dir() {	//writes the arrow that shows the direction of sorting
+	var last_sorted_link_m = "h_link_" + ReadCookie("sorted_link_m");
+	var _arrow_m = " " + String.fromCharCode(8593);
+
+	if (a.order_stack_m[0]) { _arrow_m = " " + String.fromCharCode(8595) };
+	
+	var _new_dir = document.createTextNode(_arrow_m);
+	var _obj = document.getElementById(last_sorted_link_m);
+	if (_obj) { _obj.appendChild(_new_dir) }
+}
+//--></SCRIPT>
+
+</HEAD>
+<BODY>
+
+<noscript>Warning: Java not found! <br>Enable JavaScript or install a browser with JavaScript support in order to view this document properly.</noscript>
+
+<div id="dhtmltooltip" class="dhtmltooltip"></div>	<!-- <== this should be at the beginning of the page (popup) -->
+
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT"><!--
+// +++ Cookie read and set +++ //
+	//read all cookies and set up color theme
+	var curr_ct = ReadCookie('current_color_theme'); 
+	var curr_theme_nr = ReadCookie('current_theme_nr'); 
+	var curr_link_nr = ReadCookie('current_link_nr');
+	
+	if (curr_ct) { SetColorTheme(curr_ct, false, -1) }
+	else { SetColorTheme('ct_milka', false, -1) }	//default color theme for ie and netscape
+	//set up popup
+	var tipobj=document.all? document.all["dhtmltooltip"] : document.getElementById? document.getElementById("dhtmltooltip") : "";
+	document.onmousemove=positiontip;
+	onload=full_loaded;	//update links, set tooltip
+	read_settings_m();
+// +++ Back on top by cntchris +++ //
+
+//Specify the text to display
+var displayed="<nobr><b>[Back On Top]</b></nobr>"
+
+////////////Do not edit below this line////////////
+var logolink='javascript:window.scrollTo(0,0)'
+var ns4=document.layers
+var ie4=document.all
+var ns6=document.getElementById&&!document.all
+function ietruebody(){
+	return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+}
+function regenerate(){
+	window.location.reload()
+}
+function regenerate2(){
+	if (ns4)
+		setTimeout("window.onresize=regenerate",400)
+}
+if (ie4||ns6)
+	document.write('<span id="logo" style="position:absolute;top:-300px;z-index:100">'+displayed+'</span>')
+function createtext(){ //function for NS4
+	staticimage=new Layer(5)
+	staticimage.left=-300
+	staticimage.document.write('<a href="'+logolink+'">'+displayed+'</a>')
+	staticimage.document.close()
+	staticimage.visibility="show"
+	regenerate2()
+	staticitns()
+}
+function staticit(){ //function for IE4/ NS6
+	var w2=ns6? pageXOffset+w : ietruebody().scrollLeft+w
+	var h2=ns6? pageYOffset+h : ietruebody().scrollTop+h
+	crosslogo.style.left=w2+"px"
+	crosslogo.style.top=h2+"px"
+}
+function staticit2(){ //function for NS4
+	staticimage.left=pageXOffset+window.innerWidth-staticimage.document.width-28
+	staticimage.top=pageYOffset+window.innerHeight-staticimage.document.height-10
+}
+function inserttext(){ //function for IE4/ NS6
+	if (ie4)
+		crosslogo=document.all.logo
+	else if (ns6)
+		crosslogo=document.getElementById("logo")
+		crosslogo.innerHTML='<a href="'+logolink+'">'+displayed+'</a>'
+		w=ns6 || window.opera? window.innerWidth-crosslogo.offsetWidth-20 : ietruebody().clientWidth-crosslogo.offsetWidth-10
+		h=ns6 || window.opera? window.innerHeight-crosslogo.offsetHeight-15 : ietruebody().clientHeight-crosslogo.offsetHeight-10
+		crosslogo.style.left=w+"px"
+		crosslogo.style.top=h+"px"
+	if (ie4)
+		window.onscroll=staticit
+	else if (ns6)
+		startstatic=setInterval("staticit()",100)
+}
+if (ie4||ns6){
+	if (window.addEventListener)
+		window.addEventListener("load", inserttext, false)
+	else if (window.attachEvent)
+		window.attachEvent("onload", inserttext)
+	else
+		window.onload=inserttext
+		window.onresize=new Function("window.location.reload()")
+}
+else if (ns4)
+window.onload=createtext
+function staticitns(){ //function for NS4
+	startstatic=setInterval("staticit2()",90)
+}
+//--></SCRIPT>
+
+<table width="82%" style="margin-left:11%"><td width="100%" valign="top">
+
+<table class="about_table" id="about_table" width="100%" cellspacing="0" cellpadding="0">
+<tr class="info_table" id="info_table"><th class="info_values" id="info_values_0" style="padding-left: 10px" align="left">
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT">statistics()</SCRIPT> | 12:47:40 hrs | 858,58 MB
+</th></tr></table><br>
+
+<table class="info_table" id="info_table_l" width="100%" cellspacing="0" cellpadding="2">
+<tr><td colspan="5" class="info_values" id="info_values_1">
+<a id="other_0" href="" onMouseOver="over_link(this,0,0)"onMouseOut="out_link(this,1,0)"><b>Explore All</b></a>
+| <a id="other_1" href="---=== Burn ===---.m3u" onMouseOver="over_link(this,0,1)"onMouseOut="out_link(this,1,1)"><b>Play All</b></a>
+</td></tr>
+
+<tr>
+<th colspan="5" class="info_line" id="info_line"><a id="other_2" href="---=== Burn ===---.html" onMouseOver="over_link(this,1,0)"onMouseOut="out_link(this,1,0)">. . : : Mix / Set : : . .</a></th>
+</tr>
+
+<tr class="export_header" id="export_header">
+<td class="info_values" id="misc_0"align="center">Nr.</td>
+<td class="info_values" id="misc_1"><b><a id="h_link_0" href="javascript:do_sort(12,0)" onMouseOver="over_link(this,0,0)" onMouseOut="out_link(this,0,0)">Filename</a></b> (<b><a id="h_link_1" href="javascript:do_sort(1,1)" onMouseOver="over_link(this,0,1)" onMouseOut="out_link(this,0,1)">Artist</a></b>
+, <b><a id="h_link_2" href="javascript:do_sort(3,2)" onMouseOver="over_link(this,0,2)" onMouseOut="out_link(this,0,2)">Title</a></b>)</td>
+<td align="center"><b><a id="h_link_3" href="javascript:do_sort(6,3)" onMouseOver="over_link(this,0,3)" onMouseOut="out_link(this,0,3)">Genre</a></b></td>
+<td align="right"><b><a id="h_link_4" href="javascript:do_sort(4,4)" onMouseOver="over_link(this,0,4)" onMouseOut="out_link(this,0,4)">Length</a></b></td>
+<td class="info_values" id="misc_2" align="right">Included (Picture, Tracklist, Review)</td></tr>
+
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT"><!--
+var op_fix = new String("");	//write link color for opera
+if (!document.styleSheets) {	//opera fix
+	op_fix = ' style="color:' + curr_theme[13] + '"';
+	if (curr_ct) { SetColorTheme(curr_ct, false, -1) }
+	else { SetColorTheme('ct_milka', false, -1) }
+}
+//write output table
+var s = new String("");
+for (i = 0; i<table_length; i++) {
+	s += '<tr id="num_' + i + '"><td id="misc_' + (i+3) + '" class="info_values" align="center">' + a[i][0] + '</td>';
+	s += '<td align="left"><b><a id="link_' + i + '" href="javascript:play_file(' + i + ')" onMouseOver="over_link(this,0,' + i + ')" onMouseOut="out_link(this,0,' + i + ')"' + op_fix + '>' + a[i][12]  + '</a></b></td>';
+	s += '<td id="info_values_' + (i+2) + '" class="info_values" align="center">' + a[i][6] + '</td>';
+	s += '<td id="info_names_' + i + '" class="info_values" align="right">' + a[i][4] + '</td>';
+	s += '<td id="included_' + i + '" class="info_values" align="right">' + a[i][13] + '</td></tr>';
+	if (ie5 || (i%20==19)) {	//I don't want make IE worse that it is, but my IE6SP2 is really faster by writing each line than each 20th !!!
+		document.write(s);
+		s = "";
+	}
+}
+document.write(s);
+s = "";
+write_dir();	//write sorting direction arrow
+//--></SCRIPT>
+
+</table>
+
+</td><td width="125px">
+
+<table width="100%"><td><div style="width: 125px"></div></td></table>
+
+</td></table>
+</BODY>
+</HTML>
