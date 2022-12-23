@@ -19,19 +19,32 @@ Just copy the .mte files to (C:\Users\\"your username"\AppData\Roaming\Mp3tag\ex
 
 ## Demo preview
 
+### [Complete]([https://raw.githack.com/alanmilinovic/mp3tag-exports/main/Preview/Simple/---%3D%3D%3D%20Burn%20%3D%3D%3D---.html](https://raw.githack.com/alanmilinovic/mp3tag-exports/main/Preview/Complete/---%3D%3D%3D%20Burn%20%3D%3D%3D---.html))
+<p align="center" float="left">
+    <a href="https://raw.githack.com/alanmilinovic/mp3tag-exports/main/Preview/Complete/---%3D%3D%3D%20Burn%20%3D%3D%3D---.html">
+        <img src="https://raw.githubusercontent.com/alanmilinovic/mp3tag-exports/main/Preview/Complete%20Screenshot.png" width="450" alt="click for demo" />
+    </a>
+    <a href="https://raw.githack.com/alanmilinovic/mp3tag-exports/main/Preview/Complete/High%20Contrast%20-%20High%20Society%20[2004]/High%20Contrast%20-%20High%20Society%20[2004].html">
+        <img src="https://raw.githubusercontent.com/alanmilinovic/mp3tag-exports/main/Preview/Complete%20Album%20Screenshot.png" width="450" alt="click for demo" />
+    </a>
+    <a href="https://raw.githack.com/alanmilinovic/mp3tag-exports/main/Preview/Complete/Mixes.html">
+        <img src="https://raw.githubusercontent.com/alanmilinovic/mp3tag-exports/main/Preview/Complete%20Mix%20Screenshot.png" width="450" alt="click for demo" />
+    </a>
+</p>
+
 ### [Simple](https://raw.githack.com/alanmilinovic/mp3tag-exports/main/Preview/Simple/---%3D%3D%3D%20Burn%20%3D%3D%3D---.html)
 <p align="center" float="left">
-    <a href="https://raw.githubusercontent.com/alanmilinovic/mp3tag-exports/main/Preview/Simple%20Screenshot.png">
+    <a href="https://raw.githack.com/alanmilinovic/mp3tag-exports/main/Preview/Simple/---%3D%3D%3D%20Burn%20%3D%3D%3D---.html">
         <img src="https://raw.githubusercontent.com/alanmilinovic/mp3tag-exports/main/Preview/Simple%20Screenshot.png" width="450" alt="click for demo" />
     </a>
-    <a href="https://raw.githubusercontent.com/alanmilinovic/mp3tag-exports/main/Preview/Simple%20Album%20Screenshot.png">
+    <a href="https://raw.githack.com/alanmilinovic/mp3tag-exports/main/Preview/Simple/High%20Contrast%20-%20High%20Society%20[2004]/High%20Contrast%20-%20High%20Society%20[2004].html">
         <img src="https://raw.githubusercontent.com/alanmilinovic/mp3tag-exports/main/Preview/Simple%20Album%20Screenshot.png" width="450" alt="click for demo" />
     </a>
 </p>
 
 ### [Simple Smart Dynamic List](https://raw.githack.com/alanmilinovic/mp3tag-exports/main/Preview/Simple%20Smart%20Dynamic%20List/---%3D%3D%3D%20Burn%20%3D%3D%3D---%20(((Dynamic%20Music%20List))).html)
 <p align="center" float="left">
-    <a href="https://raw.githubusercontent.com/alanmilinovic/mp3tag-exports/main/Preview/Simple%20Smart%20Dynamic%20List%20Screenshot.png">
+    <a href="https://raw.githack.com/alanmilinovic/mp3tag-exports/main/Preview/Simple%20Smart%20Dynamic%20List/---%3D%3D%3D%20Burn%20%3D%3D%3D---%20(((Dynamic%20Music%20List))).html">
         <img src="https://raw.githubusercontent.com/alanmilinovic/mp3tag-exports/main/Preview/Simple%20Smart%20Dynamic%20List%20Screenshot.png" width="450" alt="click for demo" />
     </a>
 </p>
