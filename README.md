@@ -36,5 +36,15 @@ Just copy the .mte files to (C:\Users\\"your username"\AppData\Roaming\Mp3tag\ex
     </a>
 </p>
 
+## Description
+
+### Simple
+A simple nice blue exports. Very fast to use.
+
+### Simple Smart Dynamic List
+List of folders and files with simple info (length, size, genre, track), smart counters and excellent
+dynamic preview. Export file that recognize when there are no albums or mixes (folders or files) and by
+that creates html file.
+
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg?style=for-the-badge
 [forum]: https://community.mp3tag.de/t/milkas-exports/2422
