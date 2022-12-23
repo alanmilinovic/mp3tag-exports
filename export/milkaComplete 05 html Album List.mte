@@ -1,0 +1,812 @@
+$filename(%_workingpath%%_workingdir%.html,utf-8)<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META NAME="Author" CONTENT="milka (amilino@gmail.com)">
+<META NAME="Generator" CONTENT="%_app% - http://www.mp3tag.de">
+<META NAME="Date" CONTENT="%_date%">
+<title>..:: %_workingdir% Album / Compilation List ::..</title>
+<style type="text/css"><!--
+body { font-family: tahoma, verdana, arial, helvetica; color: #FFFFFF; font-size: 11px; text-align: center;
+SCROLLBAR-FACE-COLOR: #FFFFFF; SCROLLBAR-HIGHLIGHT-COLOR: #000000; SCROLLBAR-SHADOW-COLOR: #000000; SCROLLBAR-3DLIGHT-COLOR: #888888;
+SCROLLBAR-ARROW-COLOR: #888888; SCROLLBAR-TRACK-COLOR: #222222; SCROLLBAR-DARKSHADOW-COLOR: #888888; }
+
+.search_link { color: #FFFFFF; text-decoration: none; }
+nobr { color: #FFFFFF; padding: 2px; font-weight:bold; text-decoration: none; font-family: Tahoma,Verdana,Arial; }
+th { width: 20%% }
+
+.info_table {
+	background-color: #000000;
+	border-right: 1px solid #000000;
+	border-left: 1px solid #000000;
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	font-size: 11px;
+	font-family: Tahoma,Verdana,Arial;
+}
+.info_table a { text-decoration: none; color: #FFFFFF; }
+.info_table a:hover { text-decoration: none; color: #000000; }
+.info_names { font-family: tahoma, verdana, arial, helvetica; font-size: 12px; color: #FFFFFF; height: 17px; }
+.info_values { font-family: tahoma, verdana, arial, helvetica; color: #AAAAAA; padding: 2px; height: 17px; }
+.info_line { color: #AAAAAA; padding: 2px; height: 17px; width: auto; border-bottom: 1px solid #000000; }
+.info_themes { color: #FFFFFF; text-align: center; padding: 2px; font-weight:bold; height: 17px; border-top: 1px solid #000000; border-right: 1px solid #000000; }
+
+.main_title { font-family: tahoma, verdana, arial, helvetica; font-size: 12px; color: #EFEFEF; height: 17px; width: 75px; background: #A0A0A4; border: 1px solid #EFEFEF; font-weight:bold; }
+
+.export_table { border: 1px solid #000000; }
+.export_header { border: 1px solid #000000; }
+
+.about_table {
+	background-color: #000000;
+	border-right: 1px solid #000000;
+	border-left: 1px solid #000000;
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	color: #FFFFFF;
+	font-size: 11px;
+	font-family: Tahoma,Verdana,Arial;
+
+}
+.about_table a { text-decoration: none; color: #FFFFFF; font-weight: bold; }
+.about_table a:hover { text-decoration: none; color: #000000; font-weight: bold; }
+.tip_table {
+	border: 0px solid #000000;
+	font-size: 11px;
+	font-family: Tahoma,Verdana,Arial;
+	text-align: left;
+	vertical-align: middle;
+	margin: 0px;
+	padding: 2px;
+}
+
+/* +++ Tooltip by ctnchris +++ */
+/* +++ edited by nickless +++ */
+/*
+	Tangering Structure CSS
+	Copyright wehnerj (jwehner@wehnerweb.com)
+	http://www.wehnerweb.com
+
+	LEAVE THIS COMMENT INTACT
+*/
+.dhtmltooltip {
+	border: 1px solid black;
+	background-color: #7B8279;
+	color: white;
+	font-family: Tahoma,Verdana,Arial;
+	font-size: 11px;
+	text-align:left;
+	padding: 2px;
+}
+
+#dhtmltooltip {
+	position: absolute;
+	width: 300px;
+	visibility: hidden;
+	z-index: 100;
+	/* Remove following 3 lines to remove tooltip alpha blending. */
+	filter:alpha(opacity=88);
+	-moz-opacity: 0.88;
+	opacity: 0.88;
+}
+//--></style>
+
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT" SRC="search_data.js"></SCRIPT>
+
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT"><!--
+// All functions are created by milka.                   //
+// Functions can be used when credit is given. It        //
+// should look like this:                                //
+/* +++ script name by milka +++ */                       //
+
+// When you classify it in such a way, you are free to   //
+// use the script.                                       //
+// this export script was last modified: 26.08.2006      //
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
+// ++++++++++++++++++ DEFINE THE NAME +++++++++++++++++++ //
+// Here you can define the names of the covers.           //
+// You can even define the whole name of the file!!!      //
+
+// Define names for covers:
+var cover = "cover.jpg";
+
+
+/* +++ Javascript error remover +++ */
+function stoperror(){
+   return true
+}
+window.onerror=stoperror
+
+/* +++ Smart counters by milka +++ */
+var artist_count = $loop(%artist%,1)$loopend()%_max_counter%;
+var unknownartist = 0;$loop(%artist%)$if(%artist%,,
+var unknownartist = 1;)$loopend()
+var artist_real = artist_count - unknownartist;
+var album_count = $loop(%_folderpath%,1)$puts(album,$if($eql(%_folderpath%,%_workingpath%),$add($get(album),0),$add($get(album),1)))$loopend()$get(album);
+
+function statistics() {
+	if(artist_real > 1) {
+		var artist_ext = " Artists";
+	}else{
+		var artist_ext = " Artist";
+	}
+	if(album_count > 1) {
+		var album_ext = " Albums / Compilations";
+	}else{
+		var album_ext = " Album / Compilation";
+	}
+
+	document.write(album_count + album_ext + " | ");
+	if(unknownartist == 1) {
+		document.write(artist_real + artist_ext + " + Unknown Artist(s)");
+	}else{
+		document.write(artist_real + artist_ext);
+	}
+}
+
+// Tipue 2.1.1 Search engine //
+// +++ Fully Edited by milka +++ //
+// ---------- script properties ----------
+var results_location = "$replace(%_workingdir%.html,#,%%23)";
+var results_per_page = 2;
+var image_height = 50;
+var image_width = 50;
+// ---------- string properties ----------
+var s_1 = ''Your search did not match any song(s).<p>Make sure all keywords are spelled correctly.<br>Try different or more general keywords like: artist, title, length...<div class="info_line" id="info_line_1"></div>'';
+var s_2 = ''Previous'';
+var s_3 = ''Next'';
+var s_4 = ''to'';
+var s_5 = ''of'';
+var s_6 = ''for'';
+var s_7 = ''Type text that you are looking for!<div class="info_line" id="info_line_1"></div>'';
+// ---------- end of properties ----------
+var fo = new Array(0);
+var tid = window.location.search;
+tid = tid.substring(1, tid.length);
+list = tid.split("&");
+for (i=0; i <= list.length - 1; i++)
+{
+	fot = list'['i']'.split("="); 
+	fo.splice(fo.length, 2, fot'['0']', fot'['1']');
+}
+for (i=0; i <= fo.length - 1; i++)
+{
+	fo'['i']' = fo'['i']'.replace(/\+/g," ");
+	fo'['i']' = unescape(fo'['i']');
+}
+var dit = fo'['1']';
+var tn = fo'['3']';
+var od = dit;
+var nr = results_per_page;
+tn = parseInt(tn);
+var nc = 0;
+var nd = 0;
+var tr = new Array();
+var rt = new Array();
+var co = 0;
+var tm = 0;
+var nud = false;
+if (dit == '''' || dit == '' '') nud = true;
+if (dit.charAt(0) == ''"'' && dit.charAt(dit.length - 1) == ''"'') tm = 1;
+var rn = dit.search(/ or /i);
+if (rn >= 0) tm = 2;
+rn = dit.search(/-/i);
+if (rn >= 0 && tm != 1)
+{
+	rn = dit.search(/ /i);
+	if (rn != 0) dit = dit.replace(/-/gi, '' -'');
+}
+rn = dit.search(/ not /i);
+if (rn >= 0 && tm != 1) dit = dit.replace(/ not /gi, '' -'');
+rn = dit.search(/\+/i);
+if (rn >= 0)
+{
+	rn = dit.search(/ /i);
+	if (rn != 0) dit = dit.replace(/\+/gi, '' +'');
+}
+
+if (tm == 0)
+{
+	var woin = new Array();
+	dit = dit.replace(/ and /gi, '' '');
+	var wt = dit.split('' '');
+	for (var a = 0; a < wt.length; a++)
+	{
+		woin'['a']' = 0;
+		if (wt'['a']'.charAt(0) == ''-'') woin'['a']' = 1;
+	}
+	for (var a = 0; a < wt.length; a++)
+	{
+		wt'['a']' = wt'['a']'.replace(/^\-|^\+/gi, '''');
+	}
+	a = 0;
+	for (var c = 0; c < s.length; c++) {
+		var es = s'['c']'.split(''^'');
+		var rk = 100;
+		var pa = 0;
+		var nh = 0;
+		for (var i = 0; i < woin.length; i++)
+		{
+			if (woin'['i']' == 0)
+			{
+				nh++;
+				var nt = 0;
+				var pat = new RegExp(wt'['i']', ''i'');
+				rn = es'['0']'.search(pat);
+				if (rn >= 0)
+				{
+					rk = rk - 11;
+					nt = 1;
+				}
+				rn = es'['2']'.search(pat);
+				if (rn >= 0) {
+					rk = rk - 11;
+					nt = 1;
+				}
+				if (nt == 1) pa++;
+			}
+			if (woin'['i']' == 1)
+			{
+				var pat = new RegExp(wt'['i']', ''i'');
+				rn = es'['0']'.search(pat);
+				if (rn >= 0) pa = 0;
+				rn = es'['2']'.search(pat);
+				if (rn >= 0) pa = 0;
+			}
+		}
+		if (pa == nh)
+		{
+			tr'['a']' = rk + ''^'' + s'['c']';
+			a++;
+		}
+	}
+	tr.sort();
+	co = a;
+}
+if (tm == 1)
+{
+	dit = dit.replace(/"/gi, '''');
+	var a = 0;
+	var pat = new RegExp(dit, ''i'');
+	for (var c = 0; c < s.length; c++)
+	{
+		var es = s'['c']'.split(''^'');
+		var rk = 100;
+		rn = es'['0']'.search(pat);
+		if (rn >= 0)
+		{
+			rk = rk - 11;
+		}
+		rn = es'['2']'.search(pat);
+		if (rn >= 0)
+		{
+			rk = rk - 11;
+		}
+		if (rk < 100)
+		{
+			tr'['a']' = rk + ''^'' + s'['c']';
+			a++;
+		}
+	}
+	tr.sort();
+	co = a;
+}
+if (tm == 2)
+{
+	dit = dit.replace(/ or /gi, '' '');
+	var wt = dit.split('' '');
+	var a = 0;
+	for (var i = 0; i < wt.length; i++)
+	{
+		var pat = new RegExp(wt'['i']', ''i'');
+		for (var c = 0; c < s.length; c++)
+		{
+			var es = s'['c']'.split(''^'');
+			var rk = 100;
+			var pa = 0;
+			var rn = es'['0']'.search(pat);
+			if (rn >= 0)
+			{
+				rk = rk - 11;
+				if (rn >= 0)
+				{
+					for (var e = 0; e < rt.length; e++) {
+						if (s'['c']' == rt'['e']') pa = 1;
+					}
+				}
+			}
+			rn = es'['2']'.search(pat);
+			if (rn >= 0)
+			{
+				rk = rk - 11;
+				if (rn >= 0)
+				{
+					for (var e = 0; e < rt.length; e++)
+					{
+						if (s'['c']' == rt'['e']') pa = 1;
+					}
+				}
+			}
+			if (rk < 100 && pa == 0)
+			{
+				rt'['a']' = s'['c']';
+				tr'['a']' = rk + ''^'' + s'['c']';
+				a++;
+				co++;
+			}
+		}
+	}
+	tr.sort();
+}
+if (nud) co = 0;
+// ---------- External references ----------
+function tip_query()
+{
+	if (od != ''undefined'' && od != null) document.tip_Form.d.value = od;
+}
+function tip_search()
+{
+	document.write(''<div style=" width: 125px; font-size: 11px;" class="info_values" id="info_values_0" align="left">'');
+	if (co > 0)
+	{
+		var ne = nr + tn;
+		if (ne > co) ne = co;
+		document.write(''Results '', tn + 1, '' '', s_4, '' '', ne, '' '', s_5, '' '', co, ''<br>'', s_6, '' <b>'', od, ''</b><div class="info_line" id="info_line_1"></div>'');
+	}
+	if (co > nr)
+	{
+		var np = Math.ceil(co / nr);
+		nc = co - (tn + nr);
+		if (tn > 0) var na = Math.ceil(tn / nr) + 1; else var na = 1;
+		document.write(''<br>|'');
+		if (np < 6)
+		{
+			for (var i = 0; i < np; i++)
+			{
+				var nb = nr * i;
+				if (nb == tn)
+				{
+					document.write(''<b>'', i + 1, ''</b> &nbsp;'');
+				}
+				else document.write(''<a href="'', results_location, ''?d='', od, ''&n='', nb, ''" class="search_link">'', i + 1, ''</a> &nbsp;'');
+			}
+		}
+		if (np > 5)
+		{
+			if (na < 5)
+			{
+				for (var i = 0; i < 5; i++)
+				{
+					var nb = nr * i;
+					if (nb == tn)
+					{
+						document.write(''<b>'', i + 1, ''</b> &nbsp;'');
+					}
+					else document.write(''<a href="'', results_location, ''?d='', od, ''&n='', nb, ''" class="search_link">'', i + 1, ''</a> &nbsp;'');
+				}
+			}
+			else
+			{
+				var ng = na - 3;
+				if (np > ng + 5) var nf = ng + 5; else nf = np; 
+				for (var i = ng; i < nf; i++)
+				{
+					var nb = nr * i;
+					if (nb == tn)
+					{
+						document.write(''<b>'', i + 1, ''</b> &nbsp;'');
+					}
+					else document.write(''<a href="'', results_location, ''?d='', od, ''&n='', nb, ''" class="search_link">'', i + 1, ''</a> &nbsp;'');
+				}				
+			}
+		}
+		document.write(''|<br>'');
+		if (tn > 1) document.write(''<b><a href="'', results_location, ''?d='', od, ''&n='', tn - nr, ''" class="search_link">'', s_2, ''</a></b>'');
+		if (nc != 0 && tn != 0) document.write('' -- '');
+		if (nc > 0) document.write(''<b><a href="'', results_location, ''?d='', od, ''&n='', tn + nr, ''" class="search_link">'', s_3, ''</a></b>'');
+		document.write(''<br><br>'');
+	}
+	if (co == 0)
+	{
+		document.write(s_1);
+		document.write(''<div align="right"><b><a class="search_link" href="'', results_location,''">Close Search</a></b></div>'');
+		return;
+	}
+	if (co == null)
+	{
+		document.write(s_7);
+		return;
+	}
+	if (tn + nr > co) nd = co; else nd = tn + nr;
+	for (var a = tn; a < nd; a++)
+	{
+		var os = tr'['a']'.split(''^'');
+		if (os'['5']' != null) document.write(''<a href="'', os'['2']', ''" onMouseOver="over_link(this,3,0)" onMouseOut="out_link(this,3,0)"><img src="'', os'['5']','''', cover,''" border=1 width='', image_width, '' height='', image_height, '' class="export_table" id="export_table_'',a,''"></a><p>'');
+		if (tm == 0){
+			for (var i = 0; i < wt.length; i++)
+			{
+				var lw = wt'['i']'.length;
+				var tw = new RegExp(wt'['i']', ''i'');
+				rn = os'['3']'.search(tw);
+				rn1 = os'['1']'.search(tw);
+				if (rn >= 0){
+					var o1 = os'['3']'.slice(0, rn);
+					var o2 = os'['3']'.slice(rn, rn + lw);
+					var o3 = os'['3']'.slice(rn + lw);
+					os'['3']' = o1 + ''<b>'' + o2 + ''</b>'' + o3;
+				}
+				if (rn1 >= 0){
+					var o1 = os'['1']'.slice(0, rn1);
+					var o2 = os'['1']'.slice(rn1, rn1 + lw);
+					var o3 = os'['1']'.slice(rn1 + lw);
+					os'['1']' = o1 + ''<b>'' + o2 + ''</b>'' + o3;
+				}
+			}
+		}
+		if (tm == 1){
+			var lw = dit.length;
+			var tw = new RegExp(dit, ''i'');
+			rn = os'['3']'.search(tw);
+			rn1 = os'['1']'.search(tw);
+			if (rn >= 0){
+				var o1 = os'['3']'.slice(0, rn);
+				var o2 = os'['3']'.slice(rn, rn + lw);
+				var o3 = os'['3']'.slice(rn + lw);
+				os'['3']' = o1 + ''<b>'' + o2 + ''</b>'' + o3;
+			}
+			if (rn1 >= 0){
+				var o1 = os'['1']'.slice(0, rn1);
+				var o2 = os'['1']'.slice(rn1, rn1 + lw);
+				var o3 = os'['1']'.slice(rn1 + lw);
+				os'['1']' = o1 + ''<b>'' + o2 + ''</b>'' + o3;
+			}
+		}
+		document.write(a + 1, ''. '');
+		document.write(''<a href="'', os'['4']', ''" class="search_link" onMouseOver="over_link(this,4,0)" onMouseOut="out_link(this,4,0)">'', os'['1']', ''</a>'')
+		document.write(''<br>'', os'['3']',''<div class="info_line" id="info_line_'',a+2,''" style="height:1px"></div><br>'')
+	}
+	if (co != 0){
+		document.write(''<div align="right"><b><a class="search_link" href="'', results_location,''">Close Search</a></b></div>'');}
+	document.write(''</div>'');
+}
+
+/****************************************************
+* Cookie Functions, Color Themes & Custom Functions
+* Coded by nickless
+* Edited by milka
+*****************************************************/
+// +++ Color Themes by nickless +++ //
+function UpdateLinks(theme_nr, link_nr) {	//updates colors of links to themes
+	if (Number(theme_nr)>=0) {
+		var obj = document.getElementById("ct_" + old_theme);
+		if (obj) { 
+			obj.style.color = '''';
+			if (!document.styleSheets) { obj.style.color = curr_theme'['5']' }
+		}
+		old_theme = Number(theme_nr);
+		var obj = document.getElementById("ct_" + theme_nr);
+		if (obj) { obj.style.color = curr_theme'['6']' }
+	}
+}
+function SetColorTheme(name, update_now, theme_nr) {	//applies a color theme to document by it''s name and updates the table if necessary; name = name of the array with colors (s.th. like "ct_milka")
+	curr_theme = eval(name);
+	if (!curr_theme) { return };
+	var all_rules = new Array();
+	var all_nums = new Array();
+	
+	if (document.styleSheets) {	//mozilla/ie browsers allows change css rules
+		if (document.styleSheets'['0']'.rules) { all_rules =  document.styleSheets'['0']'.rules;}	//IE
+		if (document.styleSheets'['0']'.cssRules) { all_rules =  document.styleSheets'['0']'.cssRules;}	//Netscape
+	
+		if (!all_rules) {return};	//unknown browser that supports document.styleSheets but neither rules nor cssRules
+		all_nums = ChooseRules(all_rules);
+	
+		all_rules'['all_nums'['0']'']'.style.backgroundColor = curr_theme'['0']';	//background
+		all_rules'['all_nums'['1']'']'.style.color = curr_theme'['5']';	//search button
+		all_rules'['all_nums'['1']'']'.style.borderColor = curr_theme'['7']';	//search button
+		all_rules'['all_nums'['1']'']'.style.backgroundColor  = curr_theme'['2']';	//search button
+
+		all_rules'['all_nums'['2']'']'.style.backgroundColor  = curr_theme'['2']';	//info table background
+		all_rules'['all_nums'['2']'']'.style.borderColor = curr_theme'['7']';	//info table border
+		all_rules'['all_nums'['3']'']'.style.color = curr_theme'['3']';	//info table names
+		all_rules'['all_nums'['4']'']'.style.color = curr_theme'['4']';	//info table values
+		all_rules'['all_nums'['5']'']'.style.color = curr_theme'['5']';	//info table link
+		all_rules'['all_nums'['6']'']'.style.color = curr_theme'['6']';	//info table link hover
+		all_rules'['all_nums'['7']'']'.style.borderBottomColor = curr_theme'['7']';	//info table line
+
+		all_rules'['all_nums'['8']'']'.style.borderColor = curr_theme'['7']';	//export table names
+		all_rules'['all_nums'['9']'']'.style.borderColor = curr_theme'['7']';	//export table border
+
+		all_rules'['all_nums'['12']'']'.style.backgroundColor  = curr_theme'['16']';	//about table background
+		all_rules'['all_nums'['12']'']'.style.borderColor = curr_theme'['7']';	//about table border
+		all_rules'['all_nums'['12']'']'.style.color = curr_theme'['17']';	//about table text
+		all_rules'['all_nums'['13']'']'.style.color = curr_theme'['18']';	//about table link
+		all_rules'['all_nums'['14']'']'.style.color = curr_theme'['19']';	//about table link hover
+
+		all_rules'['all_nums'['15']'']'.style.backgroundColor  = curr_theme'['16']';	//popup background
+		all_rules'['all_nums'['15']'']'.style.color = curr_theme'['17']';	//popup text
+		all_rules'['all_nums'['15']'']'.style.borderColor = curr_theme'['7']';	//popup border
+	}
+	else {	//browser don''t support document.styleSheets = Opera etc.
+		//body & main title
+		document.body.style.backgroundColor = curr_theme'['0']';
+		var obj = document.getElementById(''main_title'');	//search button
+		if (obj) {
+			obj.style.color = curr_theme'['5']';
+			obj.style.borderColor = curr_theme'['7']';
+			obj.style.backgroundColor  = curr_theme'['2']'};
+		//info table
+		var obj = document.getElementById(''info_table'');
+		if (obj) {
+			obj.style.backgroundColor = curr_theme'['2']';
+			obj.style.borderColor = curr_theme'['7']'};
+		var obj = document.getElementById(''info_table_l'');
+		if (obj) {
+			obj.style.backgroundColor = curr_theme'['2']';
+			obj.style.borderColor = curr_theme'['7']'};
+		var i = 0;
+		do {
+			var obj = document.getElementById(''info_values_''+i);
+			if (obj) {obj.style.color = curr_theme'['4']'};
+			i++;
+		} while (obj);
+		i = 0;
+		do {
+			var obj = document.getElementById(''info_line_''+i);
+			if (obj) {
+				obj.style.color = curr_theme'['3']';
+				obj.style.borderBottomColor = curr_theme'['7']'}
+			i++;
+		} while (obj);
+		//all links
+		i = 0;
+		do {
+			var obj = document.getElementById(''export_header_''+i);	//image border
+			if (obj) { obj.style.borderColor = curr_theme'['7']'}
+			i++;
+		} while (obj);
+		i = 0;
+		do {
+			var obj = document.getElementById(''export_table_''+i);	//image border
+			if (obj) { obj.style.borderColor = curr_theme'['7']'}
+			i++;
+		} while (obj);
+		i = 0;
+		do {
+			var obj = document.getElementById(''other_''+i);	//links in the info table
+			if (obj) { obj.style.color = curr_theme'['5']'}
+			i++;
+		} while (obj);
+		i = 0;
+		do {
+			var obj = document.getElementById(''link_''+i);	//links in the info table
+			if (obj) {
+				obj.style.color = curr_theme'['5']';
+				obj.style.backgroundColor = curr_theme'['2']'}
+			i++;
+		} while (obj);
+		//about table
+		var obj = document.getElementById(''about_table'');
+		if (obj) {
+			obj.style.backgroundColor = curr_theme'['16']';
+			obj.style.color = curr_theme'['17']';
+			obj.style.borderColor = curr_theme'['7']';
+		}
+		var obj = document.getElementById(''about_table_s'');
+		if (obj) {
+			obj.style.backgroundColor = curr_theme'['16']';
+			obj.style.color = curr_theme'['17']';
+			obj.style.borderColor = curr_theme'['7']';
+		}
+		//popup; color scheme = info table
+		var obj = document.getElementById(''dhtmltooltip'');
+		if (obj) {
+			obj.style.backgroundColor = curr_theme'['16']';
+			obj.style.color = curr_theme'['17']';
+			obj.style.borderColor = curr_theme'['7']';
+		}
+	}
+	UpdateLinks(Number(theme_nr), -1);	//update colors of links
+}
+
+// +++ Custom Functions +++ //
+function full_loaded() {	//update links & colors after page is loaded
+	if (!document.styleSheets) { 	//opera fix
+		if (curr_ct) { SetColorTheme(curr_ct, false, -1) }
+		else { SetColorTheme(''ct_milka'', false, -1) }	//default color theme for opera nr2
+	}
+	if (!curr_theme_nr) {  //set default color theme link for opera
+		curr_theme_nr = 14;  //ct_milka
+	
+	}
+	
+	UpdateLinks(Number(curr_theme_nr));  //set links to current color settings
+}
+function over_link(obj, table_nr, link_nr) {	//handle mouseover events of links in whole document; obj=link, table_nr:0=info_table,1=export_table,2=about_table, link_nr=nr of link that sent the event
+//all tooltip textes are defined here
+	switch (table_nr) {
+		case 0: {	//info table
+			if (!document.styleSheets && obj) { obj.style.color = curr_theme'['6']'; }	//onhover for opera
+			
+			break;
+		}
+		case 1: {	//export table
+			if (!document.styleSheets && obj) { obj.style.color = curr_theme'['19']'; }	//onhover for opera
+			//link popup
+			ddrivetip(''<b>Play Album</b>'', 75);
+			break;
+		}
+		case 2: {	//info table
+			if (!document.styleSheets && obj) { obj.style.color = curr_theme'['19']'; }	//onhover for opera
+			//mp3tag link popup
+			ddrivetip(''<b>Go To Mix / Set List</b>'', 118);
+			break;
+		}
+		case 3: {	//info & search table
+			//mp3tag link popup
+			ddrivetip(''<b>Read Overview</b>'', 98);
+			break;
+		}
+		case 4: {	//search table
+			if (!document.styleSheets && obj) { obj.style.color = curr_theme'['20']'; }	//onhover for opera
+			//mp3tag link popup
+			ddrivetip(''<b>Play Song</b>'', 65);
+			break;
+		}
+	}
+}
+function out_link(obj, table_nr, link_nr) {	//handle mouseout events of links in whole document; obj=link, table_nr:0=info_table,1=export_table,2=about_table, link_nr=nr of link that sent the event
+	switch (table_nr) {
+		case 0: {	//info table
+			if (!document.styleSheets && obj) {	//onhover for opera
+				if (obj.id != ''ct_'' + curr_theme_nr) { obj.style.color = curr_theme'['5']'; }	//onhover for opera
+			}
+			break;
+		}
+		case 1: {	//export table
+			if (!document.styleSheets && obj) {	//onhover for opera
+					if (!document.styleSheets && obj) { obj.style.color = curr_theme'['18']'; }	//onhover for opera
+					break;
+				}
+		}
+		case 2: {	//about
+			if (!document.styleSheets && obj) { obj.style.color = curr_theme'['18']'; }	//onhover for opera
+			break;
+		}
+	}
+	hideddrivetip();	//hide popup
+}
+//--></SCRIPT>
+
+</HEAD>
+<BODY>
+
+<noscript>Warning: Java not found! <br>Enable JavaScript or install a browser with JavaScript support in order to view this document properly.</noscript>
+
+<div id="dhtmltooltip" class="dhtmltooltip"></div>	<!-- <== this should be at the beginning of the page (popup) -->
+
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT"><!--
+// +++ Cookie read and set +++ //
+	//read all cookies and set up color theme
+	var curr_ct = ReadCookie(''current_color_theme''); 
+	var curr_theme_nr = ReadCookie(''current_theme_nr''); 
+	
+	if (curr_ct) { SetColorTheme(curr_ct, false, -1) }
+	else { SetColorTheme(''ct_milka'', false, -1) }	//default color theme for ie and netscape
+	//set up popup
+	var tipobj=document.all? document.all'['"dhtmltooltip"']' : document.getElementById? document.getElementById("dhtmltooltip") : "";
+	document.onmousemove=positiontip;
+	onload=full_loaded;	//update links, set tooltip
+// +++ Back on top by cntchris +++ //
+
+//Specify the text to display
+var displayed="<nobr><b>'['Back On Top']'</b></nobr>"
+
+////////////Do not edit below this line////////////
+
+var logolink=''javascript:window.scrollTo(0,0)''
+var ns4=document.layers
+var ie4=document.all
+var ns6=document.getElementById&&!document.all
+function ietruebody(){
+	return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+}
+function regenerate(){
+	window.location.reload()
+}
+function regenerate2(){
+	if (ns4)
+	setTimeout("window.onresize=regenerate",400)
+}
+if (ie4||ns6)
+	document.write(''<span id="logo" style="position:absolute;top:-300px;z-index:100">''+displayed+''</span>'')
+function createtext(){ //function for NS4
+	staticimage=new Layer(5)
+	staticimage.left=-300
+	staticimage.document.write(''<a href="''+logolink+''">''+displayed+''</a>'')
+	staticimage.document.close()
+	staticimage.visibility="show"
+	regenerate2()
+	staticitns()
+}
+function staticit(){ //function for IE4/ NS6
+	var w2=ns6? pageXOffset+w : ietruebody().scrollLeft+w
+	var h2=ns6? pageYOffset+h : ietruebody().scrollTop+h
+	crosslogo.style.left=w2+"px"
+	crosslogo.style.top=h2+"px"
+}
+function staticit2(){ //function for NS4
+	staticimage.left=pageXOffset+window.innerWidth-staticimage.document.width-28
+	staticimage.top=pageYOffset+window.innerHeight-staticimage.document.height-10
+}
+function inserttext(){ //function for IE4/ NS6
+	if (ie4)
+		crosslogo=document.all.logo
+	else if (ns6)
+		crosslogo=document.getElementById("logo")
+		crosslogo.innerHTML=''<a href="''+logolink+''">''+displayed+''</a>''
+		w=ns6 || window.opera? window.innerWidth-crosslogo.offsetWidth-20 : ietruebody().clientWidth-crosslogo.offsetWidth-10
+		h=ns6 || window.opera? window.innerHeight-crosslogo.offsetHeight-15 : ietruebody().clientHeight-crosslogo.offsetHeight-10
+		crosslogo.style.left=w+"px"
+		crosslogo.style.top=h+"px"
+	if (ie4)
+		window.onscroll=staticit
+	else if (ns6)
+		startstatic=setInterval("staticit()",100)
+}
+if (ie4||ns6){
+if (window.addEventListener)
+	window.addEventListener("load", inserttext, false)
+else if (window.attachEvent)
+	window.attachEvent("onload", inserttext)
+else
+	window.onload=inserttext
+	window.onresize=new Function("window.location.reload()")
+}
+else if (ns4)
+	window.onload=createtext
+function staticitns(){ //function for NS4
+startstatic=setInterval("staticit2()",90)
+}
+//--></SCRIPT>
+
+<table width="82%%" style="margin-left:11%%"><td width="100%%" valign="top">
+
+<table class="about_table" id="about_table" width="100%%" cellspacing="0" cellpadding="0">
+<tr class="info_table" id="info_table"><td class="info_values" id="info_values_1" align="left" style="padding-left: 10px"><b>
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT">statistics()</SCRIPT> | %_total_files% Tracks | $replace($replace($replace($replace($replace(-%_total_time2%,-00:00,0),-00:0,),-00:,),-0,),-,) $ifgreater(%_total_time_raw%,3599,hrs,min) | %_total_size%
+</b></td></tr></table><br>
+
+<table class="info_table" id="info_table_l" width="100%%" cellspacing="0" cellpadding="2" align="center">
+<tr><td colspan="4" class="info_values" id="info_values_2">
+<a id="other_0" href="" onMouseOver="over_link(this,0,0)" onMouseOut="out_link(this,0,0)"><b>Explore All</b></a>
+| <a id="other_1" href="Album, Compilation.m3u" onMouseOver="over_link(this,0,1)" onMouseOut="out_link(this,0,1)"><b>Play All</b></a>
+</td></tr>
+
+<tr>
+<th colspan="4" class="info_line" id="info_line_0"><a id="other_2" href="Mixes.html" onMouseOver="over_link(this,2,0)"onMouseOut="out_link(this,2,0)">. . : : Album / Compilation : : . .</a></th>
+</tr>
+
+$loop(%_folderpath%,1)$if($odd(%_counter%),<tr>,)<a name="%_directory%"></a>
+<th><a href="$replace($replace(%_folderpath%%_directory%.html,%_workingpath%,),#,%%23)" onMouseOver="over_link(this,3,$sub(%_counter%,1))" onMouseOut="out_link(this,3,$sub(%_counter%,1))"><script>document.write("<img src=\"$replace($replace($replace(%_folderpath%,%_workingpath%,),#,%%23),\,/)" + cover + "\" width=\"100\" /*height=\"100\"*/ class=\"export_header\" id=\"export_header_$sub(%_counter%,1)\">");</script></a></th>
+<td><a id="link_$sub(%_counter%,1)" href="$replace($replace(%_folderpath%%_directory%.m3u,%_workingpath%,),#,%%23)" onMouseOver="over_link(this,1,$sub(%_counter%,1))" onMouseOut="out_link(this,1,$sub(%_counter%,1))"><b>%_directory%</b></a><br>
+<div class="info_values" id="info_values_$add(%_counter%,2)"><b>Time:</b> $replace($replace($replace($replace($replace(-%_total_time2%,-00:00,0),-00:0,),-00:,),-0,),-,) $ifgreater(%_total_time_raw%,3599,hrs,min)<br><b>Files / Size:</b> %_total_files% $ifgreater(%_total_files%,1,Files,File) / %_total_size%$if(%genre%,<br><b>Genre:</b> %genre%,)</div></td>$if($odd(%_counter%),,</tr>)$loopend()
+</table>
+
+</td><td width="125px" valign="top">
+
+<table width="100%%">
+
+<form name="tip_Form" method="get" action="$replace(%_workingdir%.html,#,%%23)"><tr><td align="center">
+<input type="text" name="d" class="about_table" id="about_table_s" style="width: 100px; height: 19px">
+<input type="hidden" name="n" value="0"></td></tr>
+<tr><td align="center">
+<input type="submit" value="Search" class="main_title" id="main_title" style="width: 54px; height: 19px">
+</td></tr></form>
+
+<tr><td><SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT">tip_query()</SCRIPT>
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT">tip_search()</SCRIPT></td></tr>
+</table>
+
+</td></table>
+</BODY>
+</HTML>

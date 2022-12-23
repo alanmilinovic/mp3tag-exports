@@ -1,0 +1,244 @@
+$filename(%_workingpath%search_data.js,utf-8)var s = new Array(%_total_files%);
+//s'['counter']'="ALBUM^album link^<!--COUNTER-->&bull; TRACK<br>&bull; ARTIST<br>&bull; TITLE<br>&bull; TIME^song link^image link";
+$loop(%_folderpath%,%_filename_ext%)s'['$sub(%_counter%,1)']'="$if($eql($folderdepth(%_folderpath%),$folderdepth(%_workingpath%)),$if(%album%,%album%,Mix / Set List),$if(%album%,%album%,%_directory%))^$if($eql($folderdepth(%_folderpath%),$folderdepth(%_workingpath%)),Mixes.html,$replace($replace($replace(%_folderpath%%_directory%.html,%_workingpath%,),\,/),#,%%23))^<!--$num($sub(%_counter%,1),5)-->&bull;$if(%track%, %track%,)<br>$if($or(%artist%,%title%),$if(%artist%,&bull; %artist%<br>,)$if(%title%,&bull; %title%<br>,),&bull; %_filename%<br>)&bull; $div(%_length_seconds%,60):$num($sub(%_length_seconds%,$mul($div(%_length_seconds%,60),60)),2)^$replace($replace($replace(%_folderpath%%_filename_ext%,%_workingpath%,),\,/),#,%%23)$if($eql($folderdepth(%_folderpath%),$folderdepth(%_workingpath%)),,^$replace($replace($replace(%_folderpath%,%_workingpath%,),\,/),#,%%23))";
+$loopend()
+var a = new Array($get(albamt))$loop(%_folderpath%,1)$if($eql($folderdepth(%_folderpath%),$folderdepth(%_workingpath%)),,$puts(albamt,$if($eql($folderdepth(%_folderpath%),$folderdepth(%_workingpath%)),$add($get(albamt),0),$add($get(albamt),1)))
+a'['$sub($get(albamt),1)']'="$replace($replace($replace(%_folderpath%%_directory%,%_workingpath%,),\,/),#,%%23)";)$loopend()
+
+// +++ Tooltip script code by cntchris +++ //
+// +++ Edited by nickless +++ //
+var offsetxpoint=-80;	//Customize x offset of tooltip
+var offsetypoint=20;	//Customize y offset of tooltip
+var enabletip=false;
+var tipobj = new Object();
+
+function ietruebody() { return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body }
+function ddrivetip(thetext, thewidth) {
+	if (ns5||ie5||op7) {
+		offsetxpoint=90;
+		if (typeof thewidth!="undefined") {
+			tipobj.style.width=thewidth+"px";
+			if (thewidth<160) {
+				offsetypoint = -50; 
+				offsetxpoint = -1; (thewidth >>> 1);}
+		}
+		tipobj.innerHTML=thetext;
+		enabletip=true;
+		return false;
+	}
+}
+function positiontip(e) {
+	if (enabletip) {
+		var curX=(ns5)? e.pageX : event.x+ietruebody().scrollLeft;
+		var curY=(ns5)? e.pageY : event.y+ietruebody().scrollTop;
+		//Find out how close the mouse is to the corner of the window
+		var rightedge=ie5&&!window.opera? ietruebody().clientWidth-event.clientX-offsetxpoint : window.innerWidth-e.clientX-offsetxpoint-20;
+		var bottomedge=ie5&&!window.opera? ietruebody().clientHeight-event.clientY-offsetypoint : window.innerHeight-e.clientY-offsetypoint-20;
+
+		var leftedge=(offsetxpoint<0)? offsetxpoint*(-1) : -1000;
+
+		//if the horizontal distance isn''t enough to accomodate the width of the context menu
+		if (rightedge<tipobj.offsetWidth) {
+			//move the horizontal position of the menu to the left by it''s width
+			tipobj.style.left=ie5? ietruebody().scrollLeft+event.clientX-tipobj.offsetWidth+"px" : window.pageXOffset+e.clientX-tipobj.offsetWidth+"px"
+		}
+		else { 
+			if (curX<leftedge) { tipobj.style.left="5px" }
+			else {
+				//position the horizontal position of the menu where the mouse is positioned
+				tipobj.style.left=curX+offsetxpoint+"px";
+			}
+		}
+		//same concept with the vertical position
+		if (bottomedge<tipobj.offsetHeight) {
+			tipobj.style.top=ie5? ietruebody().scrollTop+event.clientY-tipobj.offsetHeight-offsetypoint+"px" : window.pageYOffset+e.clientY-tipobj.offsetHeight-offsetypoint+"px";
+		}
+		else { tipobj.style.top=curY+offsetypoint+"px" }
+		tipobj.style.visibility="visible"
+	}
+}
+function hideddrivetip() {
+	if (ns5||ie5||op7) {
+		enabletip=false;
+		tipobj.style.visibility="hidden";
+		tipobj.style.left="-1000px";
+		tipobj.style.width='''';
+	}
+}
+
+/****************************************************
+* Cookie Functions, Formatting Functions, Quick Sort,
+  Color Themes & Effects & Custom Functions
+* Coded by nickless
+* Edited by milka
+*****************************************************/
+// +++ Browser Checks +++ //
+var nav = navigator.appVersion.indexOf("MSIE");
+var ie5 = ((nav>0) && (parseInt(navigator.appVersion.substring(nav+5, nav+6)) >= 5));	//Internet Explorer 5++
+var ns5 = ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion.substring(0, 1)) >= 5));	//Mozilla Family 5++ = Netscape 6++, FireFox etc.
+var op7 = ((navigator.appName == "Opera") && (parseInt(navigator.appVersion.substring(0, 1)) >= 7));	//Opera 7++
+if (!(ie5||ns5||op7)) alert("Warning!!!\nYour browser couldn''t be detected as a supported one (IE5++/Mozilla5++/Opera7++)\nSome functions won''t work properly");
+
+// +++ Cookie Functions +++ //
+function ReadCookie(name) {
+	var _cookie = document.cookie; 
+	var _name = name + "=";
+	var _len = _cookie.length;
+	var i = 0;
+
+	while (i < _len) {
+		var _val_from = i + _name.length;
+		if (_cookie.substring(i, _val_from) == _name) { 
+			var _val_to = _cookie.indexOf (";", _val_from);
+			if (_val_to == -1) {_val_to = _len};
+			return unescape(_cookie.substring(_val_from, _val_to));
+		}
+		i = _cookie.indexOf(" ", i) + 1;
+		if (i == 0) break;
+	}
+	return null;
+}
+// +++ Color Themes by nickless +++ //
+// +++ Edited and added Themes by milka +++ //
+
+//you can add new themes or delete them by making/deleting such arrays of colors AND links in the info table (href="javascript:SetColorTheme(''theme_name'',true,0)" )
+/* History of colors in array:
+theme_name'['0']' = background
+theme_name'['1']' = main title
+
+theme_name'['2']' = info table background
+theme_name'['3']' = info table names
+theme_name'['4']' = info table values
+theme_name'['5']' = info table link
+theme_name'['6']' = info table link hover
+theme_name'['7']' = info table line
+
+theme_name'['8']' = export table background 1
+theme_name'['9']' = export table background 2
+theme_name'['10']' = export table header background
+theme_name'['11']' = export table names
+theme_name'['12']' = export table values
+theme_name'['13']' = export table link
+theme_name'['14']' = export table link hover
+theme_name'['15']' = export table border
+
+theme_name'['16']' = about table background
+theme_name'['17']' = about table text
+theme_name'['18']' = about table link
+theme_name'['19']' = about table link hover
+*/
+
+//red theme
+ct_red = new  
+Array(''#8F4545'',''#840B00'',''#440000'',''#FFFFFF'',''#E9E9E9'',''#FFFFFF'',''#7C899C'',''#FFFFFF'',''#500000'',''#CC2200'',''#000000'',''#FFFFFF'',''#FFFFFF'',''#FFFFFF'',''#7C899C'',''#000000'',''#440000'',''#FFFFFF'',''#FFFFFF'',''#7C899C'');
+
+//blue theme
+ct_blue = new  
+Array(''#457D8F'',''#00339A'',''#00628C'',''#FFFFFF'',''#E9E9E9'',''#FFFFFF'',''#7C899C'',''#FFFFFF'',''#001050'',''#007CD2'',''#000000'',''#FFFFFF'',''#FFFFFF'',''#FFFFFF'',''#9C997C'',''#000000'',''#00628C'',''#FFFFFF'',''#FFFFFF'',''#7C899C'');
+
+//indigo theme
+ct_indigo = new  
+Array(''#C6C4C4'',''#6600A0'',''#5F7361'',''#FFFFFF'',''#E9E9E9'',''#FFFFFF'',''#7C899C'',''#FFFFFF'',''#350050'',''#8C00DC'',''#000000'',''#FFFFFF'',''#FFFFFF'',''#FFFFFF'',''#799F7C'',''#000000'',''#5F7361'',''#FFFFFF'',''#FFFFFF'',''#7C899C'');
+
+//orange theme
+ct_orange = new  
+Array(''#907053'',''#9A3300'',''#995D11'',''#FFFFFF'',''#E9E9E9'',''#FFFFFF'',''#7C899C'',''#FFFFFF'',''#502600'',''#FF7709'',''#000000'',''#FFFFFF'',''#FFFFFF'',''#FFFFFF'',''#747796'',''#000000'',''#995D11'',''#FFFFFF'',''#FFFFFF'',''#7C899C'');
+
+//yellow theme
+ct_yellow = new  
+Array(''#CE9E4E'',''#A17C00'',''#655415'',''#FFFFFF'',''#E9E9E9'',''#FFFFFF'',''#7C899C'',''#FFFFFF'',''#504000'',''#FFD933'',''#000000'',''#FFFFFF'',''#FFFFFF'',''#FFFFFF'',''#897799'',''#000000'',''#655415'',''#FFFFFF'',''#FFFFFF'',''#7C899C'');
+
+//lime theme
+ct_lime = new  
+Array(''#458F6A'',''#317023'',''#377149'',''#FFFFFF'',''#E9E9E9'',''#FFFFFF'',''#7C899C'',''#FFFFFF'',''#005000'',''#00C51C'',''#000000'',''#FFFFFF'',''#FFFFFF'',''#FFFFFF'',''#897799'',''#000000'',''#377149'',''#FFFFFF'',''#FFFFFF'',''#7C899C'');
+
+//light theme
+ct_light = new  
+Array(''#C6C4C4'',''#646363'',''#ABB0B3'',''#FFFFFF'',''#F4F2F2'',''#FFFFFF'',''#7C899C'',''#FFFFFF'',''#5A5D5F'',''#ABB0B3'',''#8D8C8C'',''#FFFFFF'',''#FFFFFF'',''#FFFFFF'',''#000000'',''#000000'',''#ABB0B3'',''#FFFFFF'',''#FFFFFF'',''#7C899C'');
+
+//night theme
+ct_night = new  
+Array(''#000000'',''#CCCCCC'',''#A0A0A0'',''#4F4F4F'',''#616161'',''#000000'',''#FFFFFF'',''#FFFFFF'',''#161616'',''#A0A0A0'',''#000000'',''#FFFFFF'',''#FFFFFF'',''#FFFFFF'',''#7E8FAC'',''#8D8C8C'',''#A0A0A0'',''#000000'',''#000000'',''#FFFFFF'');
+
+//dano theme
+ct_dano = new  
+Array(''#404142'',''#D9E2E4'',''#7B8279'',''#FFFFFF'',''#FFFFFF'',''#FFFFFF'',''#B9C2C4'',''#FFFFFF'',''#111112'',''#2C2D2E'',''#111112'',''#FFFFFF'',''#B9C2C4'',''#FFFFFF'',''#B9C2C4'',''#7B8279'',''#7B8279'',''#FFFFFF'',''#FFFFFF'',''#B9C2C4'');
+
+//mp3tag theme
+ct_mp3tag = new  
+Array(''#FF9900'',''#960000'',''#FFEFA0'',''#960000'',''#000000'',''#960000'',''#FF9900'',''#960000'',''#FF9900'',''#FFFFEE'',''#FFFFEE'',''#000000'',''#000000'',''#000000'',''#960000'',''#960000'',''#FFEFA0'',''#000000'',''#960000'',''#FF9900'');
+
+//milka theme
+ct_milka = new  
+Array(''#2D2D2D'',''#0FCADB'',''#177582'',''#FFFFFF'',''#FFFFFF'',''#9ECCCC'',''#C1FAFA'',''#9ECCCC'',''#056275'',''#089FBC'',''#177582'',''#9ECCCC'',''#9ECCCC'',''#9ECCCC'',''#C1FAFA'',''#000000'',''#177582'',''#FFFFFF'',''#9ECCCC'',''#C1FAFA'');
+
+//sunset theme
+ct_sunset = new
+Array(''#2A0402'',''#E36D30'', ''#3A0503'',''#9E3508'',''#E36D30'',''#9E3508'',''#F6DC41'',''#9E3508'',''#790300'',''#F7BB49'',''#702B08'',''#9E3508'',''#1F1F1F'',''#1F1F1F'',''#F6DC41'',''#000000'',''#3A0503'',''#E36D30'',''#9E3508'',''#F6DC41'');
+
+//gold theme
+ct_gold = new
+Array(''#876736'',''#FFFFAE'', ''#6B522B'',''#FFFFE2'',''#FFE692'',''#FFFFE2'',''#FFFFAE'',''#FFE692'',''#89773D'',''#FFF67D'',''#6B522B'',''#FFE692'',''#000000'',''#000000'',''#FFFFFF'',''#000000'',''#6B522B'',''#FFFFE2'',''#FFFFE2'',''#FFE692'');
+
+//emerald theme
+ct_emerald = new
+Array(''#246E71'',''#94E2E7'', ''#1C5659'',''#5EC0D3'',''#A8E8FC'',''#5EC0D3'',''#A8E8FC'',''#A8E8FC'',''#216567'',''#329093'',''#45757D'',''#A8E8FC'',''#5EC0D3'',''#5EC0D3'',''#A8E8FC'',''#57B1C3'',''#1C5659'',''#FFFFFF'',''#5EC0D3'',''#A8E8FC'');
+
+//arctica theme
+ct_arctica = new
+Array(''#AEB7C2'',''#FFFFFF'', ''#FFFFFF'',''#2F78BD'',''#2F78BD'',''#4F94D2'',''#4C5B6A'',''#2F78BD'',''#D8D8D8'',''#FEFEFE'',''#FFFFFF'',''#2F78BD'',''#2F78BD'',''#2F78BD'',''#4C5B6A'',''#FFFFFF'',''#FFFFFF'',''#2F78BD'',''#2F78BD'',''#4C5B6A'');
+
+//matrix theme
+ct_matrix = new
+Array(''#000000'',''#00A000'',''#000000'',''#00B000'',''#00B000'',''#00DF00'',''#00E790'',''#00E850'',''#000000'',''#005000'',''#000000'',''#00E850'',''#009000'',''#00B000'',''#00E790'',''#000000'',''#000000'',''#00A000'',''#00B000'',''#00E790'');
+
+//red desert theme
+ct_red_desert = new
+Array(''#0F0A06'',''#BA1014'',''#300000'',''#BA1014'',''#A00808'',''#BA1014'',''#FF2B20'',''#800000'',''#250010'',''#5A0000'',''#5A0000'',''#FF2B20'',''#A00808'',''#BA1014'',''#FF2B20'',''#5A0000'',''#300000'',''#FF2B20'',''#BA1014'',''#FF2B20'');
+
+//deep blue theme
+ct_deep_blue = new
+Array(''#000020'',''#00AAEE'',''#000020'',''#3030FF'',''#0080FF'',''#3030FF'',''#00CCEE'',''#0080FF'',''#000020'',''#0040B0'',''#000020'',''#0000FF'',''#0060FF'',''#0080E0'',''#00CCEE'',''#000020'',''#000020'',''#0080FF'',''#0000FF'',''#00CCEE'');
+
+//red sky theme
+ct_red_sky = new
+Array(''#09AFF4'',''#FFFFFF'',''#09AFF4'',''#3030FF'',''#1050FF'',''#3030FF'',''#FF3D3D'',''#DDEEFF'',''#09AFF4'',''#FF4952'',''#09AFF4'',''#0000FF'',''#3030FF'',''#DDEEFF'',''#FFD43D'',''#09AFF4'',''#09AFF4'',''#1050FF'',''#3030FF'',''#FF3D3D'');
+
+
+var curr_theme = new Array();	//current theme
+var old_theme = 0;	//nr of link in info table to current theme
+var old_link = 0;	//nr of link in info table to old theme
+
+function ChooseRules(rules_array) {	//makes an array with numbers of css rules which will be used in SetColorTheme()
+	var numbers = new Array(18);
+	for (i=0;i<18;i++) { numbers'['i']' = 0; }	//prevents exceptions if some class will not be found -> body background color will be changed instead
+	var s = new String("");
+	for (i=0;i<rules_array.length;i++) { 
+		s = rules_array'['i']'.selectorText.toLowerCase();	//IE css names are uppercase
+		switch (s) {
+			case ''body'': { numbers'['0']' = i; break; }				//0
+			case ''.main_title'': { numbers'['1']' = i; break; }		//1
+
+			case ''.info_table'': { numbers'['2']' = i; break; }		//2
+			case ''.info_names'': { numbers'['3']' = i; break; }		//3
+			case ''.info_values'': { numbers'['4']' = i; break; }		//4
+			case ''.info_table a'': { numbers'['5']' = i; break; }	//5
+			case ''.info_table a:hover'': { numbers'['6']' = i; break; }	//6
+			case ''.info_line'': { numbers'['7']' = i; break; }		//7
+
+			case ''.export_header'': { numbers'['8']' = i; break; }	//10 11
+			case ''.export_table'': { numbers'['9']' = i; break; }	//12 15
+			case ''.export_table a'': { numbers'['10']' = i; break; }	//13
+			case ''.export_table a:hover'': { numbers'['11']' = i; break; }//14
+
+			case ''.about_table'': { numbers'['12']' = i; break; }	//16 17
+			case ''.about_table a'': { numbers'['13']' = i; break; }	//18
+			case ''.about_table a:hover'': { numbers'['14']' = i; break; }//19
+
+			case ''.dhtmltooltip'': { numbers'['15']' = i; break; }	//16 17
+			case ''.export_header a'': { numbers'['16']' = i; break; }	//11
+			case ''.export_header a:hover'': { numbers'['17']' = i; break; }	//11
+		}
+	}
+	return numbers;
+}

@@ -1,0 +1,1194 @@
+$filename(%_folderpath%%_directory%.html,utf-8)<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META NAME="Author" CONTENT="milka (amilino@gmail.com)">
+<META NAME="Generator" CONTENT="%_app% - http://www.mp3tag.de">
+<META NAME="Date" CONTENT="%_date%">
+<title>.~ %_workingdir% ~. Overview</title>
+<style type="text/css"><!--
+body { background: #FFFFFF; font-size: 12px; SCROLLBAR-FACE-COLOR: #FFFFFF; SCROLLBAR-HIGHLIGHT-COLOR: #000000;
+SCROLLBAR-SHADOW-COLOR: #000000; SCROLLBAR-3DLIGHT-COLOR: #888888; SCROLLBAR-ARROW-COLOR: #888888;
+SCROLLBAR-TRACK-COLOR: #222222; SCROLLBAR-DARKSHADOW-COLOR: #888888 }
+
+nobr { font-size: 11px; color: #FFFFFF; padding: 2px; font-weight:bold; text-decoration: none; font-family: Tahoma,Verdana,Arial; }
+pre  { padding: 2px; text-decoration: none; font-family: Tahoma,Verdana,Arial; }
+
+.info_table {
+	background-color: #000000;
+	border: 1px solid #000000;
+	font-size: 11px;
+	font-family: Tahoma,Verdana,Arial;
+	text-align: left;
+}
+.info_table a { text-decoration: none; color: #FFFFFF; }
+.info_table a:hover { text-decoration: none; color: #000000; }
+.info_names { color: #FFFFFF; padding: 2px; font-weight: bold; width: 40%%; height: 17px; text-align: right }
+.info_values { color: #AAAAAA; padding: 2px; height: 17px; }
+.info_line { color: #AAAAAA; border-top: 1px solid #000000; }
+.info_themes  { color: #FFFFFF; text-align: center; padding: 2px; font-weight:bold; height: 17px; border-top: 1px solid #000000; border-right: 1px solid #000000; }
+
+.main_title { font-size: 20px; color: #AA0000; font-family: Tahoma,Verdana,Arial; font-weight:bold; margin: 0px; padding: 4px; }
+
+.export_table { 
+	background-color: #000000;
+	border: 0px solid #000000;
+	font-size: 11px;
+	font-family: Tahoma,Verdana,Arial;
+	color: #FFFFFF;
+	text-align: center;
+	vertical-align: middle;
+	margin: 10px 4px 10px 4px;
+	padding: 0px;
+	border-collapse: separate;
+}
+.export_table a { text-decoration: none; color: #FFFFFF; }
+.export_table a:hover { text-decoration: none; color: #000000; }
+.export_header { background-color: #000000; color: #FFFFFF; height: 18px; }
+.export_header a { text-decoration: none; color: #FFFFFF; }
+.export_header a:hover { text-decoration: none; color: #FFFFFF; }
+
+.about_table {
+	background-color: #000000;
+	border: 1px solid #000000;
+	color: #FFFFFF;
+	font-size: 11px;
+	font-family: Tahoma,Verdana,Arial;
+	text-align: center;
+	vertical-align: middle;
+	margin: 10px;
+	padding: 2px;
+}
+.about_table a { text-decoration: none; color: #FFFFFF; font-weight: bold; }
+.about_table a:hover { text-decoration: none; color: #000000; font-weight: bold; }
+.tip_table {
+	border: 0px solid #000000;
+	font-size: 11px;
+	font-family: Tahoma,Verdana,Arial;
+	text-align: left;
+	vertical-align: middle;
+	margin: 0px;
+	padding: 2px;
+}
+
+/* +++ Tooltip by ctnchris +++ */
+/* +++ Edited by nickless & milka +++ */
+/*
+	Tangering Structure CSS
+	Copyright wehnerj (jwehner@wehnerweb.com)
+	http://www.wehnerweb.com
+
+	LEAVE THIS COMMENT INTACT
+*/
+.dhtmltooltip {
+	border: 1px solid black;
+	background-color: #7B8279;
+	color: white;
+	font-family: Tahoma,Verdana,Arial;
+	font-size: 11px;
+	text-align:left;
+	padding: 2px;
+}
+
+#dhtmltooltip {
+	position: absolute;
+	width: 300px;
+	visibility: hidden;
+	z-index: 100;
+	/* Remove following 3 lines to remove tooltip alpha blending. */
+	filter:alpha(opacity=88);
+	-moz-opacity: 0.88;
+	opacity: 0.88;
+}
+//--></style>
+
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT" SRC="$replace($num(0,$sub($folderdepth(%_folderpath%),$folderdepth(%_workingpath%))),0,../)search_data.js"></SCRIPT>
+
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT"><!--
+// All functions are created by milka.                   //
+// Functions can be used when credit is given. It        //
+// should look like this:                                //
+/* +++ script name by milka +++ */                       //
+
+// When you classify it in such a way, you are free to   //
+// use the script.                                       //
+// this export script was last modified: 26.08.2006      //
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
+// ++++++++++++++++++ DEFINE THE NAMES ++++++++++++++++++ //
+// Here you can define the names of the image links (set  //
+// link & name to "" for no image).                       //
+// You can even define the whole name of the file!!!      //
+// And you can define image names that are placed in      //
+// pictures list.                                         //
+
+var dynimages=new Array();
+// Define image links and image names:
+dynimages'['0']'='['"cover.jpg", "* Cover"']'
+dynimages'['1']'='['"cover2.jpg", "* Cover2"']'
+dynimages'['2']'='['"", ""']'
+dynimages'['3']'='['"", ""']'
+dynimages'['4']'='['"", ""']'
+dynimages'['5']'='['"", ""']'
+dynimages'['6']'='['"", ""']'
+dynimages'['7']'='['"", ""']'
+dynimages'['8']'='['"", ""']'
+dynimages'['9']'='['"", ""']'
+dynimages'['10']'='['"", ""']'
+dynimages'['11']'='['"", ""']'
+dynimages'['12']'='['"", ""']'
+dynimages'['13']'='['"", ""']'
+dynimages'['14']'='['"", ""']'
+
+
+/* +++ Album navigation by SquallLeonhart38 & milka +++ */
+directory = "$replace($replace($replace(%_folderpath%%_directory%,%_workingpath%,),\,/),#,%%23)";
+backs = "$replace($num(0,$sub($folderdepth(%_folderpath%),$folderdepth(%_workingpath%))),0,../)";
+
+function previous_link() {
+var link_1  = "<a id=\"other_21\" onMouseOver=\"ddrivetip(''<b>";
+var link_1_1 = "</b>'', 159); over_link(this,0,21)\" onMouseOut=\"out_link(this,0,21)\" href=\"";
+var link_2 = "\">P<br>r<br>e<br>v<br>i<br>o<br>u<br>s<br><\/a>";
+var prevlinkid;
+	for(var c = 0; c < a.length; c++) {
+		if(a'['c']' == directory) {
+			prevlinkid = (c-1);
+			break;
+		}
+	}
+	if(prevlinkid != -1) {
+		var temp = new Array();
+		temp = a'['prevlinkid']'.split(''/'');
+
+		var href = backs + a'['prevlinkid']' + ".html";
+		var link = link_1 + temp'['temp.length - 1']' + link_1_1 + href + link_2;
+	}else{
+		var link = "P<br>r<br>e<br>v<br>i<br>o<br>u<br>s<br>";
+	}
+document.write(link);
+}
+
+function next_link() {
+var link_1 = "<a id=\"other_22\" onMouseOver=\"ddrivetip(''<b>";
+var link_1_1 = "</b>'', 159); over_link(this,0,22)\" onMouseOut=\"out_link(this,0,22)\" href=\"";
+var link_2 = "\">N<br>e<br>x<br>t<br><\/a>";
+var nextlinkid;
+	for(var c = 0; c < a.length; c++) {
+		if(a'['c']' == directory) {
+			nextlinkid = (c+1);
+			break;
+		}
+	}
+	if(nextlinkid < a.length) {
+		var temp = new Array();
+		temp = a'['nextlinkid']'.split(''/'');
+
+		var href = backs + a'['nextlinkid']' + ".html";
+	if(nextlinkid == 1){
+		var link_1 = "<a id=\"other_21\" onMouseOver=\"ddrivetip(''<b>";
+		var link_1_1 = "</b>'', 159); over_link(this,0,21)\" onMouseOut=\"out_link(this,0,21)\" href=\"";
+	}
+		var link = link_1 + temp'['temp.length - 1']' + link_1_1 + href + link_2;
+	}else{
+		var link = "N<br>e<br>x<br>t";
+	}
+document.write(link);
+}
+/* +++ Auto-Sizing Image Popup Window +++ */
+/* +++++ script by SquallLeonhart38 +++++ */
+/* +++ Edited by milka +++ */
+
+// Set the horizontal and vertical position for the popup
+var Start_X = 100;
+var Start_Y = 100;
+// Set these value approximately 20 pixels greater than the
+// size of the largest image to be used (needed for Netscape)
+var img_Width  = 500;
+var img_Height = 500;
+
+// Do not edit below this line...
+// ================================
+if(navigator.userAgent.indexOf("Opera") != -1) {defaultWidth = screen.availWidth;defaultHeight = screen.availHeight;}
+var img_option = "scrollbars=no, status=no, toolbar=no, menubar=no, dependent=yes, location=no, resizable=no, width=" + img_Width + ", height=" + img_Height + ", left=" + Start_X + ", top=" + Start_Y;
+function popImage(imgName) {
+	var imageURL = imgName;
+	var imageTitle = "%_directory%";
+	var image_window=window.open("about:blank","Albumcover",img_option);
+	with(image_window.document) {
+		writeln("<html><head><title>" + imageTitle + "<\/title><script><!--");
+		writeln("var isNN,isIE,isOO;");
+			writeln("isNN = (navigator.appName == \"Netscape\" && navigator.userAgent.indexOf(\"Opera\") == -1)?1:0;");
+			writeln("isOO = (navigator.userAgent.indexOf(\"Opera\") != -1)?1:0;");
+			writeln("isIE = (navigator.appName.indexOf(\"Microsoft\") != -1 && navigator.userAgent.indexOf(\"Opera\") == -1)?1:0;");
+		writeln("function resizepopup() {");
+			writeln("if(isIE) {");
+				writeln("window.resizeTo(100,100);");
+				writeln("width = 100-(document.body.clientWidth-document.images'['0']'.width);");
+				writeln("height = 100-(document.body.clientHeight-document.images'['0']'.height);");
+				writeln("window.resizeTo(width,height);}");
+			writeln("if(isNN) {");       
+				writeln("window.innerWidth=document.images'['0']'.width;");
+				writeln("window.innerHeight=document.images'['0']'.height;}");
+			writeln("if(isOO) {");
+				writeln("window.resizeTo(100,100);");
+				writeln("width = 100-(document.body.clientWidth-document.images'['0']'.width)+12;");
+				writeln("height = 100-(document.body.clientHeight-document.images'['0']'.height)-16;");
+				writeln("window.resizeTo(width,height);}}");
+		writeln("//--><\/script><\/head>");
+		writeln("<body style=\"margin: 0px; padding: 0px\" onload=\"resizepopup();self.focus()\">");
+		writeln("<img name=\"cover\" src=\"" + imageURL + "\"><\/body><\/html>");
+	close();
+	}
+}
+/* +++ Show/hide by milka +++ */
+function show_themes(id) {
+	if(document.getElementById("show_themes" + id).style.display == ''none'') {
+		document.getElementById("show_themes" + id).style.display = '''';
+	}else{
+		document.getElementById("show_themes" + id).style.display = ''none'';
+	}
+}
+
+function show_pictures(id) {
+	if(document.getElementById("show_pictures" + id).style.display == ''none'') {
+		document.getElementById("show_pictures" + id).style.display = '''';
+	}else{
+		document.getElementById("show_pictures" + id).style.display = ''none'';
+	}
+}
+
+function show_review(id) {
+	if(document.getElementById("show_review" + id).style.display == ''none'') {
+		document.getElementById("show_review" + id).style.display = '''';
+	}else{
+		document.getElementById("show_review" + id).style.display = ''none'';
+	}
+}
+/* +++ Image Thumbnail Viewer II +++ */
+// +++ Edited by milka +++ //
+
+//Preload images ("yes" or "no"):
+var preloadimg="no"
+//Optionally, change 1.0 and 0.7 below to affect Wipe gradient size and duration in seconds in IE5.5+:
+var filterstring="progid:DXImageTransform.Microsoft.GradientWipe(GradientSize=1.0 Duration=0.7)"
+
+///////No need to edit beyond here/////
+if (preloadimg=="yes"){
+for (x=0; x<dynimages.length; x++){
+var myimage=new Image()
+myimage.src=dynimages'['x']''['0']'
+}
+}
+
+function returnimgcode(theimg){
+var imghtml=""
+if (theimg'['1']'!="")
+imghtml=''<a id="ab_0" href="javascript:popImage(\''''+theimg'['0']'+''\'')" onMouseOver="over_link(this,2,0)" onMouseOut="out_link(this,2,0)">''
+imghtml+=''<img src="''+theimg'['0']'+''" class="info_line" id="image_border" width="180" border=1 /*height="180"*/>''
+if (theimg'['0']'!="")
+imghtml+=''</a>''
+return imghtml
+}
+
+function modifyimage(loadarea, imgindex){
+if (document.getElementById){
+var imgobj=document.getElementById(loadarea)
+if (imgobj.filters && window.createPopup){
+imgobj.style.filter=filterstring
+imgobj.filters'['0']'.Apply()
+}
+imgobj.innerHTML=returnimgcode(dynimages'['imgindex']')
+if (imgobj.filters && window.createPopup)
+imgobj.filters'['0']'.Play()
+return false
+}
+}
+
+/****************************************************
+* Cookie Functions, Formatting Functions, Quick Sort,
+  Color Themes & Effects & Custom Functions
+* Coded by nickless
+* Edited by milka
+*****************************************************/
+// +++ Cookie Functions +++ //
+function WriteCookie(name, value, expire_time) { //expire_time in hours
+	_expire_date =  new Date();
+	_expire_date.setTime(_expire_date.getTime() + expire_time * 1000 * 3600);
+
+	document.cookie = name + "=" + escape(value) + "; expires=" + _expire_date.toGMTString() + "; path=/";
+}
+function DeleteCookie(name) { document.cookie = name + "=; expires=Thu, 01-Jan-80 00:00:01 GMT; path=/"; }
+
+// +++ Formatting Functions +++ //
+function fmtNull(number, n) {
+	var _result = new String("");
+	var _l = n-Math.ceil(Math.log(number+1)/Math.LN10);
+	if (number==0) _l = n-1;
+	for (var _j=0;_j<_l;_j++) { _result +="0"; }
+
+	return _result += number;
+}
+
+// +++ Arrayed Java Export by nickless +++ //
+// +++ Edited by milka +++ //
+var table_length = %_total_files%;	//length of the table
+var s = new Array(table_length);	//main export array
+
+/* history of subarray fields usage
+s'['n']'=new Array(12);	//creates a new subarray in the n-th line of table
+s'['n']''['0']'=counter
+s'['n']''['1']'=artist
+s'['n']''['2']'=track
+s'['n']''['3']'=title
+s'['n']''['4']'=length in minutes:seconds format
+s'['n']''['5']'=bitrate (digits only)
+s'['n']''['6']'=bitrate information ( kbps VBR/CBR)
+s'['n']''['7']'=comment
+s'['n']''['8']'=size of file
+s'['n']''['9']'=written tags
+s'['n']''['10']'=filename with extension
+s'['n']''['11']'=length in seconds (digits only)
+*/
+
+//you can delete fields you don''t need (memory & performance), but delete ALL cases where they are used everywhere in the file!
+$loop(%_filename_ext%)
+s'['$sub(%_counter%,1)']'=new Array(12);
+s'['$sub(%_counter%,1)']''['0']'="%_counter%";
+s'['$sub(%_counter%,1)']''['1']'="$replace($replace($replace($replace(%artist%,\,\\),$char(10),<br>),$char(13), ),",\")";
+s'['$sub(%_counter%,1)']''['2']'="$num(%track%,2)";
+s'['$sub(%_counter%,1)']''['3']'="$replace($replace($replace($replace(%title%,\,\\),$char(10),<br>),$char(13), ),",\")";
+s'['$sub(%_counter%,1)']''['4']'="$div(%_length_seconds%,60):$num($sub(%_length_seconds%,$mul($div(%_length_seconds%,60),60)),2)";
+s'['$sub(%_counter%,1)']''['5']'=%_bitrate%;
+s'['$sub(%_counter%,1)']''['6']'=" kbps$if($eql(%_vbr%,CBR),, %_vbr%)";
+s'['$sub(%_counter%,1)']''['7']'="$replace($replace($replace($replace(%comment%,\,\\),$char(10),<br>),$char(13), ),",\")";
+s'['$sub(%_counter%,1)']''['8']'="%_file_size%";
+s'['$sub(%_counter%,1)']''['9']'="%_tag%";
+s'['$sub(%_counter%,1)']''['10']'="$replace(%_filename_rel%,#,%%23)";
+s'['$sub(%_counter%,1)']''['11']'=%_length_seconds%;$loopend()
+
+// +++ Average Bitrate Calculations +++ //
+var avg_btr_file = 0;
+var avg_btr_second = 0;
+var avg_length = 0;
+for (i=0; i<table_length;i++) {
+	avg_btr_file += s'['i']''['5']';
+	avg_btr_second += s'['i']''['11']' * s'['i']''['5']';
+	avg_length += s'['i']''['11']';
+}
+avg_btr_file /= table_length;
+avg_btr_second /= avg_length;
+avg_length = Math.round(avg_length/table_length);
+
+// +++ Array Object Extension +++ //
+//public functions
+Array.prototype.sortBy = sortBySubarrayNr;	//call name_of_the_array.sortBy() to sort the array by nr. in subarray in alphabetical (A->Z or Z-A) order (optionally)
+Array.prototype.sortByStack = sortByStack;	//call name_of_the_array.sortBy() to sort the array by settings setted with push_stack
+Array.prototype.push_stack = push_stack;	//add subarray nr and order to sorting history, array will be sorted my all this (up to 5) criteria
+
+//internal functions & properties
+Array.prototype.multisort = multisort;
+Array.prototype.xchange = xchange;
+Array.prototype.compare = compare;
+Array.prototype.quicksort = quicksort;
+Array.prototype.sort_stack = new Array(-1,-1,-1,-1,-1);	//contains history of sorting for sorting by multiple criteria; -1=not sorted, 0++=sorted by subarray nr; internal use, don''t change directly!!!
+Array.prototype.order_stack = new Array(true,true,true,true,true);	//contains history of sorting order; true = A->Z, false = Z->A; internal use, don''t change directly!!!
+
+// +++ Quick Sort +++ //
+function sortBySubarrayNr(sub_nr, order) {	//sorts array by entry nr. sub_nr in (alphabetical or not) order; internal use, don''t call directly!!!
+	this.push_stack(sub_nr,order);
+	this.multisort(0,this.length-1,0);
+}
+function sortByStack() { this.multisort(0,this.length-1,0) }	//internal use, don''t call directly!!!
+function multisort(from_a, to_b, stack_level) {  //sorts by multiple criteria; internal use, don''t call directly!!!
+	if ((stack_level>=this.sort_stack.length)||(this.sort_stack'['stack_level']'<0)) { return }
+	this.quicksort(from_a,to_b,stack_level);
+	if ((stack_level+1>=this.sort_stack.length)||(this.sort_stack'['stack_level+1']'<0)) { return }
+	var a = from_a+1;
+	var b = from_a;
+	while (a<=to_b) {
+		while ((a<=to_b)&&(this'['a-1']''['this.sort_stack'['stack_level']'']'!=this'['a']''['this.sort_stack'['stack_level']'']')) { a++ }
+		b = a+1;
+		while ((b<=to_b)&&(this'['a']''['this.sort_stack'['stack_level']'']'==this'['b']''['this.sort_stack'['stack_level']'']')) { b++ }
+		if (a>to_b) { return }
+		this.multisort(a-1,b-1,stack_level+1);
+		a = b+1;
+	}
+}
+function push_stack(last_sort, last_order) {  //internal use, don''t call directly!!!
+	if (last_sort < 0) return;
+	if (this.sort_stack'['0']' == last_sort) {	//prevent sorting multiple times by the same criterion
+		if (!last_order) { this.order_stack'['0']' = !(this.order_stack'['0']') }	//reverse order if not defined
+		else { this.order_stack'['0']' = last_order }
+		return;
+	}
+	for (var i=this.sort_stack.length-1;i>0;i--) {
+		this.sort_stack'['i']' = this.sort_stack'['i-1']';
+		this.order_stack'['i']' = this.order_stack'['i-1']';
+	}
+	if (!last_order) { last_order = true }
+	this.sort_stack'['0']' = last_sort;
+	this.order_stack'['0']' = last_order;
+}
+function xchange(nr1, nr2) {  //internal use, don''t call directly!!!
+	var temp = this'['nr1']';
+	this'['nr1']' = this'['nr2']';
+	this'['nr2']' = temp;
+}
+function compare(n1, n2, stack_nr) {  //internal use, don''t call directly!!!
+	if (this.order_stack'['stack_nr']') { return(this'['n1']''['this.sort_stack'['stack_nr']'']' < this'['n2']''['this.sort_stack'['stack_nr']'']') }
+	else { return(this'['n1']''['this.sort_stack'['stack_nr']'']' > this'['n2']''['this.sort_stack'['stack_nr']'']') };
+}
+function quicksort(left, right, stack_pos) {  //internal use, don''t call directly!!!
+	var l, r, x;
+
+	l = left;
+	r = right;
+	x = (left + right)>>>1;
+
+	do { 
+		while(this.compare(l, x, stack_pos)) { l++ };
+		while(this.compare(x, r, stack_pos)) { r-- };
+		if(l <= r) { 
+			this.xchange(l, r);
+
+			//x==l? r : x==r? l : x;
+			if(x == l) { x = r }
+			else { if(x == r) {x = l} }
+
+			l++;
+			r--;
+		}
+	} while(l < r);
+
+	if (r > left) { this.quicksort(left, r, stack_pos) };
+	if (l < right) { this.quicksort(l, right, stack_pos) };
+}
+
+// +++ Gradient Colors Calculation by nickless +++ //
+function ToColor(r, g, b) {		//convert red, green & blue channels to html color
+	return ''#'' + (0x1000000+(r<<16)+(g<<8)+b).toString(16).substr(1,6);
+}
+var gcolor_1 =  new Array(''#000000'',0,0,0);	//first color + r,g,b-channels
+var gcolor_2 = new Array(''#FFFFFF'',255,255,255);	//second color + r,g,b-channels
+var glength = 1;	//current length of the gradient effect period (number of lines)
+var gdirection = 0;	//current direction of gradient effect 0 = up, 1 = down
+var gtype = 0;	//current type of gradient effect 0 = gradient, 1 = mirror, 2 = repeat
+function SetGradientColor(color_1, color_2) {	//set up gradient colors 1 & 2 so they can be used later in UpdateGradientTable() & GetCurrentColor()
+	gcolor_1'['0']' = color_1;
+	if (color_1.length == 7) { 
+		gcolor_1'['1']' = parseInt(color_1.substr(1,2), 16);
+		gcolor_1'['2']' = parseInt(color_1.substr(3,2), 16);
+		gcolor_1'['3']' = parseInt(color_1.substr(5,2), 16);
+	}
+	else {
+		gcolor_1'['1']' = 0;
+		gcolor_1'['2']' = 0;
+		gcolor_1'['3']' = 0;
+	};
+	
+	gcolor_2'['0']' = color_2;
+	if (color_2.length == 7) {
+		gcolor_2'['1']' = parseInt(color_2.substr(1,2), 16);
+		gcolor_2'['2']' = parseInt(color_2.substr(3,2), 16);
+		gcolor_2'['3']' = parseInt(color_2.substr(5,2), 16);
+	}
+	else {
+		gcolor_2'['1']' = 255;
+		gcolor_2'['2']' = 255;
+		gcolor_2'['3']' = 255;
+	};
+}
+function UpdateGradientTable() {	//recalculate colors in whole table according to current settings
+	var tr_obj = 0;
+	if (!document.getElementById("tab_lines")) { return }
+	tr_obj = document.getElementById("tab_lines").childNodes;
+	var curr_i = 0;
+	for (i=1;i<tr_obj.length;i++) {
+		if (tr_obj'['i']'.nodeName == ''TR'') {
+			tr_obj'['i']'.style.backgroundColor = GetCurrentColor(curr_i);
+			curr_i++;
+		}
+	}
+}
+function SetGradientLDTU(g_length, g_direction, g_type, update_now, link_nr) {	//set up length, direction and type of gradient calculations, update table if necessary
+	g_length < 1? glength = 1 : glength = g_length;
+	g_direction < 0? gdirection = 0 : g_direction > 1? gdirection = 1 : gdirection = g_direction;
+	g_type < 0? gtype = 0 : g_type > 2? gtype = 2 : gtype = g_type;
+	
+	if (curr_theme.length > 0) {
+		if (gdirection == 0) { SetGradientColor(curr_theme'['8']', curr_theme'['9']') }
+		if (gdirection == 1) { SetGradientColor(curr_theme'['9']', curr_theme'['8']') }
+	}
+	UpdateLinks(-1,Number(link_nr));
+	//write current length, direction and type of gradient calculations to cookie 
+	if (update_now) { 
+		WriteCookie(''current_gradient_length'',glength,24*14);
+		WriteCookie(''current_gradient_direction'',gdirection,24*14);
+		WriteCookie(''current_gradient_type'',gtype,24*14);
+		if (Number(link_nr)>=0) { 
+			curr_link_nr = Number(link_nr); 
+			WriteCookie(''current_link_nr'',link_nr,24*14) 
+		}
+		UpdateGradientTable(); 
+	}
+}
+function GetCurrentColor(curr_position) {	//get color (html) of the gradient effect on the current position according to current settings
+	switch (gtype) {
+		case 0: {	//gradient
+			var m = (curr_position %% (glength+1)) / glength;
+			var r = gcolor_2'['1']' + Math.round((gcolor_1'['1']' - gcolor_2'['1']')*m);
+			var g = gcolor_2'['2']' + Math.round((gcolor_1'['2']' - gcolor_2'['2']')*m);
+			var b = gcolor_2'['3']' + Math.round((gcolor_1'['3']' - gcolor_2'['3']')*m);
+			return ToColor(r,g,b);  //''rgb('' + r + '', '' + g + '', '' + b + '')'';
+			break;
+		}
+		case 1: {	//mirror
+			var m = Math.cos((curr_position / glength) *2*Math.PI)/2+0.5;
+			var r = gcolor_1'['1']' + Math.round((gcolor_2'['1']' - gcolor_1'['1']')*m);
+			var g = gcolor_1'['2']' + Math.round((gcolor_2'['2']' - gcolor_1'['2']')*m);
+			var b = gcolor_1'['3']' + Math.round((gcolor_2'['3']' - gcolor_1'['3']')*m);
+			return ToColor(r,g,b);  //''rgb('' + r + '', '' + g + '', '' + b + '')'';
+			break;
+		}
+		case 2: {	//repeat
+			if ((Math.floor(curr_position / glength) & 0x00000001) == 1) { return gcolor_1'['0']' }
+			else { return gcolor_2'['0']' };
+			break;
+		}
+		default: {
+			return "#000000";
+		}
+	}
+}
+
+// +++ Color Themes by nickless +++ //
+function UpdateLinks(theme_nr, link_nr) {	//updates colors of links to themes, direction and type of effect in the info table
+	//direction
+	var obj = document.getElementById("dir_" + Number(1-gdirection));	//clear color of old link
+	if (obj) { 
+		obj.style.color = '''';
+		if (!document.styleSheets) { obj.style.color = curr_theme'['5']' }
+	}
+	var obj = document.getElementById("dir_" + gdirection);	//set color of new link
+	if (obj) { obj.style.color = curr_theme'['6']' }
+	//color themes
+	if (Number(theme_nr)>=0) {
+		var obj = document.getElementById("ct_" + old_theme);
+		if (obj) { 
+			obj.style.color = '''';
+			if (!document.styleSheets) { obj.style.color = curr_theme'['5']' }
+		}
+		old_theme = Number(theme_nr);
+		var obj = document.getElementById("ct_" + theme_nr);
+		if (obj) { obj.style.color = curr_theme'['6']' }
+	}
+	//type
+	if (Number(link_nr)>=0) {
+		var obj = document.getElementById("type_" + old_link);
+		if (obj) { 
+			obj.style.color = '''';
+			if (!document.styleSheets) { obj.style.color = curr_theme'['5']' }
+		}
+		old_link = Number(link_nr);
+		var obj = document.getElementById("type_" + link_nr);
+		if (obj) { obj.style.color = curr_theme'['6']' }
+	}
+}
+function SetColorTheme(name, update_now, theme_nr) {	//applies a color theme to document by it''s name and updates the table if necessary; name = name of the array with colors (s.th. like "ct_red")
+	curr_theme = eval(name);
+	if (!curr_theme) { return };
+	var all_rules = new Array();
+	var all_nums = new Array();
+	
+	SetGradientColor(curr_theme'['8']', curr_theme'['9']');	//set up export table backgrounds 1 & 2
+	if (document.styleSheets) {	//mozilla/ie browsers allows change css rules
+		if (document.styleSheets'['0']'.rules) { all_rules =  document.styleSheets'['0']'.rules;}	//IE
+		if (document.styleSheets'['0']'.cssRules) { all_rules =  document.styleSheets'['0']'.cssRules;}	//Netscape
+	
+		if (!all_rules) {return};	//unknown browser that supports document.styleSheets but neither rules nor cssRules
+		all_nums = ChooseRules(all_rules);
+	
+		all_rules'['all_nums'['0']'']'.style.backgroundColor = curr_theme'['0']';	//background
+		all_rules'['all_nums'['1']'']'.style.color = curr_theme'['1']';	//main title
+
+		all_rules'['all_nums'['2']'']'.style.backgroundColor  = curr_theme'['2']';	//info table background
+		all_rules'['all_nums'['2']'']'.style.borderColor = curr_theme'['7']';	//info table border
+		all_rules'['all_nums'['3']'']'.style.color = curr_theme'['3']';	//info table names
+		all_rules'['all_nums'['4']'']'.style.color = curr_theme'['4']';	//info table values
+		all_rules'['all_nums'['5']'']'.style.color = curr_theme'['5']';	//info table link
+		all_rules'['all_nums'['6']'']'.style.color = curr_theme'['6']';	//info table link hover
+		all_rules'['all_nums'['7']'']'.style.borderTopColor = curr_theme'['7']';	//info table line
+		all_rules'['all_nums'['7']'']'.style.borderRightColor = curr_theme'['7']';	//info table line
+		all_rules'['all_nums'['7']'']'.style.borderLeftColor = curr_theme'['7']';	//info table line
+		all_rules'['all_nums'['7']'']'.style.borderBottomColor = curr_theme'['7']';	//info table line
+
+		all_rules'['all_nums'['8']'']'.style.backgroundColor = curr_theme'['10']';	//export table header background
+		all_rules'['all_nums'['8']'']'.style.color = curr_theme'['11']';	//export table names
+		all_rules'['all_nums'['16']'']'.style.color = curr_theme'['13']';	//export table names link
+		all_rules'['all_nums'['17']'']'.style.color = curr_theme'['14']';	//export table names link hover
+		all_rules'['all_nums'['9']'']'.style.color = curr_theme'['12']';	//export table values
+		all_rules'['all_nums'['10']'']'.style.color = curr_theme'['13']';	//export table link
+		all_rules'['all_nums'['11']'']'.style.color = curr_theme'['14']';	//export table link hover
+		all_rules'['all_nums'['9']'']'.style.backgroundColor = curr_theme'['15']';	//export table background
+
+		all_rules'['all_nums'['12']'']'.style.backgroundColor  = curr_theme'['16']';	//about table background
+		all_rules'['all_nums'['12']'']'.style.borderColor = curr_theme'['7']';	//about table border
+		all_rules'['all_nums'['12']'']'.style.color = curr_theme'['17']';	//about table text
+		all_rules'['all_nums'['13']'']'.style.color = curr_theme'['18']';	//about table link
+		all_rules'['all_nums'['14']'']'.style.color = curr_theme'['19']';	//about table link hover
+
+		all_rules'['all_nums'['15']'']'.style.backgroundColor  = curr_theme'['16']';	//popup background
+		all_rules'['all_nums'['15']'']'.style.color = curr_theme'['17']';	//popup text
+		all_rules'['all_nums'['15']'']'.style.borderColor = curr_theme'['7']';	//popup border
+	}
+	else {	//browser don''t support document.styleSheets = Opera etc.
+		//body & main title
+		document.body.style.backgroundColor = curr_theme'['0']';
+		var obj = document.getElementById(''main_title'');
+		if (obj) {obj.style.color = curr_theme'['1']'};
+		//info table
+		var obj = document.getElementById(''info_table'');
+		if (obj) {
+			obj.style.backgroundColor = curr_theme'['2']';
+			obj.style.borderColor = curr_theme'['7']'};
+		var obj = document.getElementById(''info_table_l'');
+		if (obj) {
+			obj.style.backgroundColor = curr_theme'['2']';
+			obj.style.borderColor = curr_theme'['7']'};
+		var obj = document.getElementById(''info_table_r'');
+		if (obj) {
+			obj.style.backgroundColor = curr_theme'['2']';
+			obj.style.borderColor = curr_theme'['7']'};
+		var i = 0;
+		do {
+			var obj = document.getElementById(''info_names_''+i);
+			if (obj) {obj.style.color = curr_theme'['3']'};
+			i++;
+		} while (obj);
+		i = 0;
+		do {
+			var obj = document.getElementById(''info_values_''+i);
+			if (obj) {obj.style.color = curr_theme'['4']'};
+			i++;
+		} while (obj);
+		i = 0;
+		do {
+			var obj = document.getElementById(''info_line_''+i);
+			if (obj) {obj.style.borderTopColor = curr_theme'['7']';}
+			i++;
+		} while (obj);
+		var obj = document.getElementById(''image_border'');
+		if (obj) {
+				obj.style.borderTopColor = curr_theme'['7']';
+				obj.style.borderRightColor = curr_theme'['7']';
+				obj.style.borderLeftColor = curr_theme'['7']';
+				obj.style.borderBottomColor = curr_theme'['7']';
+		}
+		//all links
+		i = 0;
+		do {
+			var obj = document.getElementById(''ct_''+i);	//color themes
+			if (obj) { obj.style.color = curr_theme'['5']' }
+			i++;
+		} while (obj);
+		i = 0;
+		do {
+			var obj = document.getElementById(''dir_''+i);	//gradient directions
+			if (obj) { obj.style.color = curr_theme'['5']' }
+			i++;
+		} while (obj);
+		i = 0;
+		do {
+			var obj = document.getElementById(''type_''+i);	//gradient types
+			if (obj) { obj.style.color = curr_theme'['5']' }
+			i++;
+		} while (obj);
+		i = 0;
+		do {
+			var obj = document.getElementById(''other_''+i);	//gradient types
+			if (obj) { obj.style.color = curr_theme'['5']' }
+			i++;
+		} while (obj);
+		i = 0;
+		do {
+			var obj = document.getElementById(''h_link_''+i);	//links in the header of export table
+			if (obj) { obj.style.color = curr_theme'['13']' }
+			i++;
+		} while (obj);
+		i = 0;
+		do {
+			var obj = document.getElementById(''ex_''+i);	//extended info
+			if (obj) { obj.style.color = curr_theme'['13']'; }
+			i++;
+		} while (obj&&update_now);
+		i = 0;
+		do {
+			var obj = document.getElementById(''link_''+i);	//links to exported files 
+			if (obj) { obj.style.color = curr_theme'['13']'; }
+			i++;
+		} while (obj&&update_now);
+		i = 0;
+		do {
+			var obj = document.getElementById(''ab_''+i);	//links in the about table
+			if (obj) { obj.style.color = curr_theme'['18']' }
+			i++;
+		} while (obj);
+		//export table
+		var obj = document.getElementById(''export_header'');
+		if (obj) {
+			obj.style.backgroundColor = curr_theme'['10']';
+			obj.style.color = curr_theme'['11']';
+		}
+		var obj = document.getElementById(''export_table'');
+		if (obj) {
+			obj.style.color = curr_theme'['12']';
+			obj.style.backgroundColor = curr_theme'['15']';
+		}
+		//about table
+		var obj = document.getElementById(''about_table'');
+		if (obj) {
+			obj.style.backgroundColor = curr_theme'['16']';
+			obj.style.color = curr_theme'['17']';
+			obj.style.borderColor = curr_theme'['7']';
+		}
+		//popup; color scheme = info table
+		var obj = document.getElementById(''dhtmltooltip'');
+		if (obj) {
+			obj.style.backgroundColor = curr_theme'['16']';
+			obj.style.color = curr_theme'['17']';
+			obj.style.borderColor = curr_theme'['7']';
+		}
+	}
+	UpdateLinks(Number(theme_nr), -1);	//update colors of links
+	//set up gradient effect
+	SetGradientLDTU(glength, gdirection, gtype, update_now, old_link);
+	if (update_now) {
+		//write current color theme to cookie
+		WriteCookie(''current_color_theme'', name, 24*14); 
+		if (Number(theme_nr)>=0) { 
+			curr_theme_nr = Number(theme_nr);
+			WriteCookie(''current_theme_nr'', String(theme_nr), 24*14) 
+		} 
+	}
+}
+
+// +++ Custom Functions +++ //
+function full_loaded() {	//update links & colors after page is loaded
+	if (!document.styleSheets) { 	//opera fix
+		if (curr_ct) { SetColorTheme(curr_ct, false, -1) }
+		else { SetColorTheme(''ct_milka'', false, -1) }	//default color theme for opera nr2
+	}
+	if (!curr_theme_nr) {  //set default color theme link for opera
+		curr_theme_nr = 14;  //ct_milka
+	
+	}
+	if (!curr_link_nr) {  //set default effect link for opera
+		curr_link_nr = 3;  //mirror 33
+	}
+	
+	UpdateLinks(Number(curr_theme_nr), Number(curr_link_nr));  //set links to current color settings
+}
+function over_link(obj, table_nr, link_nr) {	//handle mouseover events of links in whole document; obj=link, table_nr:0=info_table,1=export_table,2=about_table, link_nr=nr of link that sent the event
+//all tooltip textes are defined here
+	switch (table_nr) {
+		case 0: {	//info table
+			if (!document.styleSheets && obj) { obj.style.color = curr_theme'['6']'; }	//onhover for opera
+			switch (obj.id.charAt(0)) {
+				case ''c'': {	//color theme popup
+					ddrivetip(''Switch Color Theme To <br><b>'' + obj.firstChild.nodeValue + ''</b>'', 130);
+					break;
+				}
+				case ''d'': {	//direction popup
+					ddrivetip(''Switch Direction <br>Of Gradient Effect To<br><b>'' + obj.firstChild.nodeValue + ''</b>'', 110);
+					break;
+				}
+				case ''t'': {	//type popup
+					ddrivetip(''Switch Type Of <br>Gradient Effect To<br><b>'' + obj.firstChild.nodeValue + ''</b>'', 110);
+					break;
+				}
+			}			
+			break;
+		}
+		case 1: {	//export table
+			switch (obj.id.charAt(0)) {
+				case ''h'': {	//header popup
+					if (!document.styleSheets && obj) { obj.style.color = curr_theme'['14']'; } //onhover for opera
+					ddrivetip(''Sort Table By<br><b>'' + obj.firstChild.nodeValue + ''</b>'', 80);
+					break;
+				}
+				case ''l'': {	//extended info popup
+					if (!document.styleSheets && obj) { obj.style.color = curr_theme'['14']'; }	//onhover for opera
+					//extended information popup
+					ddrivetip(''<table class="tip_table" style="color:'' + curr_theme'['3']' + ''; width:320px;">''
+						+ ''<tr><td style="font-weight:bold; text-align:right; width:70px;" valign="top">Comment:</td><td style="color:'' + curr_theme'['4']' + ''; width:250px;">'' + s'['link_nr']''['7']' + ''</td></tr>''
+						+ ''<tr><td style="font-weight:bold; text-align:right;">Bitrate:</td><td style="color:'' + curr_theme'['4']' + ''">'' + s'['link_nr']''['5']' + s'['link_nr']''['6']' + ''</td></tr>''
+						+ ''<tr><td style="font-weight:bold; text-align:right;">Tag(s):</td><td style="color:'' + curr_theme'['4']' + ''">'' + s'['link_nr']''['9']' + ''</td></tr>''
+						+ ''<tr><td style="font-weight:bold; text-align:right;">Filesize:</td><td style="color:'' + curr_theme'['4']' + ''">'' + s'['link_nr']''['8']' + ''</td></tr>''
+						+ ''<tr><td style="font-weight:bold; text-align:right;" valign="top">Filename:</td><td style="color:'' + curr_theme'['4']' + ''">'' + s'['link_nr']''['10']' + ''</td></tr></table>'',320);
+					break;
+				}
+				case ''e'': {	//link to exported file popup
+					if (!document.styleSheets && obj) { obj.style.color = curr_theme'['14']'; }	//onhover for opera
+					ddrivetip(''<b><big><center>Extended File Info</center></big></u></b><hr><b>Filename:</b> '' + s'['link_nr']''['10']' + '''', 320);
+					break;
+				}
+			}			
+			break;
+		}
+		case 2: {	//info table
+			if (!document.styleSheets && obj) { obj.style.color = curr_theme'['19']'; }	//onhover for opera
+			//image popup
+			ddrivetip(''<b>Click To Enlarge</b>'', 100);
+			break;
+		}
+		case 3: {	//info table
+			if (!document.styleSheets && obj) { obj.style.color = curr_theme'['19']'; }	//onhover for opera
+			//extended information popup (missing tag)
+			ddrivetip(''<b>MISSING Artist AND Title IN ID3 Tag</b>'', 220);
+			break;
+		}
+	}
+}
+function out_link(obj, table_nr, link_nr) {	//handle mouseout events of links in whole document; obj=link, table_nr:0=info_table,1=export_table,2=about_table, link_nr=nr of link that sent the event
+	switch (table_nr) {
+		case 0: {	//info table
+			if (!document.styleSheets && obj) {	//onhover for opera
+				if ((obj.id != ''ct_'' + curr_theme_nr) && (obj.id != ''type_'' + curr_link_nr) && (obj.id != ''dir_'' + gdirection)) obj.style.color = curr_theme'['5']';
+			}
+			break;
+		}
+		case 1: {	//export table
+			switch (obj.id.charAt(0)) {
+				case ''h'': {	//header popup
+					if (!document.styleSheets && obj) { obj.style.color = curr_theme'['13']'; }	//onhover for opera
+					break;
+				}
+				case ''e'': {	//extended info popup
+					if (!document.styleSheets && obj) { obj.style.color = curr_theme'['13']'; }	//onhover for opera
+					break;
+				}
+				case ''l'': {	//link to exported file popup
+					if (!document.styleSheets && obj) { obj.style.color = curr_theme'['13']'; }	//onhover for opera
+					break;
+				}
+			}			
+			break;
+		}
+		case 2: {	//info table
+			if (!document.styleSheets && obj) { obj.style.color = curr_theme'['18']'; }	//onhover for opera
+			break;
+		}
+		case 3: {	//info table
+			if (!document.styleSheets && obj) { obj.style.color = curr_theme'['18']'; }	//onhover for opera
+			break;
+		}
+	}
+	hideddrivetip();	//hide popup
+}
+function do_sort(criterion, link_nr) {	//set cookies and reload to sort; criterion=nr of subarray
+	s.push_stack(criterion);
+	WriteCookie("sorting_stack",s.sort_stack.join(),24*14);
+	WriteCookie("sort_order_stack",s.order_stack.join(),24*14);
+	WriteCookie("sorted_link",link_nr,24*14);
+	window.location.reload();
+}
+function play_file(file_nr) {
+	window.location = s'['file_nr']''['10']';
+}
+function read_settings() {
+	var sort_st = ReadCookie("sorting_stack");
+	var order_st = ReadCookie("sort_order_stack");
+	if (sort_st) { s.sort_stack = eval(''Array('' + sort_st + '')'') };
+	if (order_st) { s.order_stack = eval(''Array('' + order_st + '')'') };
+	s.sortByStack();
+}
+function write_dir() {	//writes the arrow that shows the direction of sorting
+	var last_sorted_link = "h_link_" + ReadCookie("sorted_link");
+	var _arrow = " " + String.fromCharCode(8593);
+
+	if (s.order_stack'['0']') { _arrow = " " + String.fromCharCode(8595) };
+	
+	var _new_dir = document.createTextNode(_arrow);
+	var _obj = document.getElementById(last_sorted_link);
+	if (_obj) { _obj.appendChild(_new_dir) }
+}
+//--></SCRIPT>
+
+</HEAD>
+<BODY>
+
+<noscript>Warning: Java not found! <br>Enable JavaScript or install a browser with JavaScript support in order to view this document properly.</noscript>
+
+<div id="dhtmltooltip" class="dhtmltooltip"></div>	<!-- <== this should be at the beginning of the page (popup) -->
+
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT"><!--
+// +++ Cookie read and set +++ //
+	//read all cookies and set up color theme & gradient effect
+	var curr_ct = ReadCookie(''current_color_theme''); 
+	var curr_theme_nr = ReadCookie(''current_theme_nr''); 
+	var curr_glength = ReadCookie(''current_gradient_length'');
+	var curr_gdir = ReadCookie(''current_gradient_direction'');
+	var curr_gtype = ReadCookie(''current_gradient_type'');
+	var curr_link_nr = ReadCookie(''current_link_nr'');
+	
+	if (curr_ct) { SetColorTheme(curr_ct, false, -1) }
+	else { SetColorTheme(''ct_milka'', false, -1) }	//default color theme for ie and netscape
+	if ((curr_glength) && (curr_gdir) && (curr_gtype)) { SetGradientLDTU(Number(curr_glength), Number(curr_gdir), Number(curr_gtype), false, -1) }
+	else { SetGradientLDTU(33, 1, 1, false, -1) }	//default effect
+	//set up popup
+	var tipobj=document.all? document.all'['"dhtmltooltip"']' : document.getElementById? document.getElementById("dhtmltooltip") : "";
+	document.onmousemove=positiontip;
+	onload=full_loaded;	//update links, set tooltip
+	read_settings();
+// +++ Back on top by cntchris +++ //
+
+//Specify the text to display
+var displayed="<nobr><b>'['Back On Top']'</b></nobr>"
+
+////////////Do not edit below this line////////////
+
+var logolink=''javascript:window.scrollTo(0,0)''
+var ns4=document.layers
+var ie4=document.all
+var ns6=document.getElementById&&!document.all
+
+function ietruebody(){
+	return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+}
+function regenerate(){
+	window.location.reload()
+}
+function regenerate2(){
+	if (ns4)
+setTimeout("window.onresize=regenerate",400)
+}
+if (ie4||ns6)
+	document.write(''<span id="logo" style="position:absolute;top:-300px;z-index:100">''+displayed+''</span>'')
+
+function createtext(){ //function for NS4
+	staticimage=new Layer(5)
+	staticimage.left=-300
+	staticimage.document.write(''<a href="''+logolink+''">''+displayed+''</a>'')
+	staticimage.document.close()
+	staticimage.visibility="show"
+	regenerate2()
+	staticitns()
+}
+function staticit(){ //function for IE4/ NS6
+	var w2=ns6? pageXOffset+w : ietruebody().scrollLeft+w
+	var h2=ns6? pageYOffset+h : ietruebody().scrollTop+h
+	crosslogo.style.left=w2+"px"
+	crosslogo.style.top=h2+"px"
+}
+function staticit2(){ //function for NS4
+	staticimage.left=pageXOffset+window.innerWidth-staticimage.document.width-28
+	staticimage.top=pageYOffset+window.innerHeight-staticimage.document.height-10
+}
+function inserttext(){ //function for IE4/ NS6
+	if (ie4)
+		crosslogo=document.all.logo
+	else if (ns6)
+		crosslogo=document.getElementById("logo")
+		crosslogo.innerHTML=''<a href="''+logolink+''">''+displayed+''</a>''
+		w=ns6 || window.opera? window.innerWidth-crosslogo.offsetWidth-20 : ietruebody().clientWidth-crosslogo.offsetWidth-10
+		h=ns6 || window.opera? window.innerHeight-crosslogo.offsetHeight-15 : ietruebody().clientHeight-crosslogo.offsetHeight-10
+		crosslogo.style.left=w+"px"
+		crosslogo.style.top=h+"px"
+	if (ie4)
+		window.onscroll=staticit
+	else if (ns6)
+		startstatic=setInterval("staticit()",100)
+}
+
+if (ie4||ns6){
+	if (window.addEventListener)
+		window.addEventListener("load", inserttext, false)
+	else if (window.attachEvent)
+	window.attachEvent("onload", inserttext)
+else
+	window.onload=inserttext
+	window.onresize=new Function("window.location.reload()")
+}
+else if (ns4)
+	window.onload=createtext
+
+function staticitns(){ //function for NS4
+startstatic=setInterval("staticit2()",90)
+}
+//--></SCRIPT>
+
+<table width="100%%"><td>
+
+<table width="120px" class="info_table" id="info_table_l" height="224px" border="0" cellspacing="1" cellpadding="2">
+<td width="20%%"><b>
+<a id="other_0" onMouseOver="over_link(this,0,0)"onMouseOut="out_link(this,0,0)" href="javascript:show_pictures(''Pictures'');">Pictures</a></b></td>
+	<tr style="display:none;" id="show_picturesPictures">
+<td>
+
+<a id="other_1" href="javascript:popImage(''''+dynimages'['0']''['0']'+'''')" onMouseover="modifyimage(''dynloadarea'', 0); over_link(this,0,1)" onMouseOut="out_link(this,0,1)"><script>document.write(dynimages'['0']''['1']')</script></a><br>
+<a id="other_2" href="javascript:popImage(''''+dynimages'['1']''['0']'+'''')" onMouseover="modifyimage(''dynloadarea'', 1); over_link(this,0,2)" onMouseOut="out_link(this,0,2)"><script>document.write(dynimages'['1']''['1']')</script></a><br>
+<a id="other_3" href="javascript:popImage(''''+dynimages'['2']''['0']'+'''')" onMouseover="modifyimage(''dynloadarea'', 2); over_link(this,0,3)" onMouseOut="out_link(this,0,3)"><script>document.write(dynimages'['2']''['1']')</script></a><br>
+<a id="other_4" href="javascript:popImage(''''+dynimages'['3']''['0']'+'''')" onMouseover="modifyimage(''dynloadarea'', 3); over_link(this,0,4)" onMouseOut="out_link(this,0,4)"><script>document.write(dynimages'['3']''['1']')</script></a><br>
+<a id="other_5" href="javascript:popImage(''''+dynimages'['4']''['0']'+'''')" onMouseover="modifyimage(''dynloadarea'', 4); over_link(this,0,5)" onMouseOut="out_link(this,0,5)"><script>document.write(dynimages'['4']''['1']')</script></a><br>
+<a id="other_6" href="javascript:popImage(''''+dynimages'['5']''['0']'+'''')" onMouseover="modifyimage(''dynloadarea'', 5); over_link(this,0,6)" onMouseOut="out_link(this,0,6)"><script>document.write(dynimages'['5']''['1']')</script></a><br>
+<a id="other_7" href="javascript:popImage(''''+dynimages'['6']''['0']'+'''')" onMouseover="modifyimage(''dynloadarea'', 6); over_link(this,0,7)" onMouseOut="out_link(this,0,7)"><script>document.write(dynimages'['6']''['1']')</script></a><br>
+<a id="other_8" href="javascript:popImage(''''+dynimages'['7']''['0']'+'''')" onMouseover="modifyimage(''dynloadarea'', 7); over_link(this,0,8)" onMouseOut="out_link(this,0,8)"><script>document.write(dynimages'['7']''['1']')</script></a><br>
+<a id="other_9" href="javascript:popImage(''''+dynimages'['8']''['0']'+'''')" onMouseover="modifyimage(''dynloadarea'', 8); over_link(this,0,9)" onMouseOut="out_link(this,0,9)"><script>document.write(dynimages'['8']''['1']')</script></a><br>
+<a id="other_10" href="javascript:popImage(''''+dynimages'['9']''['0']'+'''')" onMouseover="modifyimage(''dynloadarea'', 9); over_link(this,0,10)" onMouseOut="out_link(this,0,10)"><script>document.write(dynimages'['9']''['1']')</script></a><br>
+<a id="other_11" href="javascript:popImage(''''+dynimages'['10']''['0']'+'''')" onMouseover="modifyimage(''dynloadarea'', 10); over_link(this,0,11)" onMouseOut="out_link(this,0,11)"><script>document.write(dynimages'['10']''['1']')</script></a><br>
+<a id="other_12" href="javascript:popImage(''''+dynimages'['11']''['0']'+'''')" onMouseover="modifyimage(''dynloadarea'', 11); over_link(this,0,12)" onMouseOut="out_link(this,0,12)"><script>document.write(dynimages'['11']''['1']')</script></a><br>
+<a id="other_13" href="javascript:popImage(''''+dynimages'['12']''['0']'+'''')" onMouseover="modifyimage(''dynloadarea'', 12); over_link(this,0,13)" onMouseOut="out_link(this,0,13)"><script>document.write(dynimages'['12']''['1']')</script></a><br>
+<a id="other_14" href="javascript:popImage(''''+dynimages'['13']''['0']'+'''')" onMouseover="modifyimage(''dynloadarea'', 13); over_link(this,0,14)" onMouseOut="out_link(this,0,14)"><script>document.write(dynimages'['13']''['1']')</script></a><br>
+<a id="other_15" href="javascript:popImage(''''+dynimages'['14']''['0']'+'''')" onMouseover="modifyimage(''dynloadarea'', 14); over_link(this,0,15)" onMouseOut="out_link(this,0,15)"><script>document.write(dynimages'['14']''['1']')</script></a><br>
+
+</td>
+</tr></table>
+
+</td><td width="100%%">
+
+<table width="100%%" class="info_table" id="info_table" height="224px" border="0" cellspacing="1" align="center"><tbody>
+<tr>
+<td id="dynloadarea" style="width:400pX;height:220px" rowspan="11" width="21%%"><a id="ab_0" href="javascript:popImage(''''+dynimages'['0']''['0']'+'''')" onMouseOver="over_link(this,2,0)" onMouseOut="out_link(this,2,0)"><script>document.write("<img src=\""+dynimages'['0']''['0']'+"\" class=\"info_line\" id=\"image_border\" width=\"180\" border=1 \/*height=\"180\"*\/>");</script></a></td>
+<th class="info_values" id="info_values_0" rowspan="11" nowrap width="3%%" align="center">
+
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT">previous_link()</SCRIPT>
+<br>--<br><br>
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT">next_link()</SCRIPT>
+
+</th>
+
+<td class="info_names" id="info_names_0">Directory:</td>
+<td width="57%%" class="info_values" id="info_values_1">%_directory%</td>
+</tr><tr>
+<td class="info_names" id="info_names_1">Artist:</td>
+<td width="57%%" class="info_values" id="info_values_2">%artist%</td>
+</tr><tr>
+<td class="info_names" id="info_names_2">Album:</td>
+<td width="57%%" class="info_values" id="info_values_3">%album%</td>
+</tr><tr>
+<td class="info_names" id="info_names_3">Genre:</td>
+<td width="57%%" class="info_values" id="info_values_4">%genre%</td>
+</tr><tr>
+<td class="info_names" id="info_names_4">Year:</td>
+<td width="57%%" class="info_values" id="info_values_5">%year%</td>
+</tr><tr>
+<td class="info_names" id="info_names_5">Comment:</td>
+<td width="57%%" class="info_values" id="info_values_6">%comment%</td>
+</tr><tr>
+<td class="info_names" id="info_names_6">Settings:</td>
+<td width="57%%" class="info_values" id="info_values_7">%_vbr% / %_samplerate% khz / %_mode%</td>
+</tr><tr>
+<td class="info_names" id="info_names_7">Average Bitrate Per File:</td>
+<td width="57%%" class="info_values" id="info_values_8"><SCRIPT>document.write(avg_btr_file.toFixed(1))</SCRIPT> kbps</td>
+</tr><tr>
+<td class="info_names" id="info_names_8">Average Bitrate Per Second:</td>
+<td width="57%%" class="info_values" id="info_values_9"><SCRIPT>document.write(avg_btr_second.toFixed(1))</SCRIPT> kbps</td>
+</tr><tr>
+<td class="info_names" id="info_names_9">Total: Length | Tracks | Size:</td>
+<td width="57%%" class="info_values" id="info_values_10">$replace($replace($replace($replace($replace(-%_total_time2%,-00:00,0),-00:0,),-00:,),-0,),-,) | %_total_files% | %_total_size%</td>
+</tr><tr>
+<td colspan="2" class="info_line" id="info_line_0" style="height:17px" align="center"><font class="info_values" id="info_values_11">
+<a id="other_16" href="$replace($num(0,$sub($folderdepth(%_folderpath%),$folderdepth(%_workingpath%))),0,../)$replace(%_workingdir%.html,#,%%23)#$replace(%_directory%,#,%%23)" onMouseOver="over_link(this,0,16)" onMouseOut="out_link(this,0,16)"><b>Back On Album / Compi. List</b></a> | 
+<a id="other_17" href="" onMouseOver="over_link(this,0,17)" onMouseOut="out_link(this,0,17)"><b>Explore</b></a> | 
+<a id="other_18" href="$replace(%_directory%.m3u,#,%%23)" onMouseOver="over_link(this,0,18)" onMouseOut="out_link(this,0,18)"><b>Play Album</b></a>
+</font></td></tr></tbody></table>
+
+</td><td>
+
+<table width="120px" class="info_table" id="info_table_r" height="224px" border="0" cellspacing="1" cellpadding="2">
+<td width="20%%"><b>
+<a id="other_19" onMouseOver="over_link(this,0,19)"onMouseOut="out_link(this,0,19)" href="javascript:show_themes(''Color Themes'');">Color Themes</a></b></td>
+	<tr style="display:none;" id="show_themesColor Themes">
+<td class="info_values" id="info_values_12"><p>
+<!-- all links should have an id with number and over_link() for onMouseOver and out_link() for onMouseOut events with corresponding parameters for central handling of popups and color theme support in opera -->
+<a id="ct_0" href="javascript:SetColorTheme(''ct_red'',true,0)"onMouseOver="over_link(this,0,0)"onMouseOut="out_link(this,0,0)">Red</a>|<a 
+id="ct_1" href="javascript:SetColorTheme(''ct_orange'',true,1)"onMouseOver="over_link(this,0,1)" onMouseOut="out_link(this,0,1)">Orange</a>|<a 
+id="ct_2" href="javascript:SetColorTheme(''ct_yellow'',true,2)"onMouseOver="over_link(this,0,2)" onMouseOut="out_link(this,0,2)">Yellow</a><br>
+<a id="ct_3" href="javascript:SetColorTheme(''ct_lime'',true,3)"onMouseOver="over_link(this,0,3)" onMouseOut="out_link(this,0,3)">Lime</a>|<a 
+id="ct_4" href="javascript:SetColorTheme(''ct_blue'',true,4)"onMouseOver="over_link(this,0,4)" onMouseOut="out_link(this,0,4)">Blue</a>|<a 
+id="ct_5" href="javascript:SetColorTheme(''ct_indigo'',true,5)"onMouseOver="over_link(this,0,5)" onMouseOut="out_link(this,0,5)">Indigo</a><br>
+<a id="ct_6" href="javascript:SetColorTheme(''ct_light'',true,6)"onMouseOver="over_link(this,0,6)" onMouseOut="out_link(this,0,6)">Light</a>|<a 
+id="ct_7" href="javascript:SetColorTheme(''ct_night'',true,7)"onMouseOver="over_link(this,0,7)" onMouseOut="out_link(this,0,7)">Night</a>|<a 
+id="ct_8" href="javascript:SetColorTheme(''ct_sunset'',true,8)"onMouseOver="over_link(this,0,8)" onMouseOut="out_link(this,0,8)">Sunset</a><br>
+<a id="ct_9" href="javascript:SetColorTheme(''ct_gold'',true,9)"onMouseOver="over_link(this,0,9)" onMouseOut="out_link(this,0,9)">Gold</a>|<a 
+id="ct_10" href="javascript:SetColorTheme(''ct_emerald'',true,10)"onMouseOver="over_link(this,0,10)" onMouseOut="out_link(this,0,10)">Emerald</a>|<a 
+id="ct_11" href="javascript:SetColorTheme(''ct_arctica'',true,11)"onMouseOver="over_link(this,0,11)" onMouseOut="out_link(this,0,11)">Arctica</a><br>
+<a id="ct_12" href="javascript:SetColorTheme(''ct_dano'',true,12)"onMouseOver="over_link(this,0,12)" onMouseOut="out_link(this,0,12)">Dano</a>|<a 
+id="ct_13" href="javascript:SetColorTheme(''ct_mp3tag'',true,13)"onMouseOver="over_link(this,0,13)" onMouseOut="out_link(this,0,13)">Mp3tag</a>|<a 
+id="ct_14" href="javascript:SetColorTheme(''ct_milka'',true,14)"onMouseOver="over_link(this,0,14)" onMouseOut="out_link(this,0,14)">Milka</a><br>
+<a id="ct_15" href="javascript:SetColorTheme(''ct_matrix'',true,15)"onMouseOver="over_link(this,0,15)" onMouseOut="out_link(this,0,15)">Matrix</a>|<a 
+id="ct_16" href="javascript:SetColorTheme(''ct_red_desert'',true,16)"onMouseOver="over_link(this,0,16)" onMouseOut="out_link(this,0,16)">Red Desert</a><br>
+<a id="ct_17" href="javascript:SetColorTheme(''ct_deep_blue'',true,17)"onMouseOver="over_link(this,0,17)" onMouseOut="out_link(this,0,17)">Deep Blue</a>|<a 
+id="ct_18" href="javascript:SetColorTheme(''ct_red_sky'',true,18)"onMouseOver="over_link(this,0,18)" onMouseOut="out_link(this,0,18)">Red Sky</a></p>
+<div align="center" class="info_line" id="info_line_1">
+<font class="info_values" id="info_values_13">
+<a id="dir_0" href="javascript:SetGradientLDTU(glength,0,gtype,true)"onMouseOver="over_link(this,0,0)"onMouseOut="out_link(this,0,0)">Up</a> | 
+<a id="dir_1" href="javascript:SetGradientLDTU(glength,1,gtype,true)"onMouseOver="over_link(this,0,1)"onMouseOut="out_link(this,0,1)">Down</a>
+</font></div>
+<div class="info_line" id="info_line_2">
+<font class="info_values" id="info_values_14">
+<a id="type_0" href="javascript:SetGradientLDTU(table_length-1,gdirection,0,true,0)"onMouseOver="over_link(this,0,0)"onMouseOut="out_link(this,0,0)">Gradient</a><br>
+<a id="type_1" href="javascript:SetGradientLDTU(table_length-1,gdirection,1,true,1)"onMouseOver="over_link(this,0,1)"onMouseOut="out_link(this,0,1)">Mirror All</a><br>
+<a id="type_2" href="javascript:SetGradientLDTU(20,gdirection,1,true,2)"onMouseOver="over_link(this,0,2)"onMouseOut="out_link(this,0,2)">Mirror 20</a>|<a 
+id="type_3" href="javascript:SetGradientLDTU(33,gdirection,1,true,3)"onMouseOver="over_link(this,0,3)"onMouseOut="out_link(this,0,3)">Mirror 33</a><br>
+<a id="type_4" href="javascript:SetGradientLDTU(1,gdirection,2,true,4)"onMouseOver="over_link(this,0,4)"onMouseOut="out_link(this,0,4)">Repeat 1</a>|<a 
+id="type_5" href="javascript:SetGradientLDTU(10,gdirection,2,true,5)"onMouseOver="over_link(this,0,5)"onMouseOut="out_link(this,0,5)">Repeat 10</a><br>
+</font></div><br></td></tr></table>
+
+</td></table>
+
+<div align="center">
+<div class="main_title" id="main_title">%_directory%</div>
+
+<table class="export_table" id="export_table" width="60%%" cellspacing="1" align="center">
+<tbody id="tab_lines"><tr class="export_header" id="export_header">		<!-- !!! there shouldn''t be any spaces etc. between <tbody ...> and <tr ...> !!! -->
+<td width="30px"><b><a id="h_link_0" href="javascript:do_sort(10,0)" onMouseOver="over_link(this,1,0)" onMouseOut="out_link(this,1,0)">Nr.</a></b></td>
+<td class="info_values" id="info_values_15" style="width:auto; text-align:left">
+<b><a id="h_link_1" href="javascript:do_sort(2,1)" onMouseOver="over_link(this,1,1)" onMouseOut="out_link(this,1,1)">Track</a></b>
+. <b><a id="h_link_2" href="javascript:do_sort(1,2)" onMouseOver="over_link(this,1,2)" onMouseOut="out_link(this,1,2)">Artist</a></b>
+ - <b><a id="h_link_3" href="javascript:do_sort(3,3)" onMouseOver="over_link(this,1,3)" onMouseOut="out_link(this,1,3)">Title</a></b>
+</td>
+<td width="60px">
+<b><a id="h_link_4" href="javascript:do_sort(4,4)" onMouseOver="over_link(this,1,4)" onMouseOut="out_link(this,1,4)">Length</a></b>
+</td>
+</tr>
+<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT"><!--
+var op_fix = new String("");	//write link color for opera
+if (!document.styleSheets) {	//opera fix
+	op_fix = '' style="color:'' + curr_theme'['13']' + ''"'';
+	if (curr_ct) { SetColorTheme(curr_ct, false, -1) }
+	else { SetColorTheme(''ct_milka'', false, -1) }  //default color theme for opera
+}
+//write output table
+var list = new String("");
+for (i = 0; i<table_length; i++) {
+	list += ''<tr bgcolor="'' + GetCurrentColor(i) + ''"><td>'' + s'['i']''['0']' + ''</td><td align="left">'';
+	if (s'['i']''['2']'!=''00'') { list += s'['i']''['2']' + ''. '' }
+	if ((s'['i']''['1']'=='''' ) && (s'['i']''['3']'=='''')) { list += ''<a id="link_'' + i + ''" + href="javascript:play_file('' + i + '')" onMouseOver="over_link(this,3,'' + i + '')" onMouseOut="out_link(this,3,'' + i + '')"'' + op_fix + ''><u>'' + s'['i']''['10']'.substring(0,s'['i']''['10']'.length - 4) + ''</u></a>''; }
+	else {list += ''<a id="link_'' + i + ''" href="javascript:play_file('' + i + '')" onMouseOver="over_link(this,1,'' + i + '')" onMouseOut="out_link(this,1,'' + i + '')"'' + op_fix + ''>'' + s'['i']''['1']' + '' - '' +s'['i']''['3']'  + ''</a></td>'';}
+	list += ''<td>'' + s'['i']''['4']' + ''</td>'';
+	if (ie5 || (i%%20==19)) {	//I don''t want make IE worse that it is, but my IE6SP2 is really faster by writing each line than each 20th !!!
+		document.write(list);
+		list = "";
+	}
+}
+document.write(list);
+list = "";
+write_dir();	//write sorting direction arrow ab_0
+//--></SCRIPT>
+</tbody></table>
+
+<table class="about_table" id="about_table" width="45%%" cellspacing="1" cellpadding="2" align="center">
+<th width="20%%"><a id="other_20" onMouseOver="over_link(this,0,20)"onMouseOut="out_link(this,0,20)" href="javascript:show_review(''Read Review'');">Read Review</a></th>
+<tr style="display:none; text-align:left" id="show_reviewRead Review">
+<td class="info_values" id="info_values_16">
+
+<pre><!-- ************************/////// REVIEW \\\\\\\************************ -->
+COPY, PASTE REVIEW HERE !
+<!-- ************************/////// END OF REVIEW \\\\\\\************************ --></pre>
+
+</td>
+</tr>
+</table>
+</div>
+</BODY>
+</HTML>
