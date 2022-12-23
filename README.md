@@ -10,7 +10,7 @@ Hey there! Help me out and support my work. You can buy me a :coffee: as a thank
 
 <a href="https://www.buymeacoffee.com/amilino"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" width="160px"></a> or <a href="https://www.paypal.com/paypalme/alanmilinovic1"><img src="https://www.paypalobjects.com/digitalassets/c/website/marketing/apac/C2/logos-buttons/optimize/44_Grey_PayPal_Pill_Button.png" width="120px"></a>
 
-## Installing
+## Installation
 Just copy the .mte files to (C:\Users\\"your username"\AppData\Roaming\Mp3tag\export):
 
 ```
