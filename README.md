@@ -51,6 +51,10 @@ Just copy the .mte files to (C:\Users\\"your username"\AppData\Roaming\Mp3tag\ex
 
 ## Description
 
+### Complete
+Very nice album & music collection overview with covers, search, sorting, color themes (skins) and
+details popup.
+
 ### Simple
 A simple nice blue exports. Very fast to use.
 
