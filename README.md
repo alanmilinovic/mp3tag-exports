@@ -19,7 +19,7 @@ Just copy the .mte files to (C:\Users\\"your username"\AppData\Roaming\Mp3tag\ex
 
 ## Demo preview
 
-### [Complete]([https://raw.githack.com/alanmilinovic/mp3tag-exports/main/Preview/Simple/---%3D%3D%3D%20Burn%20%3D%3D%3D---.html](https://raw.githack.com/alanmilinovic/mp3tag-exports/main/Preview/Complete/---%3D%3D%3D%20Burn%20%3D%3D%3D---.html))
+### [Complete](https://raw.githack.com/alanmilinovic/mp3tag-exports/main/Preview/Complete/---%3D%3D%3D%20Burn%20%3D%3D%3D---.html)
 <p align="center" float="left">
     <a href="https://raw.githack.com/alanmilinovic/mp3tag-exports/main/Preview/Complete/---%3D%3D%3D%20Burn%20%3D%3D%3D---.html">
         <img src="https://raw.githubusercontent.com/alanmilinovic/mp3tag-exports/main/Preview/Complete%20Screenshot.png" width="450" alt="click for demo" />
